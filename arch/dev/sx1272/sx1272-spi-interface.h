@@ -1,0 +1,4 @@
+#ifndef SX1272_SPI_INTERFACE_H_
+#define SX1272_SPI_INTERFACE_H_
+
+#endif

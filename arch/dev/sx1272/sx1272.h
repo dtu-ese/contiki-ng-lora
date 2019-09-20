@@ -6,384 +6,158 @@
 (______/|_____)_|_|_| \__)_____)\____)_| |_|
     (C)2013 Semtech
 
-Description: Generic SX1272 driver implementation
-
 License: Revised BSD License, see LICENSE.TXT file include in the project
-
-Maintainer: Miguel Luis and Gregory Cristian
 */
-#ifndef __SX1272_H__
-#define __SX1272_H__
 
-#include "sx1272Regs-Fsk.h"
-#include "sx1272Regs-LoRa.h"
-#include <stdbool.h>
-#include <stdint.h>
+#ifndef SX1272_H_
+#define SX1272_H_
+/*This is the main file, that should be included if a LoRa project using the SX1272 is being designed*/
+
+/*We do this before including contiki.h, to ensure that the SX1272 Radio is used instead of the radio the device is born with*/
+#ifdef  USE_SX1272_AS_STANDARD_RADIO
+#define NETSTACK_CONF_RADIO SX1272_radio_driver
+#endif
+
+#include "contiki.h"
+#include "dev/radio.h"
+#include "dev/gpio-hal.h"
 #include "dev/spi.h"
-#include "sx1272-radio.h"
 
-/*!
- * Radio wakeup time from SLEEP mode
- */
-#define RADIO_OSC_STARTUP                           1 // [ms]
 
-/*!
- * Radio PLL lock and Mode Ready delay which can vary with the temperature
- */
-#define RADIO_SLEEP_TO_RX                           2 // [ms]
+/*Defines for SX1272 user, to be done in config.h. If not done, the following will be defaulted to:*/
+#ifdef  SX1272_CONF_TX_OUTPUT_POWER
+#define SX1272_TX_OUTPUT_POWER        SX1272_CONF_TX_OUTPUT_POWER
+#else
+#define TX_OUTPUT_POWER                             14        // dBm
+#endif
 
-/*!
- * Radio complete Wake-up Time with margin for temperature compensation
- */
-#define RADIO_WAKEUP_TIME                           ( RADIO_OSC_STARTUP + RADIO_SLEEP_TO_RX )
+#ifdef  SX1272_CONF_SPREADING_FACTOR
+#define SX1272_SPREADING_FACTOR        SX1272_CONF_SPREADING_FACTOR
+#else
+#define SX1272_SPREADING_FACTOR                       7         // [SF7..SF12]
+#endif
 
-void SX1272ReadFifo(uint8_t *buffer, uint8_t size );
-void SX1272Reset( void );
-void SX1272SetOpMode( uint8_t opMode );
-bool SX1272IsCurrentChannelFree();
-rtimer_clock_t SX1272_getLastPacketTimestamp();
-void SX1272ReInit();
-int SX1272PollPacket();
-int SX1272isReceiving();
+#ifdef  SX1272_CONF_CODINGRATE
+#define SX1272_CODINGRATE        SX1272_CONF_CODINGRATE
+#else
+#define SX1272_CODINGRATE                             1         // [1: 4/5, 2: 4/6, 3: 4/7, 4: 4/8]
+#endif
 
-/*!
- * Radio FSK modem parameters
- */
-typedef struct
-{
-    int8_t   Power;
-    uint32_t Fdev;
-    uint32_t Bandwidth;
-    uint32_t BandwidthAfc;
-    uint32_t Datarate;
-    uint16_t PreambleLen;
-    bool     FixLen;
-    uint8_t  PayloadLen;
-    bool     CrcOn;
-    bool     IqInverted;
-    bool     RxContinuous;
-    uint32_t TxTimeout;
-}RadioFskSettings_t;
+#ifdef  SX1272_CONF_PREAMBLE_LENGTH
+#define SX1272_PREAMBLE_LENGTH        SX1272_CONF_PREAMBLE_LENGTH
+#else
+#define SX1272_PREAMBLE_LENGTH                        6         // Same for Tx and Rx
+#endif
 
-/*!
- * Radio FSK packet handler state
- */
-typedef struct
-{
-    uint8_t  PreambleDetected;
-    uint8_t  SyncWordDetected;
-    int8_t   RssiValue;
-    int32_t  AfcValue;
-    uint8_t  RxGain;
-    uint16_t Size;
-    uint16_t NbBytes;
-    uint8_t  FifoThresh;
-    uint8_t  ChunkSize;
-}RadioFskPacketHandler_t;
+#ifdef  SX1272_CONF_TX_SYMBOL_TIMEOUT
+#define SX1272_SYMBOL_TIMEOUT        SX1272_CONF_TX_SYMBOL_TIMEOUT
+#else
+#define SX1272_SYMBOL_TIMEOUT                         5         // Symbols
+#endif
 
-/*!
- * Radio LoRa modem parameters
- */
-typedef struct
-{
-    int8_t   Power;
-    uint32_t Bandwidth;
-    uint32_t Datarate;
-    bool     LowDatarateOptimize;
-    uint8_t  Coderate;
-    uint16_t PreambleLen;
-    bool     FixLen;
-    uint8_t  PayloadLen;
-    bool     CrcOn;
-    bool     FreqHopOn;
-    uint8_t  HopPeriod;
-    bool     IqInverted;
-    bool     RxContinuous;
-    uint32_t TxTimeout;
-}RadioLoRaSettings_t;
+#ifdef  SX1272_CONF_BANDWIDTH
+#define SX1272_BANDWIDTH        SX1272_CONF_BANDWIDTH
+#else
+#define SX1272_BANDWIDTH                              0         // [0: 125 kHz, 1: 250 kHz, 2: 500 kHz, 3: Reserved]
+#endif
 
-/*!
- * Radio LoRa packet handler state
- */
-typedef struct
-{
-    int8_t SnrValue;
-    int16_t RssiValue;
-    uint8_t Size;
-}RadioLoRaPacketHandler_t;
+#ifdef  SX1272_CONF_SPI_CONTROLLER
+#define SX1272_SPI_CONTROLLER        SX1272_CONF_SPI_CONTROLLER
+#else
+#define SX1272_SPI_CONTROLLER                              0
+#endif
 
-/*!
- * Radio Settings
- */
-typedef struct
-{
-    RadioState_t             State;
-    RadioModems_t            Modem;
-    uint32_t                 Channel;
-    RadioFskSettings_t       Fsk;
-    RadioFskPacketHandler_t  FskPacketHandler;
-    RadioLoRaSettings_t      LoRa;
-    RadioLoRaPacketHandler_t LoRaPacketHandler;
-}RadioSettings_t;
+#ifdef   SX1272_CONF_PINS
+#define  SX1272_RESET_PIN           SX1272_CONF_RESET_PIN
+#define  SX1272_ANT_SWITCH          SX1272_CONF_ANT_SWITCH
+#define  SX1272_SPI_SCK             SX1272_CONF_SPI_SCK
+#define  SX1272_SPI_MISO            SX1272_CONF_SPI_MISO
+#define  SX1272_SPI_MOSI            SX1272_CONF_SPI_MOSI
+#define  SX1272_SPI_CS              SX1272_CONF_SPI_CS
+#define  SX1272_SPI_BITRATE         SX1272_CONF_SPI_BITRATE
+#else
+/*We default to just using the pins meant for the external flash*/
+#define  SX1272_RESET_PIN           BOARD_IOID_DIO15
+#define  SX1272_ANT_SWITCH          BOARD_IOID_DIO30
+#define  SX1272_SPI_SCK             EXT_FLASH_SPI_PIN_SCK
+#define  SX1272_SPI_MISO            EXT_FLASH_SPI_PIN_MISO
+#define  SX1272_SPI_MOSI            EXT_FLASH_SPI_PIN_MOSI
+#define  SX1272_SPI_CS              EXT_FLASH_SPI_PIN_CS
+#define  SX1272_SPI_BITRATE         1000000
+#endif
 
-/*!
- * Radio hardware and global parameters
- */
-typedef struct SX1272_s
-{
-    SX1272pins_t pins;
-    RadioSettings_t Settings;
-}SX1272_t;
+#define SX1272_SPI_PHASE            0
+#define SX1272_SPI_POL              0
 
-/*!
- * Hardware IO IRQ callback function definition
- */
-typedef void ( DioIrqHandler )( void );
+  uint8_t spi_pha;                  /* SPI mode phase */
+  uint8_t spi_pol;                  /* SPI mode polarity */
+  uint8_t spi_controller;           /* ID of SPI controller to use */
 
-/*!
- * SX1272 definitions
- */
-#define XTAL_FREQ                                   32000000
-#define FREQ_STEP                                   61.03515625
 
-#define RX_BUFFER_SIZE                              256
+/*Will we allow enabling of interrupts? Also note that this should then exclude poll-mode for now*/
+#ifdef   SX1272_INTERRUPT_DRIVER
+#define  SX1272_DIO0 SX1272_CONF_DIO0
+#define  SX1272_DIO1 SX1272_CONF_DIO1
+#define  SX1272_DIO2 SX1272_CONF_DIO2
+#define  SX1272_DIO3 SX1272_CONF_DIO3
+#ifdef   GPIO_HAL_PORT_PIN_NUMBERING
+#define  SX1272_DIO0_PORT SX1272_CONF_DIO0_PORT
+#define  SX1272_DIO1_PORT SX1272_CONF_DIO1_PORT
+#define  SX1272_DIO2_PORT SX1272_CONF_DIO2_PORT
+#define  SX1272_DIO3_PORT SX1272_CONF_DIO3_PORT
+#else
+#define  SX1272_DIO0_PORT GPIO_HAL_NULL_PORT
+#define  SX1272_DIO1_PORT GPIO_HAL_NULL_PORT
+#define  SX1272_DIO2_PORT GPIO_HAL_NULL_PORT
+#define  SX1272_DIO3_PORT GPIO_HAL_NULL_PORT
+#endif
+#endif
 
-/*!
- * ============================================================================
- * Public functions prototypes
- * ============================================================================
- */
+#ifdef   GPIO_HAL_PORT_PIN_NUMBERING
+#define  SX1272_SPI_SCK_PORT             SX1272_CONF_SPI_SCK_PORT
+#define  SX1272_SPI_MISO_PORT            SX1272_CONF_SPI_MISO_PORT
+#define  SX1272_SPI_MOSI_PORT            SX1272_CONF_SPI_MOSI_PORT
+#define  SX1272_SPI_CS_PORT              SX1272_CONF_SPI_CS_PORT
+#define  SX1272_RESET_PIN_PORT           SX1272_CONF_RESET_PIN_PORT
+#define  SX1272_ANT_SWITCH_PIN_PORT      SX1272_CONF_ANT_SWITCH_PIN_PORT
 
-/*!
- * \brief Initializes the radio
- *
- * \param [IN] events Structure containing the driver callback functions
- */
-void SX1272Init( RadioEvents_t *events, SX1272pins_t * pins );
+#else/*If there is no port-pin numbering*/
+#define  SX1272_RESET_PIN_PORT           GPIO_HAL_NULL_PORT
+#define  SX1272_ANT_SWITCH_PIN_PORT      GPIO_HAL_NULL_PORT
+#endif
 
-/*!
- * Return current radio status
- *
- * \param status Radio status.[RF_IDLE, RF_RX_RUNNING, RF_TX_RUNNING]
- */
-RadioState_t SX1272GetStatus( void );
+/*Defines for LoRa*/
+#define LORA_CHANNELS = {\
+    868100000, \
+    868300000, \
+    868500000, \
+    867100000, \
+    867300000, \
+    867500000, \
+    867700000, \
+    867900000  \
+    }
 
-/*!
- * \brief Configures the radio with the given modem
- *
- * \param [IN] modem Modem to be used [0: FSK, 1: LoRa] 
- */
-void SX1272SetModem( RadioModems_t modem );
 
-/*!
- * \brief Sets the channels configuration
- *
- * \param [IN] freq         Channel RF frequency
- */
-void SX1272SetChannel( uint32_t freq );
+/*Should everything below this line be defined somewhere else?*/
+uint32_t Lora_Channels[8];
+uint8_t current_channel;
 
-/*!
- * \brief Sets the channels configuration
- *
- * \param [IN] modem      Radio modem to be used [0: FSK, 1: LoRa]
- * \param [IN] freq       Channel RF frequency
- * \param [IN] rssiThresh RSSI threshold
- *
- * \retval isFree         [true: Channel is free, false: Channel is not free]
- */
-bool SX1272IsChannelFree( RadioModems_t modem, uint32_t freq, int16_t rssiThresh );
+typedef struct SX1272pins_t {
+    gpio_hal_port_t       reset_port;
+    gpio_hal_port_t       ant_switch_port;
+    gpio_hal_pin_t        reset;
+    gpio_hal_pin_t        ant_switch;
+    spi_device_t          spi;
+} SX1272pins_t;
 
-/*!
- * \brief Generates a 32 bits random value based on the RSSI readings
- *
- * \remark This function sets the radio in LoRa modem mode and disables 
- *         all interrupts.
- *         After calling this function either SX1272SetRxConfig or
- *         SX1272SetTxConfig functions must be called.
- *
- * \retval randomValue    32 bits random value
- */
-uint32_t SX1272Random( void );
+extern const struct radio_driver SX1272_radio_driver;
 
-/*!
- * \brief Sets the reception parameters
- *
- * \param [IN] modem        Radio modem to be used [0: FSK, 1: LoRa]
- * \param [IN] bandwidth    Sets the bandwidth
- *                          FSK : >= 2600 and <= 250000 Hz
- *                          LoRa: [0: 125 kHz, 1: 250 kHz,
- *                                 2: 500 kHz, 3: Reserved] 
- * \param [IN] datarate     Sets the Datarate
- *                          FSK : 600..300000 bits/s
- *                          LoRa: [6: 64, 7: 128, 8: 256, 9: 512,
- *                                10: 1024, 11: 2048, 12: 4096  chips]
- * \param [IN] coderate     Sets the coding rate (LoRa only)
- *                          FSK : N/A ( set to 0 )
- *                          LoRa: [1: 4/5, 2: 4/6, 3: 4/7, 4: 4/8] 
- * \param [IN] bandwidthAfc Sets the AFC Bandwidth (FSK only) 
- *                          FSK : >= 2600 and <= 250000 Hz
- *                          LoRa: N/A ( set to 0 ) 
- * \param [IN] preambleLen  Sets the Preamble length
- *                          FSK : Number of bytes 
- *                          LoRa: Length in symbols (the hardware adds 4 more symbols)
- * \param [IN] symbTimeout  Sets the RxSingle timeout value (LoRa only) 
- *                          FSK : N/A ( set to 0 ) 
- *                          LoRa: timeout in symbols
- * \param [IN] fixLen       Fixed length packets [0: variable, 1: fixed]
- * \param [IN] payloadLen   Sets payload length when fixed lenght is used
- * \param [IN] crcOn        Enables/Disables the CRC [0: OFF, 1: ON]
- * \param [IN] FreqHopOn    Enables disables the intra-packet frequency hopping
- *                          FSK : N/A ( set to 0 )
- *                          LoRa: [0: OFF, 1: ON]
- * \param [IN] HopPeriod    Number of symbols bewteen each hop
- *                          FSK : N/A ( set to 0 )
- *                          LoRa: Number of symbols
- * \param [IN] iqInverted   Inverts IQ signals (LoRa only)
- *                          FSK : N/A ( set to 0 )
- *                          LoRa: [0: not inverted, 1: inverted]
- * \param [IN] rxContinuous Sets the reception in continuous mode
- *                          [false: single mode, true: continuous mode]
- */
-void SX1272SetRxConfig(  RadioModems_t modem, uint32_t bandwidth,
-                         uint32_t datarate, uint8_t coderate,
-                         uint32_t bandwidthAfc, uint16_t preambleLen,
-                         uint16_t symbTimeout, bool fixLen,
-                         uint8_t payloadLen,
-                         bool crcOn, bool FreqHopOn, uint8_t HopPeriod,
-                         bool iqInverted, bool rxContinuous );
+#define RADIO_DELAY_BEFORE_TX_SX1272 US_TO_RTIMERTICKS(71)//Did not find this in the documentation. Note, is always in RX mode when on. Assumes same flip for TX
+#define RADIO_DELAY_BEFORE_RX_SX1272 US_TO_RTIMERTICKS(71)//Table 22, datasheet.
+#define TSCH_PACKET_DURATION_SX1272(len) US_TO_RTIMERTICKS(SX1272GetTimeOnAir(MODEM_LORA, len))
 
-/*!
- * \brief Sets the transmission parameters
- *
- * \param [IN] modem        Radio modem to be used [0: FSK, 1: LoRa] 
- * \param [IN] power        Sets the output power [dBm]
- * \param [IN] fdev         Sets the frequency deviation (FSK only)
- *                          FSK : [Hz]
- *                          LoRa: 0
- * \param [IN] bandwidth    Sets the bandwidth (LoRa only)
- *                          FSK : 0
- *                          LoRa: [0: 125 kHz, 1: 250 kHz,
- *                                 2: 500 kHz, 3: Reserved] 
- * \param [IN] datarate     Sets the Datarate
- *                          FSK : 600..300000 bits/s
- *                          LoRa: [6: 64, 7: 128, 8: 256, 9: 512,
- *                                10: 1024, 11: 2048, 12: 4096  chips]
- * \param [IN] coderate     Sets the coding rate (LoRa only)
- *                          FSK : N/A ( set to 0 )
- *                          LoRa: [1: 4/5, 2: 4/6, 3: 4/7, 4: 4/8] 
- * \param [IN] preambleLen  Sets the preamble length
- *                          FSK : Number of bytes 
- *                          LoRa: Length in symbols (the hardware adds 4 more symbols)
- * \param [IN] fixLen       Fixed length packets [0: variable, 1: fixed]
- * \param [IN] crcOn        Enables disables the CRC [0: OFF, 1: ON]
- * \param [IN] FreqHopOn    Enables disables the intra-packet frequency hopping
- *                          FSK : N/A ( set to 0 )
- *                          LoRa: [0: OFF, 1: ON]
- * \param [IN] HopPeriod    Number of symbols bewteen each hop
- *                          FSK : N/A ( set to 0 )
- *                          LoRa: Number of symbols
- * \param [IN] iqInverted   Inverts IQ signals (LoRa only)
- *                          FSK : N/A ( set to 0 )
- *                          LoRa: [0: not inverted, 1: inverted]
- * \param [IN] timeout      Transmission timeout [ms]
- */
-void SX1272SetTxConfig( RadioModems_t modem, int8_t power, uint32_t fdev, 
-                        uint32_t bandwidth, uint32_t datarate,
-                        uint8_t coderate, uint16_t preambleLen,
-                        bool fixLen, bool crcOn, bool FreqHopOn,
-                        uint8_t HopPeriod, bool iqInverted, uint32_t timeout );
+#define SYMBOL_TIME_SX1272  ((2 << SX1272_SPREADING_FACTOR)/SX1272_BANDWIDTH_HZ*1000)
+/*The 8 + 4.25 being preamble time*/
 
-/*!
- * \brief Computes the packet time on air in us for the given payload
- *
- * \Remark Can only be called once SetRxConfig or SetTxConfig have been called
- *
- * \param [IN] modem      Radio modem to be used [0: FSK, 1: LoRa]
- * \param [IN] pktLen     Packet payload length
- *
- * \retval airTime        Computed airTime (us) for the given packet payload length
- */
-uint32_t SX1272GetTimeOnAir( RadioModems_t modem, uint8_t pktLen );
-
-/*!
- * \brief Sends the buffer of size. Prepares the packet to be sent and sets
- *        the radio in transmission
- *
- * \param [IN]: buffer     Buffer pointer
- * \param [IN]: size       Buffer size
- */
-void SX1272Send( uint8_t *buffer, uint8_t size );
-void SX1272Prepare( uint8_t *buffer, uint8_t size );
-void SX1272Transmit(uint8_t size );
-    
-/*!
- * \brief Sets the radio in sleep mode
- */
-void SX1272SetSleep( void );
-
-/*!
- * \brief Sets the radio in standby mode
- */
-void SX1272SetStby( void );
-
-/*!
- * \brief Sets the radio in reception mode for the given time
- * \param [IN] timeout Reception timeout [ms] [0: continuous, others timeout]
- */
-void SX1272SetRx( uint32_t timeout );
-
-/*!
- * \brief Start a Channel Activity Detection
- */
-void SX1272StartCad( void );
-
-/*!
- * \brief Reads the current RSSI value
- *
- * \retval rssiValue Current RSSI value in [dBm]
- */
-int16_t SX1272ReadRssi( RadioModems_t modem );
-
-/*!
- * \brief Writes the radio register at the specified address
- *
- * \param [IN]: addr Register address
- * \param [IN]: data New register value
- */
-void SX1272Write( uint8_t addr, uint8_t data );
-
-/*!
- * \brief Reads the radio register at the specified address
- *
- * \param [IN]: addr Register address
- * \retval data Register value
- */
-uint8_t SX1272Read( uint8_t addr );
-
-/*!
- * \brief Writes multiple radio registers starting at address
- *
- * \param [IN] addr   First Radio register address
- * \param [IN] buffer Buffer containing the new register's values
- * \param [IN] size   Number of registers to be written
- */
-void SX1272WriteBuffer( uint8_t addr, uint8_t *buffer, uint8_t size );
-
-/*!
- * \brief Reads multiple radio registers starting at address
- *
- * \param [IN] addr First Radio register address
- * \param [OUT] buffer Buffer where to copy the registers data
- * \param [IN] size Number of registers to be read
- */
-void SX1272ReadBuffer( uint8_t addr, uint8_t *buffer, uint8_t size );
-
-/*!
- * \brief Sets the maximum payload length.
- *
- * \param [IN] modem      Radio modem to be used [0: FSK, 1: LoRa]
- * \param [IN] max        Maximum payload length in bytes
- */
-void SX1272SetMaxPayloadLength( RadioModems_t modem, uint8_t max );
-
-#endif // __SX1272_H__
+#endif
