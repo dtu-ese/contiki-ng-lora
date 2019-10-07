@@ -14,9 +14,12 @@ Maintainer: Miguel Luis and Gregory Cristian
 */
 #include <string.h>
 #include <stdio.h>
+#include "project-conf.h"
 #include "contiki.h"
-#include "sx1272-driver-wrapper-for-tsch.h"
+#include "sx1272.h"
 #include "timer.h"
+#include "sx1272-spi-interface.h"/*This is only to read the modem status register to find delays in syncing. Do not include otherwise.*/
+#include "sx1272-regs-lora.h"/*This follows same argument as inclusion of spi interface*/
 
 #define BUFFER_SIZE                                 64 // Define the payload size here
 
@@ -28,16 +31,16 @@ static int j;
 /**
  * Main application entry point.
  */
-PROCESS(ping_pong_process, "Ping-pong-LoRa-process");
-AUTOSTART_PROCESSES(&ping_pong_process);
+PROCESS(lora_sender, "lora-sender-process");
+AUTOSTART_PROCESSES(&lora_sender);
 
-PROCESS_THREAD(ping_pong_process, ev, data)
+PROCESS_THREAD(lora_sender, ev, data)
 {
     PROCESS_BEGIN();
-    timer_set(&t, CLOCK_SECOND*5);
-    while (!timer_expired(&t));
+    timer_set(&t, CLOCK_SECOND);
+    while(!timer_expired(&t));
 
-    SX1272_tsch_driver.init();
+    NETSTACK_RADIO.init();
 
     Buffer[0] = 'A';
     Buffer[1] = 'B';
@@ -53,9 +56,9 @@ PROCESS_THREAD(ping_pong_process, ev, data)
 
     timer_set(&t, CLOCK_SECOND);
 
-    while( 1 )
+    while(1)
     {
-        SX1272_tsch_driver.prepare(Buffer, BufferSize);
+        NETSTACK_RADIO.prepare(Buffer, BufferSize);
 
         rtimer_clock_t goalTime = RTIMER_NOW() + US_TO_RTIMERTICKS(5000);
 
@@ -63,17 +66,12 @@ PROCESS_THREAD(ping_pong_process, ev, data)
         while(RTIMER_CLOCK_LT(RTIMER_NOW(), goalTime));
 
         printf("T\n");
+        NETSTACK_RADIO.transmit(BufferSize);
+        printf("opmode: %d, modemconfig1: %d, modemconfig2: %d\n", spi_read_sx1272(REG_LR_OPMODE), spi_read_sx1272(REG_LR_MODEMCONFIG1), spi_read_sx1272(REG_LR_MODEMCONFIG2));
 
-        SX1272_tsch_driver.transmit(BufferSize);
+        printf("Done transmitting. Transmitted %d bytes\n", BufferSize);
+        printf("Time estimate: %luus\n", RTIMERTICKS_TO_US_64(TSCH_CONF_PACKET_DURATION(BufferSize)));
 
-        printf("Done transmitting. Transmitted %d bytes, data is: \n", BufferSize);
-        printf("Time estimate: %d\n",(int) SX1272GetTimeOnAir(MODEM_LORA, BufferSize));
-/*
-        for (int i = 0; i < BufferSize; i++){
-            printf("_%x", Buffer[i] & 0xff);
-        }
-        printf("\n");
-*/
         for( i = 4; i < BufferSize; i++ )
         {
             Buffer[i] = i + j - 4;

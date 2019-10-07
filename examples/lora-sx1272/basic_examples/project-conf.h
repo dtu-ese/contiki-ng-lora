@@ -35,7 +35,6 @@
 #ifndef PROJECT_CONF_H_
 #define PROJECT_CONF_H_
 /*Configuration of LoRa radio driver*/
-
 #define USE_SX1272_AS_STANDARD_RADIO    1
 #define SX1272_CONF_TX_OUTPUT_POWER     14
 #define SX1272_CONF_SPREADING_FACTOR    7
@@ -51,10 +50,11 @@
 #define SX1272_CONF_SPI_MOSI EXT_FLASH_SPI_PIN_MOSI
 #define SX1272_CONF_SPI_CS EXT_FLASH_SPI_PIN_CS
 #define SX1272_CONF_SPI_BITRATE 1000000
-#define TSCH_CONF_WAIT_FOR_EB   RTIMER_SECOND/0.1 /*Sending an EB is 70ms*/
+#define TSCH_CONF_WAIT_FOR_EB   RTIMER_SECOND/0.1/*Sending an EB is 70ms*/
 
 /*We need these macros to be imported earli in the build process*/
 #include "dev/sx1272/sx1272-project-conf-macros.h"
+
 
 /* Set to enable TSCH security */
 #ifndef WITH_SECURITY
@@ -64,7 +64,6 @@
 /* USB serial takes space, free more space elsewhere */
 #define SICSLOWPAN_CONF_FRAG 0
 #define UIP_CONF_BUFFER_SIZE 160
-
 
 /*******************************************************/
 /******************* Configure TSCH ********************/
@@ -80,7 +79,7 @@
 
 /* 6TiSCH minimal schedule length.
  * Larger values result in less frequent active slots: reduces capacity and saves energy. */
-#define TSCH_SCHEDULE_CONF_DEFAULT_LENGTH 3
+#define TSCH_SCHEDULE_CONF_DEFAULT_LENGTH 5
 
 #if WITH_SECURITY
 
@@ -98,7 +97,7 @@
 #define LOG_CONF_LEVEL_TCPIP                       LOG_LEVEL_NONE
 #define LOG_CONF_LEVEL_IPV6                        LOG_LEVEL_NONE
 #define LOG_CONF_LEVEL_6LOWPAN                     LOG_LEVEL_NONE
-#define LOG_CONF_LEVEL_MAC                         LOG_LEVEL_DBG
+#define LOG_CONF_LEVEL_MAC                         LOG_LEVEL_INFO
 #define LOG_CONF_LEVEL_FRAMER                      LOG_LEVEL_NONE
 #define TSCH_LOG_CONF_PER_SLOT                     1
 
@@ -421,7 +420,6 @@
 
 /* Configurable Rx guard time is micro-seconds */
 //#define TSCH_CONF_RX_WAIT 22000
-
 #endif /* __TSCH_CONF_H__ */
 /** @} */
 

@@ -79,7 +79,6 @@ PROCESS_THREAD(udp_server_process, ev, data)
   LOG_INFO("Server here\n");
   /* Initialize DAG root */
   NETSTACK_ROUTING.root_start();
-  NETSTACK_MAC.init();
   NETSTACK_MAC.on();
 
   /* Initialize UDP connection */
@@ -100,14 +99,14 @@ PROCESS_THREAD(udp_server_process, ev, data)
            energest_type_time(ENERGEST_TYPE_CPU),
            energest_type_time(ENERGEST_TYPE_LPM),
            energest_type_time(ENERGEST_TYPE_DEEP_LPM));
-    LOG_INFO(" Radio LISTEN %llu TRANSMIT %llu OFF      %llu\n",
-           energest_type_time(ENERGEST_TYPE_LISTEN),
-           energest_type_time(ENERGEST_TYPE_TRANSMIT),
+    /*LOG_INFO(" Radio LISTEN %llu TRANSMIT %llu OFF      %llu\n",
+           energest_type_time(ENERGEST_TYPE_SX1272_RX),
+           energest_type_time(ENERGEST_TYPE_SX1272_TRANSMIT),
            
            (ENERGEST_GET_TOTAL_TIME()
-                      - energest_type_time(ENERGEST_TYPE_TRANSMIT)
-                      - energest_type_time(ENERGEST_TYPE_LISTEN)));
-  
+                      - energest_type_time(ENERGEST_TYPE_SX1272_TRANSMIT)
+                      - energest_type_time(ENERGEST_TYPE_SX1272_RX)));
+  */
     LOG_INFO("Total time: %d minutes, %d seconds, %d ticks pr sec\n", (int)energest_time/ENERGEST_SECOND/60, (int)energest_time/ENERGEST_SECOND % 60, (int)ENERGEST_SECOND);
     etimer_set(&periodic_timer, 60*CLOCK_SECOND);
   }

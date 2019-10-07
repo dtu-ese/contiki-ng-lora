@@ -14,55 +14,47 @@ Maintainer: Miguel Luis and Gregory Cristian
 */
 #include <string.h>
 #include <stdio.h>
+#include "project-conf.h"
+#include "sx1272.h"
 #include "contiki.h"
-#include "sx1272-driver-wrapper-for-tsch.h"
 #include "timer.h"
+#include "dev/radio.h"
 
-#define BUFFER_SIZE                                 64 // Define the payload size here
-
-static uint16_t BufferSize = BUFFER_SIZE;
+#define BUFFER_SIZE                                 4
 static uint8_t Buffer[BUFFER_SIZE];
 static struct timer t;
-static int j;
 
 /**
  * Main application entry point.
  */
-PROCESS(ping_pong_process, "Ping-pong-LoRa-process");
-AUTOSTART_PROCESSES(&ping_pong_process);
+PROCESS(jammer, "LoRa-Jammer");
+AUTOSTART_PROCESSES(&jammer);
 
-PROCESS_THREAD(ping_pong_process, ev, data)
+PROCESS_THREAD(jammer, ev, data)
 {
     PROCESS_BEGIN();
     timer_set(&t, CLOCK_SECOND*5);
     while (!timer_expired(&t));
 
-    SX1272_tsch_driver.init();
+    NETSTACK_RADIO.init();
 
     Buffer[0] = 'A';
     Buffer[1] = 'B';
     Buffer[2] = 'C';
     Buffer[3] = 'D';
     // We fill the buffer with numbers for the payload 
-    static int i;
-    for( i = 4; i < BufferSize; i++ )
-    {
-        Buffer[i] = i - 4;
-    }
-    j = 0;
 
-        SX1272_tsch_driver.prepare(Buffer, 1);
-
-        SX1272_tsch_driver.transmit(1);
+    NETSTACK_RADIO.prepare(Buffer, 4);
+    NETSTACK_RADIO.transmit(4);
 
     timer_set(&t, 2);
-        while(!timer_expired(&t));
+    while(!timer_expired(&t));
 
-    while( 1 )
+    while(1)
     {
-        SX1272_tsch_driver.prepare(Buffer, 1);
+        NETSTACK_RADIO.prepare(Buffer, 4);
         printf("Transmitting\n");
-        SX1272_tsch_driver.transmit(1);
+        NETSTACK_RADIO.transmit(4);
         timer_reset(&t);
         while(!timer_expired(&t));
     }

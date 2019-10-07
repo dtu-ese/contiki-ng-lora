@@ -14,8 +14,12 @@ Maintainer: Miguel Luis and Gregory Cristian
 */
 #include <string.h>
 #include <stdio.h>
+#include "project-conf.h"
 #include "contiki.h"
-#include "sx1272-driver-wrapper-for-tsch.h"
+#include "sx1272.h"
+#include "sx1272-spi-interface.h"/*This is only to read the modem status register to find delays in syncing. Do not include otherwise.*/
+#include "sx1272-regs-lora.h"/*This follows same argument as inclusion of spi interface*/
+#include "dev/radio.h"
 #include "timer.h"
 #include "rtimer.h"
 
@@ -25,60 +29,50 @@ Maintainer: Miguel Luis and Gregory Cristian
 static uint16_t BufferSize = BUFFER_SIZE;
 static uint8_t Buffer[BUFFER_SIZE];
 static int len;
-static struct timer t;
 static rtimer_clock_t rssiTime;
 static rtimer_clock_t modemTime;
 static rtimer_clock_t packet_arrival_time;
 /**
  * Main application entry point.
  */
-PROCESS(ping_pong_process, "Ping-pong-LoRa-process");
-AUTOSTART_PROCESSES(&ping_pong_process);
+static int found;
+static radio_value_t rssi;
+static struct timer t;
 
-PROCESS_THREAD(ping_pong_process, ev, data)
+PROCESS(lora_receiver, "LoRa Receiver");
+AUTOSTART_PROCESSES(&lora_receiver);
+
+PROCESS_THREAD(lora_receiver, ev, data)
 {
     PROCESS_BEGIN();
-    rtimer_init();
-    timer_set(&t, CLOCK_SECOND*5);
-    while (!timer_expired(&t));
+    timer_set(&t, CLOCK_SECOND);
+    while(!timer_expired(&t));
 
-    SX1272_tsch_driver.init();
-
+    NETSTACK_RADIO.init();
 
     while(1){
-        SX1272_tsch_driver.on();
-        //printf("Waiting for packet\n");
-        int found = 0;
-        while (!SX1272_tsch_driver.pending_packet()){
-            if (!found && (SX1272Read(REG_LR_RSSIVALUE) > 70)){
+        NETSTACK_RADIO.on();
+
+        found = 0;
+        while (!NETSTACK_RADIO.pending_packet()){
+            NETSTACK_RADIO.get_value(RADIO_PARAM_RSSI, &rssi);
+            if (!found && (rssi > -90)){
                 rssiTime = RTIMER_NOW();
                 found = 1;
-                printf("rx\n");
+                printf("rssiHigh\n");
             }
-            if ((found == 1) && (SX1272Read(REG_LR_MODEMSTAT) & 1)){
+            if ((found == 1) && (spi_read_sx1272(REG_LR_MODEMSTAT) & 1)){
                 modemTime = RTIMER_NOW();
                 found = 2;
             }
-            //SX1272_tsch_driver.on();
-            //printf("Modemstatus: %d, Rssi: %d\n", SX1272Read(REG_LR_MODEMSTAT), SX1272Read(REG_LR_RSSIVALUE));
         }
-        len = SX1272_tsch_driver.read(Buffer, BufferSize);
+        len = NETSTACK_RADIO.read(Buffer, BufferSize);
         found = 0;
 
-        SX1272_tsch_driver.get_object(RADIO_PARAM_LAST_PACKET_TIMESTAMP, &packet_arrival_time, sizeof(packet_arrival_time));
+        NETSTACK_RADIO.get_object(RADIO_PARAM_LAST_PACKET_TIMESTAMP, &packet_arrival_time, sizeof(packet_arrival_time));
 
-        printf("Received %d bytes, expected time on air: %lu, rssiToModemTime: %lu, rssiToRxIrqTime: %d\n", len, SX1272GetTimeOnAir(MODEM_LORA, len), RTIMERTICKS_TO_US_64(modemTime - rssiTime), (int) RTIMERTICKS_TO_US_64(packet_arrival_time - rssiTime));
-
-        //rtimer_clock_t deadline = RTIMER_NOW() + RTIMER_SECOND/2;
-        //while (RTIMER_CLOCK_LT(RTIMER_NOW(), deadline));
-        SX1272_tsch_driver.off();
-        clock_wait(CLOCK_SECOND/2);
-/*
-        for (int i = 0; i < len; i++){
-            printf("_%x", Buffer[i] & 0xff);
-        }
-         printf("\n");
-*/   }
+        printf("Received %d bytes, expected time on air: %lu us\nrssiToModemStatusRegisterTime: %luus\nrssiToRxIrqTime: %luus\n", len, RTIMERTICKS_TO_US_64(TSCH_CONF_PACKET_DURATION(len)), RTIMERTICKS_TO_US_64(modemTime - rssiTime), RTIMERTICKS_TO_US_64(packet_arrival_time - rssiTime));
+    }
     
     PROCESS_END();
 }
