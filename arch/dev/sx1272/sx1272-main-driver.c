@@ -95,11 +95,6 @@ uint8_t get_opmode(){
 }
 
 /*For these values, see doc. Standby to Rx assumes freq of at least 125 khz*/
-#define USEC_SLEEP_TO_STANDBY 250
-#define USEC_FREQ_SYNTH 60
-#define USEC_STANDBY_TO_RX 71 
-#define USEC_STANDBY_TO_TX 120
-#define USEC_CHANNEL_HOP   20
 
 void set_opmode(uint8_t opmode){
   /*Will always ensure LoRa Mode*/
