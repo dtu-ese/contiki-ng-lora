@@ -13,40 +13,11 @@ License: Revised BSD License, see LICENSE.TXT file include in the project
 #define SX1272_H_
 /*This is the main file, that should be included if a LoRa project using the SX1272 is being designed*/
 
-/*We do this before including contiki.h, to ensure that the SX1272 Radio is used instead of the radio the device is born with*/
-#ifdef  USE_SX1272_AS_STANDARD_RADIO
-#define NETSTACK_CONF_RADIO SX1272_radio_driver
-#endif
-
-#include "contiki.h"
-#include "dev/radio.h"
-#include "dev/gpio-hal.h"
-#include "dev/spi.h"
-
-
-/*Defines for SX1272 user, to be done in config.h. If not done, the following will be defaulted to:*/
+/*Defines for SX1272 user, to be done in project-conf.h. If not done, the following will be defaulted to:*/
 #ifdef  SX1272_CONF_TX_OUTPUT_POWER
 #define SX1272_TX_OUTPUT_POWER        SX1272_CONF_TX_OUTPUT_POWER
 #else
-#define TX_OUTPUT_POWER                             14        // dBm
-#endif
-
-#ifdef  SX1272_CONF_SPREADING_FACTOR
-#define SX1272_SPREADING_FACTOR        SX1272_CONF_SPREADING_FACTOR
-#else
-#define SX1272_SPREADING_FACTOR                       7         // [SF7..SF12]
-#endif
-
-#ifdef  SX1272_CONF_CODINGRATE
-#define SX1272_CODINGRATE        SX1272_CONF_CODINGRATE
-#else
-#define SX1272_CODINGRATE                             1         // [1: 4/5, 2: 4/6, 3: 4/7, 4: 4/8]
-#endif
-
-#ifdef  SX1272_CONF_PREAMBLE_LENGTH
-#define SX1272_PREAMBLE_LENGTH        SX1272_CONF_PREAMBLE_LENGTH
-#else
-#define SX1272_PREAMBLE_LENGTH                        6         // Same for Tx and Rx
+#define SX1272_TX_OUTPUT_POWER                             14        // dBm
 #endif
 
 #ifdef  SX1272_CONF_TX_SYMBOL_TIMEOUT
@@ -55,11 +26,7 @@ License: Revised BSD License, see LICENSE.TXT file include in the project
 #define SX1272_SYMBOL_TIMEOUT                         5         // Symbols
 #endif
 
-#ifdef  SX1272_CONF_BANDWIDTH
-#define SX1272_BANDWIDTH        SX1272_CONF_BANDWIDTH
-#else
-#define SX1272_BANDWIDTH                              0         // [0: 125 kHz, 1: 250 kHz, 2: 500 kHz, 3: Reserved]
-#endif
+
 
 #ifdef  SX1272_CONF_SPI_CONTROLLER
 #define SX1272_SPI_CONTROLLER        SX1272_CONF_SPI_CONTROLLER
@@ -69,7 +36,7 @@ License: Revised BSD License, see LICENSE.TXT file include in the project
 
 #ifdef   SX1272_CONF_PINS
 #define  SX1272_RESET_PIN           SX1272_CONF_RESET_PIN
-#define  SX1272_ANT_SWITCH          SX1272_CONF_ANT_SWITCH
+//#define  SX1272_ANT_SWITCH          SX1272_CONF_ANT_SWITCH
 #define  SX1272_SPI_SCK             SX1272_CONF_SPI_SCK
 #define  SX1272_SPI_MISO            SX1272_CONF_SPI_MISO
 #define  SX1272_SPI_MOSI            SX1272_CONF_SPI_MOSI
@@ -78,7 +45,7 @@ License: Revised BSD License, see LICENSE.TXT file include in the project
 #else
 /*We default to just using the pins meant for the external flash*/
 #define  SX1272_RESET_PIN           BOARD_IOID_DIO15
-#define  SX1272_ANT_SWITCH          BOARD_IOID_DIO30
+//#define  SX1272_ANT_SWITCH          BOARD_IOID_DIO30
 #define  SX1272_SPI_SCK             EXT_FLASH_SPI_PIN_SCK
 #define  SX1272_SPI_MISO            EXT_FLASH_SPI_PIN_MISO
 #define  SX1272_SPI_MOSI            EXT_FLASH_SPI_PIN_MOSI
@@ -89,18 +56,13 @@ License: Revised BSD License, see LICENSE.TXT file include in the project
 #define SX1272_SPI_PHASE            0
 #define SX1272_SPI_POL              0
 
-  uint8_t spi_pha;                  /* SPI mode phase */
-  uint8_t spi_pol;                  /* SPI mode polarity */
-  uint8_t spi_controller;           /* ID of SPI controller to use */
-
-
 /*Will we allow enabling of interrupts? Also note that this should then exclude poll-mode for now*/
 #ifdef   SX1272_INTERRUPT_DRIVER
 #define  SX1272_DIO0 SX1272_CONF_DIO0
 #define  SX1272_DIO1 SX1272_CONF_DIO1
 #define  SX1272_DIO2 SX1272_CONF_DIO2
 #define  SX1272_DIO3 SX1272_CONF_DIO3
-#ifdef   GPIO_HAL_PORT_PIN_NUMBERING
+#if      GPIO_HAL_PORT_PIN_NUMBERING
 #define  SX1272_DIO0_PORT SX1272_CONF_DIO0_PORT
 #define  SX1272_DIO1_PORT SX1272_CONF_DIO1_PORT
 #define  SX1272_DIO2_PORT SX1272_CONF_DIO2_PORT
@@ -113,21 +75,94 @@ License: Revised BSD License, see LICENSE.TXT file include in the project
 #endif
 #endif
 
-#ifdef   GPIO_HAL_PORT_PIN_NUMBERING
+#if      GPIO_HAL_PORT_PIN_NUMBERING
 #define  SX1272_SPI_SCK_PORT             SX1272_CONF_SPI_SCK_PORT
 #define  SX1272_SPI_MISO_PORT            SX1272_CONF_SPI_MISO_PORT
 #define  SX1272_SPI_MOSI_PORT            SX1272_CONF_SPI_MOSI_PORT
 #define  SX1272_SPI_CS_PORT              SX1272_CONF_SPI_CS_PORT
 #define  SX1272_RESET_PIN_PORT           SX1272_CONF_RESET_PIN_PORT
-#define  SX1272_ANT_SWITCH_PIN_PORT      SX1272_CONF_ANT_SWITCH_PIN_PORT
+//#define  SX1272_ANT_SWITCH_PIN_PORT      SX1272_CONF_ANT_SWITCH_PIN_PORT
 
 #else/*If there is no port-pin numbering*/
 #define  SX1272_RESET_PIN_PORT           GPIO_HAL_NULL_PORT
-#define  SX1272_ANT_SWITCH_PIN_PORT      GPIO_HAL_NULL_PORT
+//#define  SX1272_ANT_SWITCH_PIN_PORT      GPIO_HAL_NULL_PORT
 #endif
 
+/*TSCH Timeslot Build - Crafted for SF7 as default, must be handcrafted otherwise*/
+#ifdef TSCH_SX1272_TIMESLOT_CONF_CCA_OFFSET
+#define TSCH_SX1272_TIMESLOT_CCA_OFFSET TSCH_SX1272_TIMESLOT_CONF_CCA_OFFSET
+#else
+#define TSCH_SX1272_TIMESLOT_CCA_OFFSET 180
+#endif
+
+#ifdef TSCH_SX1272_TIMESLOT_CONF_CCA
+#define TSCH_SX1272_TIMESLOT_CCA_OFFSET TSCH_SX1272_TIMESLOT_CONF_CCA
+#else
+#define TSCH_SX1272_TIMESLOT_CCA 128
+#endif
+
+#ifdef TSCH_SX1272_TIMESLOT_CONF_TX_OFFSET
+#define TSCH_SX1272_TIMESLOT_TX_OFFSET TSCH_SX1272_TIMESLOT_CONF_TX_OFFSET
+#else
+#define TSCH_SX1272_TIMESLOT_TX_OFFSET 9000
+#endif
+
+#ifdef TSCH_SX1272_TIMESLOT_CONF_RX_OFFSET
+#define TSCH_SX1272_TIMESLOT_RX_OFFSET TSCH_SX1272_TIMESLOT_CONF_RX_OFFSET
+#else
+#define TSCH_SX1272_TIMESLOT_RX_OFFSET 7000
+#endif
+
+#ifdef TSCH_SX1272_TIMESLOT_CONF_RX_ACK_DELAY
+#define TSCH_SX1272_TIMESLOT_RX_ACK_DELAY TSCH_SX1272_TIMESLOT_CONF_RX_ACK_DELAY
+#else
+#define TSCH_SX1272_TIMESLOT_RX_ACK_DELAY 5000
+#endif
+
+#ifdef TSCH_SX1272_TIMESLOT_CONF_TX_ACK_DELAY
+#define TSCH_SX1272_TIMESLOT_TX_ACK_DELAY TSCH_SX1272_TIMESLOT_CONF_TX_ACK_DELAY
+#else
+#define TSCH_SX1272_TIMESLOT_TX_ACK_DELAY 6000
+#endif
+
+#ifdef TSCH_SX1272_TIMESLOT_CONF_RXWAIT
+#define TSCH_SX1272_TIMESLOT_RXWAIT TSCH_SX1272_TIMESLOT_CONF_RXWAIT
+#else
+#define TSCH_SX1272_TIMESLOT_RXWAIT 8000
+#endif
+#ifdef TSCH_SX1272_TIMESLOT_CONF_ACKWAIT
+#define TSCH_SX1272_TIMESLOT_ACKWAIT TSCH_SX1272_TIMESLOT_CONF_ACKWAIT
+#else
+#define TSCH_SX1272_TIMESLOT_ACKWAIT 6000
+#endif
+
+#ifdef TSCH_SX1272_TIMESLOT_CONF_RXTX
+#define TSCH_SX1272_TIMESLOT_RXTX TSCH_SX1272_TIMESLOT_CONF_RXTX
+#else
+#define TSCH_SX1272_TIMESLOT_RXTX 192
+#endif
+
+#ifdef TSCH_SX1272_TIMESLOT_CONF_MAXACK
+#define TSCH_SX1272_TIMESLOT_MAXACK TSCH_SX1272_TIMESLOT_CONF_MAXACK
+#else
+#define TSCH_SX1272_TIMESLOT_MAXACK 48000
+#endif
+
+#ifdef TSCH_SX1272_TIMESLOT_CONF_MAXTX
+#define TSCH_SX1272_TIMESLOT_MAXTX TSCH_SX1272_TIMESLOT_CONF_MAXTX
+#else
+#define TSCH_SX1272_TIMESLOT_MAXTX 209000
+#endif
+
+#ifdef TSCH_SX1272_TIMESLOT_CONF_TIMESLOTLENGTH
+#define TSCH_SX1272_TIMESLOT_TIMESLOTLENGTH TSCH_SX1272_TIMESLOT_CONF_TIMESLOTLENGTH
+#else
+#define TSCH_SX1272_TIMESLOT_TIMESLOTLENGTH 300000
+#endif
+
+
 /*Defines for LoRa*/
-#define LORA_CHANNELS = {\
+#define LORA_CHANNELS {\
     868100000, \
     868300000, \
     868500000, \
@@ -138,26 +173,29 @@ License: Revised BSD License, see LICENSE.TXT file include in the project
     867900000  \
     }
 
-
+/*We load contiki.h now to ensure that the type radio_driver is known...*/
+#include "contiki.h"
+#include "net/mac/tsch/tsch.h"
+#include "dev/radio.h"
 /*Should everything below this line be defined somewhere else?*/
 uint32_t Lora_Channels[8];
 uint8_t current_channel;
 
-typedef struct SX1272pins_t {
-    gpio_hal_port_t       reset_port;
-    gpio_hal_port_t       ant_switch_port;
-    gpio_hal_pin_t        reset;
-    gpio_hal_pin_t        ant_switch;
-    spi_device_t          spi;
-} SX1272pins_t;
 
-extern const struct radio_driver SX1272_radio_driver;
+extern const struct radio_driver sx1272_radio_driver;
+extern const tsch_timeslot_timing_usec tsch_timeslot_timing_sx1272;
 
-#define RADIO_DELAY_BEFORE_TX_SX1272 US_TO_RTIMERTICKS(71)//Did not find this in the documentation. Note, is always in RX mode when on. Assumes same flip for TX
-#define RADIO_DELAY_BEFORE_RX_SX1272 US_TO_RTIMERTICKS(71)//Table 22, datasheet.
-#define TSCH_PACKET_DURATION_SX1272(len) US_TO_RTIMERTICKS(SX1272GetTimeOnAir(MODEM_LORA, len))
+#define USEC_SLEEP_TO_STANDBY 250
+#define USEC_FREQ_SYNTH 60
+#define USEC_STANDBY_TO_RX 71 
+#define USEC_STANDBY_TO_TX 120
+#define USEC_CHANNEL_HOP   20
 
-#define SYMBOL_TIME_SX1272  ((2 << SX1272_SPREADING_FACTOR)/SX1272_BANDWIDTH_HZ*1000)
+/*Maybe we should note that the LoRa preambles are so slow that this doesn't matter much*/
+#define RADIO_DELAY_BEFORE_TX_SX1272 US_TO_RTIMERTICKS(USEC_STANDBY_TO_TX + USEC_FREQ_SYNTH)//Did not find this in the documentation. Note, is always in RX mode when on. Assumes same flip for TX
+#define RADIO_DELAY_BEFORE_RX_SX1272 US_TO_RTIMERTICKS(USEC_STANDBY_TO_RX + USEC_FREQ_SYNTH)//Table 22, datasheet.
+
+
+
 /*The 8 + 4.25 being preamble time*/
-
 #endif

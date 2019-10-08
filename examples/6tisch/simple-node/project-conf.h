@@ -56,7 +56,9 @@
 
 /* 6TiSCH minimal schedule length.
  * Larger values result in less frequent active slots: reduces capacity and saves energy. */
-#define TSCH_SCHEDULE_CONF_DEFAULT_LENGTH 3
+#define TSCH_SCHEDULE_CONF_DEFAULT_LENGTH 6
+
+#define CONTIKI_WATCHDOG_CONF_TIMER_TOP 0xFFFFF
 
 #if WITH_SECURITY
 
