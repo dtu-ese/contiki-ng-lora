@@ -36,6 +36,6 @@
 #include "contiki.h"
 
 /* TSCH timeslot timing (microseconds) */
-extern const uint16_t tsch_timing_cc13xx_50kbps[];
+extern const uint32_t tsch_timing_cc13xx_50kbps[];
 
 #endif /* CC13XX_50KBPS_TSCH_H_ */

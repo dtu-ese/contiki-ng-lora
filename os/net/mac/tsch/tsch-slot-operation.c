@@ -54,6 +54,10 @@
 #include "net/mac/tsch/tsch.h"
 #include "sys/critical.h"
 
+#ifdef USE_SX1272_AS_STANDARD_RADIO/*Indicates a LoRa project using the SX1272 radio*/
+#include "sx1272.h"
+#endif
+
 #include "sys/log.h"
 /* TSCH debug macros, i.e. to set LEDs or GPIOs on various TSCH
  * timeslot events */

@@ -62,6 +62,12 @@
 #include "net/mac/tsch/sixtop/sixtop.h"
 #endif
 
+#ifdef USE_SX1272_AS_STANDARD_RADIO/*Indicates a LoRa project using the SX1272 radio*/
+#include "sx1272.h"
+#else
+#define TSCH_WAIT_FOR_EB RTIMER_SECOND / 100
+#endif
+
 #if FRAME802154_VERSION < FRAME802154_IEEE802154_2015
 #error TSCH: FRAME802154_VERSION must be at least FRAME802154_IEEE802154_2015
 #endif
@@ -93,9 +99,9 @@ uint8_t tsch_hopping_sequence[TSCH_HOPPING_SEQUENCE_MAX_LEN];
 struct tsch_asn_divisor_t tsch_hopping_sequence_length;
 
 /* Default TSCH timeslot timing (in micro-second) */
-static const uint16_t *tsch_default_timing_us;
+static const uint32_t *tsch_default_timing_us;
 /* TSCH timeslot timing (in micro-second) */
-uint16_t tsch_timing_us[tsch_ts_elements_count];
+uint32_t tsch_timing_us[tsch_ts_elements_count];
 /* TSCH timeslot timing (in rtimer ticks) */
 rtimer_clock_t tsch_timing[tsch_ts_elements_count];
 

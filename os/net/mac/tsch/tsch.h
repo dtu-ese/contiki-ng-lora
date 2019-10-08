@@ -71,6 +71,10 @@ frequency hopping for enhanced reliability.
 #include TSCH_CONF_ARCH_HDR_PATH
 #endif /* TSCH_CONF_ARCH_HDR_PATH */
 
+
+#ifdef USE_SX1272_AS_STANDARD_RADIO
+#include "sx1272.h"
+#endif
 /*********** Callbacks *********/
 
 /* Link callbacks to RPL in case RPL is enabled */

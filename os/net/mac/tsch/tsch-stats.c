@@ -39,6 +39,10 @@
 #include "net/netstack.h"
 #include "dev/radio.h"
 
+#ifdef USE_SX1272_AS_STANDARD_RADIO/*Indicates a LoRa project using the SX1272 radio*/
+#include "sx1272.h"
+#endif
+
 /* Log configuration */
 #include "sys/log.h"
 #define LOG_MODULE "TSCH Stats"

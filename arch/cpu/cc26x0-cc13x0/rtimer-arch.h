@@ -53,8 +53,8 @@ rtimer_clock_t rtimer_arch_now(void);
  * an odd value; so US_TO_RTIMERTICKS always rounds to the nearest even number.
  */
 #define US_TO_RTIMERTICKS(US)  (2 * ((US) >= 0 ?                        \
-                               (((int32_t)(US) * (RTIMER_ARCH_SECOND / 2) + 500000) / 1000000L) :      \
-                                ((int32_t)(US) * (RTIMER_ARCH_SECOND / 2) - 500000) / 1000000L))
+                               (((int64_t)(US) * (RTIMER_ARCH_SECOND / 2) + 500000) / 1000000L) :      \
+                                ((int64_t)(US) * (RTIMER_ARCH_SECOND / 2) - 500000) / 1000000L))
 
 #define RTIMERTICKS_TO_US(T)   ((T) >= 0 ?                     \
                                (((int32_t)(T) * 1000000L + ((RTIMER_ARCH_SECOND) / 2)) / (RTIMER_ARCH_SECOND)) : \
