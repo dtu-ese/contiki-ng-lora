@@ -66,6 +66,20 @@
 #define UIP_CONF_BUFFER_SIZE 160
 
 
+/* Length of the various slotframes. Tune to balance network capacity,
+ * contention, energy, latency. */
+#define ORCHESTRA_CONF_EBSF_PERIOD 11
+
+#define ORCHESTRA_CONF_COMMON_SHARED_PERIOD 7
+
+#define ORCHESTRA_CONF_UNICAST_PERIOD 13
+
+/* Is the per-neighbor unicast slotframe sender-based (if not, it is receiver-based).
+ * Note: sender-based works only with RPL storing mode as it relies on DAO and
+ * routing entries to keep track of children and parents. */
+#define ORCHESTRA_CONF_UNICAST_SENDER_BASED 1
+
+
 /*******************************************************/
 /******************* Configure TSCH ********************/
 /*******************************************************/
@@ -151,7 +165,7 @@
 #ifdef TSCH_CONF_RESYNC_WITH_SFD_TIMESTAMPS
 #define TSCH_RESYNC_WITH_SFD_TIMESTAMPS TSCH_CONF_RESYNC_WITH_SFD_TIMESTAMPS
 #else
-#define TSCH_RESYNC_WITH_SFD_TIMESTAMPS 0
+define TSCH_RESYNC_WITH_SFD_TIMESTAMPS 0
 #endif
 */
 /* If enabled, remove jitter due to measurement errors */

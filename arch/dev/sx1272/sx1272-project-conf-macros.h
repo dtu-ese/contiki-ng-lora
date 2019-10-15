@@ -73,7 +73,7 @@
 
 
 #ifndef TSCH_CONF_ASSOCIATION_POLL_FREQUENCY
-#define TSCH_CONF_ASSOCIATION_POLL_FREQUENCY 10
+#define TSCH_CONF_ASSOCIATION_POLL_FREQUENCY 100
 #endif
 
 #ifndef TSCH_CONF_WAIT_FOR_EB
@@ -81,5 +81,25 @@
 #else 
 #define TSCH_WAIT_FOR_EB RTIMER_SECOND * 2.2
 #endif
+
+#define USEC_SLEEP_TO_STANDBY 250
+#define USEC_FREQ_SYNTH 60
+#define USEC_STANDBY_TO_RX 71 
+#define USEC_STANDBY_TO_TX 120
+#define USEC_CHANNEL_HOP   20
+
+/*Maybe we should note that the LoRa preambles are so slow that this doesn't matter much*/
+#define RADIO_DELAY_BEFORE_TX_SX1272 US_TO_RTIMERTICKS(USEC_STANDBY_TO_TX + USEC_FREQ_SYNTH)//Did not find this in the documentation. Note, is always in RX mode when on. Assumes same flip for TX
+#define RADIO_DELAY_BEFORE_RX_SX1272 US_TO_RTIMERTICKS(USEC_STANDBY_TO_RX + USEC_FREQ_SYNTH)//Table 22, datasheet.
+
+#define RADIO_DELAY_BEFORE_TX RADIO_DELAY_BEFORE_TX_SX1272
+#define RADIO_DELAY_BEFORE_RX RADIO_DELAY_BEFORE_RX_SX1272
+
+#define RADIO_DELAY_BEFORE_DETECT US_TO_RTIMERTICKS(4500)
+#define TSCH_CONF_RADIO_ON_DURING_TIMESLOT 0
+/*We really want to do this, since the timestamps and RxDone-interrupts are much more accurate than the modemstatus detection*/
+#define TSCH_CONF_RESYNC_WITH_SFD_TIMESTAMPS 1
+
+
 #endif /*USE_SX1272_AS_STANDARD_RADIO*/
 #endif /*SX1272_PROJECT_CONF_MACROS*/

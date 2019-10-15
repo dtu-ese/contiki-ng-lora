@@ -31,6 +31,12 @@ int init_sx1272(){
   return RADIO_RESULT_OK;
 }
 
+void delay_usec_rtimer(uint32_t usec){
+  rtimer_clock_t target = US_TO_RTIMERTICKS(usec) + RTIMER_NOW();
+
+  while (RTIMER_CLOCK_LT(RTIMER_NOW(),target));
+}
+
 void initialize_contiki_end(){
     gpio_init_sx1272();
     spi_init_sx1272();
@@ -42,7 +48,7 @@ void initialize_radio(){
     set_channel(0);
 
     /*Handle TX Output power*/
-    if (SX1272_TX_OUTPUT_POWER > 20){
+    if (SX1272_TX_OUTPUT_POWER >= 20){
       tx_power = 20;
     } else if (SX1272_TX_OUTPUT_POWER > 17){
       tx_power = 17;
@@ -134,7 +140,7 @@ void set_opmode(uint8_t opmode){
       switch (prev_opmode){
         case RFLR_OPMODE_SLEEP:
         {
-          clock_delay_usec(USEC_SLEEP_TO_STANDBY);
+          delay_usec_rtimer(USEC_SLEEP_TO_STANDBY);
           ENERGEST_SWITCH(ENERGEST_TYPE_SX1272_SLEEP, ENERGEST_TYPE_SX1272_STANDBY);
         }
         case RFLR_OPMODE_TRANSMITTER:
@@ -156,12 +162,12 @@ void set_opmode(uint8_t opmode){
       switch (prev_opmode){
         case RFLR_OPMODE_SLEEP:
         {
-          clock_delay_usec(USEC_SLEEP_TO_STANDBY + USEC_STANDBY_TO_RX + USEC_FREQ_SYNTH);
+          delay_usec_rtimer(USEC_SLEEP_TO_STANDBY + USEC_STANDBY_TO_RX + USEC_FREQ_SYNTH);
           ENERGEST_SWITCH(ENERGEST_TYPE_SX1272_SLEEP, ENERGEST_TYPE_SX1272_RX);          
         }
         case RFLR_OPMODE_STANDBY:
         {
-          clock_delay_usec(USEC_STANDBY_TO_RX + USEC_FREQ_SYNTH);
+          delay_usec_rtimer(USEC_STANDBY_TO_RX + USEC_FREQ_SYNTH);
           ENERGEST_SWITCH(ENERGEST_TYPE_SX1272_STANDBY, ENERGEST_TYPE_SX1272_RX);
         }
         /*This case should never occur, as we go from tx to standby always*/
@@ -180,17 +186,17 @@ void set_opmode(uint8_t opmode){
       switch (prev_opmode){
         case RFLR_OPMODE_SLEEP:
         {
-          clock_delay_usec(USEC_SLEEP_TO_STANDBY + USEC_STANDBY_TO_TX + USEC_FREQ_SYNTH);
+          delay_usec_rtimer(USEC_SLEEP_TO_STANDBY + USEC_STANDBY_TO_TX + USEC_FREQ_SYNTH);
           ENERGEST_SWITCH(ENERGEST_TYPE_SX1272_SLEEP, ENERGEST_TYPE_SX1272_TRANSMIT);
         }
         case RFLR_OPMODE_STANDBY:
         {
-          clock_delay_usec(USEC_STANDBY_TO_TX + USEC_FREQ_SYNTH);
+          delay_usec_rtimer(USEC_STANDBY_TO_TX + USEC_FREQ_SYNTH);
           ENERGEST_SWITCH(ENERGEST_TYPE_SX1272_STANDBY, ENERGEST_TYPE_SX1272_TRANSMIT);
         }
         case RFLR_OPMODE_RECEIVER:
         {
-          clock_delay_usec(USEC_FREQ_SYNTH + USEC_CHANNEL_HOP);
+          delay_usec_rtimer(USEC_FREQ_SYNTH + USEC_CHANNEL_HOP);
           ENERGEST_SWITCH(ENERGEST_TYPE_SX1272_RX, ENERGEST_TYPE_SX1272_TRANSMIT);
         }
         default:
@@ -240,7 +246,7 @@ int prepare(const void *buffer, unsigned short size){
 
 int transmit(unsigned short size){
   set_opmode(RFLR_OPMODE_TRANSMITTER);
-  clock_delay_usec(SX1272_PHY_OVERHEAD + SX1272_PAYLOAD_TIME(size));
+  clock_delay_rtimer(SX1272_PHY_OVERHEAD + SX1272_PAYLOAD_TIME(size));
   ENERGEST_SWITCH(ENERGEST_TYPE_TRANSMIT, ENERGEST_TYPE_CPU);/*As the radio automatically stops transmitting and go into standby when it's done tx'ing*/ 
   return 0;
 }
@@ -261,9 +267,30 @@ int read_packet(void *buf, unsigned short buf_len){
   }
 }
 
+void storepacket(){
+  pending_packet_length = spi_read_sx1272(REG_LR_RXNBBYTES);
+  spi_read_fifo_sx1272(rx_tx_buffer, pending_packet_length);
+  for (int i = 0; i < pending_packet_length; i++){
+    //printf("%x", ((uint8_t *)rx_tx_buffer)[i]);
+  }
+  //printf("\n");
+
+  last_packet_received = time_at_rx_done - TSCH_PACKET_DURATION(pending_packet_length);
+  pending_packet_flag = 1;
+}
+
 int pending_packet(){
-  
-  receiving_packet_sx1272();
+  static uint8_t flags;
+
+  flags = spi_read_sx1272(REG_LR_IRQFLAGS);
+  if (flags & RFLR_IRQFLAGS_RXDONE){
+    /*We clear the flags*/
+    spi_write_sx1272(REG_LR_IRQFLAGS, 0xFF);
+    time_at_rx_done = RTIMER_NOW();
+    storepacket();
+    printf("rx\n");
+    return 0;/*We are done receiving */
+  }
   return pending_packet_flag;
 }
 
@@ -326,31 +353,17 @@ int set_channel(uint8_t channel)
 }
 
 rtimer_clock_t time_of_last_packet_reception(){
-  return last_packet_received;  
+  return last_packet_received /*- US_TO_RTIMERTICKS(825)*/;  
 }
 
 
-void storepacket(){
-  pending_packet_length = spi_read_sx1272(REG_LR_RXNBBYTES);
-  spi_read_fifo_sx1272(rx_tx_buffer, pending_packet_length);
-
-  last_packet_received = time_at_rx_done - TSCH_PACKET_DURATION(pending_packet_length);
-  pending_packet_flag = 1;
-}
 
 int receiving_packet_sx1272(){
-    static uint8_t flags;
-    static uint8_t status;
-    flags = spi_read_sx1272(REG_LR_IRQFLAGS);
-    status = spi_read_sx1272(REG_LR_MODEMSTAT);
-    if (flags & RFLR_IRQFLAGS_RXDONE){
-        /*We clear the flags*/
-        spi_write_sx1272(REG_LR_IRQFLAGS, 0xFF);
-        time_at_rx_done = RTIMER_NOW();
-        storepacket();
-        return 0;/*We are done receiving */
-    }
-
+  static uint8_t status;
+  status = spi_read_sx1272(REG_LR_MODEMSTAT);
+  /* We check now if there's any pending packets, as TSCH turns off the radio immediately after it's stopped receiving,
+   * Which means we have to recover data from FIFO while receiving*/
+  pending_packet();
   if (status & ( 8 | 2 | 1)){/*Checking against the status reg*/
     return 1;
   }

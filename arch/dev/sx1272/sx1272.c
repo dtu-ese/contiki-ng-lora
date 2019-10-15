@@ -100,20 +100,6 @@ int clear_channel_assesment(){
   return CCA_CLEAR;/*CCA In LoRA is slow, so we don't do it*/
 }
 
-const tsch_timeslot_timing_usec tsch_timeslot_timing_sx1272 = {
-  TSCH_SX1272_TIMESLOT_CCA_OFFSET, /* CCAOffset */
-  TSCH_SX1272_TIMESLOT_CCA_OFFSET, /* CCA */
-  TSCH_SX1272_TIMESLOT_TX_OFFSET, /* TxOffset */
-  (TSCH_SX1272_TIMESLOT_RX_OFFSET - (TSCH_SX1272_TIMESLOT_RXWAIT / 2)), /* RxOffset */
-  TSCH_SX1272_TIMESLOT_RX_ACK_DELAY, /* RxAckDelay */
-  TSCH_SX1272_TIMESLOT_TX_ACK_DELAY, /* TxAckDelay */
-  TSCH_SX1272_TIMESLOT_RXWAIT, /* RxWait */
-  TSCH_SX1272_TIMESLOT_ACKWAIT, /* AckWait */
-  TSCH_SX1272_TIMESLOT_RXTX, /* RxTx */
-  TSCH_SX1272_TIMESLOT_MAXACK, /* MaxAck */
-  TSCH_SX1272_TIMESLOT_MAXTX, /* MaxTx */
-  TSCH_SX1272_TIMESLOT_TIMESLOTLENGTH /* TimeslotLength */
-};
 
 const struct radio_driver sx1272_radio_driver = {
   init_sx1272,
