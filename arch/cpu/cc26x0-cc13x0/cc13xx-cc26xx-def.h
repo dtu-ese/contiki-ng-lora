@@ -71,6 +71,7 @@
 
 #define RADIO_BYTE_AIR_TIME  (1000000 / (RADIO_BIT_RATE / 8))
 
+#ifndef USE_SX1272_AS_STANDARD_RADIO
 /* Delay between GO signal and SFD */
 #define RADIO_DELAY_BEFORE_TX ((unsigned)US_TO_RTIMERTICKS(RADIO_PHY_HEADER_LEN * RADIO_BYTE_AIR_TIME))
 /* Delay between GO signal and start listening.
@@ -78,6 +79,7 @@
 #define RADIO_DELAY_BEFORE_RX ((unsigned)US_TO_RTIMERTICKS(15))
 /* Delay between the SFD finishes arriving and it is detected in software. */
 #define RADIO_DELAY_BEFORE_DETECT ((unsigned)US_TO_RTIMERTICKS(352))
+#endif /*#ifndef USE_SX1272_AS_STANDARD_RADIO*/
 
 /* Timer conversion; radio is running at 4 MHz */
 #define RADIO_TIMER_SECOND   4000000u
@@ -88,8 +90,9 @@
 #define USEC_TO_RADIO(X)     ((X) * 4)
 
 /* Do not turn off TSCH within a timeslot: not enough time */
+#ifndef USE_SX1272_AS_STANDARD_RADIO
 #define TSCH_CONF_RADIO_ON_DURING_TIMESLOT 1
-
+#endif /*USE_SX1272_AS_STANDARD_RADIO*/
 /* Disable TSCH frame filtering */
 #define TSCH_CONF_HW_FRAME_FILTERING  0
 
