@@ -288,7 +288,6 @@ int pending_packet(){
     spi_write_sx1272(REG_LR_IRQFLAGS, 0xFF);
     time_at_rx_done = RTIMER_NOW();
     storepacket();
-    printf("rx\n");
     return 0;/*We are done receiving */
   }
   return pending_packet_flag;
