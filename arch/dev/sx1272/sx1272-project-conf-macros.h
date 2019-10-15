@@ -60,10 +60,10 @@
 /*We have to override this macro, as the 'per byte' time is dependent on the number of bytes*/
 #ifdef  USE_SX1272_AS_STANDARD_RADIO
 
-//#define NETSTACK_CONF_RADIO sx1272_radio_driver
-//#define NETSTACK_RADIO NETSTACK_CONF_RADIO
+#define NETSTACK_CONF_RADIO sx1272_radio_driver
+#define NETSTACK_RADIO NETSTACK_CONF_RADIO
 
-//#define TSCH_CONF_PACKET_DURATION(len) US_TO_RTIMERTICKS(SX1272_PHY_OVERHEAD + SX1272_PAYLOAD_TIME(len))
+#define TSCH_CONF_PACKET_DURATION(len) US_TO_RTIMERTICKS(SX1272_PHY_OVERHEAD + SX1272_PAYLOAD_TIME(len))
 
 #define RTIMER_CONF_CLOCK_SIZE 8
 

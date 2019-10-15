@@ -246,7 +246,7 @@ int prepare(const void *buffer, unsigned short size){
 
 int transmit(unsigned short size){
   set_opmode(RFLR_OPMODE_TRANSMITTER);
-  clock_delay_rtimer(SX1272_PHY_OVERHEAD + SX1272_PAYLOAD_TIME(size));
+  delay_usec_rtimer(SX1272_PHY_OVERHEAD + SX1272_PAYLOAD_TIME(size));
   ENERGEST_SWITCH(ENERGEST_TYPE_TRANSMIT, ENERGEST_TYPE_CPU);/*As the radio automatically stops transmitting and go into standby when it's done tx'ing*/ 
   return 0;
 }
