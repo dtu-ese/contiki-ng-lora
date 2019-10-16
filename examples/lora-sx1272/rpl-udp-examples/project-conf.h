@@ -54,6 +54,7 @@
 #define TSCH_CONF_WAIT_FOR_EB   RTIMER_SECOND/0.1 /*Sending an EB is 70ms*/
 
 /*We need these macros to be imported earli in the build process*/
+#define TSCH_CONF_ASSOCIATION_POLL_FREQUENCY 32
 #include "dev/sx1272/sx1272-project-conf-macros.h"
 
 /* Set to enable TSCH security */
@@ -122,7 +123,6 @@
 #define RPL_CONF_DIO_INTERVAL_MIN 15
 #define RPL_CONF_DIO_INTERVAL_DOUBLINGS 2
 #define NETSTACK_MAX_ROUTE_ENTRIES 5
-
 
 #define ENERGEST_CONF_ON 1
 

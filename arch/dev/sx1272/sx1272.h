@@ -50,7 +50,7 @@ License: Revised BSD License, see LICENSE.TXT file include in the project
 #define  SX1272_SPI_MISO            EXT_FLASH_SPI_PIN_MISO
 #define  SX1272_SPI_MOSI            EXT_FLASH_SPI_PIN_MOSI
 #define  SX1272_SPI_CS              EXT_FLASH_SPI_PIN_CS
-#define  SX1272_SPI_BITRATE         4000000/*sx1272 can do 10 mhz sck according to datasheet. It is unclear if this bitrate is the sck frequency, as spi bitrate depends on setup*/
+#define  SX1272_SPI_BITRATE         4000000/*sx1272 can do 10 mhz sck according to datasheet. It is unclear if this bitrate is the sck frequency, as spi bitrate depends on setup. Semtech driver does 8 Mhz.*/
 #endif
 
 #define SX1272_SPI_PHASE            0

@@ -95,7 +95,7 @@
 #define RADIO_DELAY_BEFORE_TX RADIO_DELAY_BEFORE_TX_SX1272
 #define RADIO_DELAY_BEFORE_RX RADIO_DELAY_BEFORE_RX_SX1272
 
-#define RADIO_DELAY_BEFORE_DETECT US_TO_RTIMERTICKS(4500)
+#define RADIO_DELAY_BEFORE_DETECT US_TO_RTIMERTICKS(6000)
 #define TSCH_CONF_RADIO_ON_DURING_TIMESLOT 0
 /*We really want to do this, since the timestamps and RxDone-interrupts are much more accurate than the modemstatus detection*/
 #define TSCH_CONF_RESYNC_WITH_SFD_TIMESTAMPS 1

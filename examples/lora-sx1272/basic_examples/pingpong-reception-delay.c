@@ -76,25 +76,17 @@ PROCESS_THREAD(pingpong, ev, data)
 
 
         startwait = RTIMER_NOW();
-        RTIMER_BUSYWAIT_UNTIL_ABS(NETSTACK_RADIO.receiving_packet(), startwait, US_TO_RTIMERTICKS(150000) + US_TO_RTIMERTICKS(rand));
+        RTIMER_BUSYWAIT_UNTIL_ABS(NETSTACK_RADIO.receiving_packet(), startwait, US_TO_RTIMERTICKS(INTERVAL) + US_TO_RTIMERTICKS(rand));
         if (NETSTACK_RADIO.receiving_packet()){
             printf("Receiving\n");
             modemTime = RTIMER_NOW();
-            while(RTIMER_CLOCK_LT(RTIMER_NOW(), modemTime + TSCH_CONF_PACKET_DURATION(BUFFER_SIZE + 100))){
-                if (NETSTACK_RADIO.pending_packet()){
-                    printf("Pending\n");
-                    break;
-                }
-                if (!NETSTACK_RADIO.receiving_packet()){
-                    printf("Receiving stopped\n");
-                }
-            }
+            RTIMER_BUSYWAIT_UNTIL_ABS(!NETSTACK_RADIO.receiving_packet(), modemTime, TSCH_CONF_PACKET_DURATION(BUFFER_SIZE + 100));
             if (NETSTACK_RADIO.pending_packet()){
                 if ((len = NETSTACK_RADIO.read(Buffer, BUFFER_SIZE) == BUFFER_SIZE) && ((Buffer[0] == magic_number) ||(Buffer[0] == magic_number + 1))){
                     prev_transmit_flag = transmit_flag;
                     transmit_flag = 1;
+                    printf("buf: %x\n", Buffer[0]);
                 }
-                printf("buf: %x\n", Buffer[0]);
             }
         } else {
             prev_transmit_flag = transmit_flag;
