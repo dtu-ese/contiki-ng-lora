@@ -36,7 +36,7 @@
 #define PROJECT_CONF_H_
 /*Configuration of LoRa radio driver*/
 #define USE_SX1272_AS_STANDARD_RADIO    1
-#define SX1272_CONF_TX_OUTPUT_POWER     14
+#define SX1272_CONF_TX_OUTPUT_POWER     1
 #define SX1272_CONF_SPREADING_FACTOR    7
 #define SX1272_CONF_CODINGRATE          1
 #define SX1272_CONF_PREAMBLE_LENGTH     6
@@ -50,7 +50,7 @@
 #define SX1272_CONF_SPI_MOSI EXT_FLASH_SPI_PIN_MOSI
 #define SX1272_CONF_SPI_CS EXT_FLASH_SPI_PIN_CS
 #define SX1272_CONF_SPI_BITRATE 1000000
-#define TSCH_CONF_WAIT_FOR_EB   RTIMER_SECOND/0.1/*Sending an EB is 70ms*/
+#define TSCH_CONF_WAIT_FOR_EB   RTIMER_SECOND/20 /*Sending an EB is 70ms*/
 
 /*We need these macros to be imported earli in the build process*/
 #include "dev/sx1272/sx1272-project-conf-macros.h"

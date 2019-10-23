@@ -15,7 +15,7 @@
 #define UDP_SERVER_PORT	5678
 
 #define BYTES_PER_MINUTE  50
-#define PACKAGE_SIZE      50
+#define PACKAGE_SIZE      110
 //#define SEND_INTERVAL		  (60 * CLOCK_SECOND)
 #define PRINT_INTERVAL		  (60 * CLOCK_SECOND)
 
@@ -46,7 +46,7 @@ udp_rx_callback(struct simple_udp_connection *c,
 /*---------------------------------------------------------------------------*/
 PROCESS_THREAD(udp_client_process, ev, data)
 {
-  uint8_t buffer[128];
+  uint8_t buffer[PACKAGE_SIZE];
   static struct etimer print_timer;
   static struct etimer periodic_timer;
   uip_ipaddr_t dest_ipaddr;
@@ -79,7 +79,7 @@ PROCESS_THREAD(udp_client_process, ev, data)
         checksum += buffer[i];
       }
       simple_udp_sendto(&udp_conn, buffer, PACKAGE_SIZE, &dest_ipaddr);
-      LOG_INFO("Sent checksum %d\n", checksum);
+      LOG_INFO("Sent checksum %d and length%d\n", checksum, PACKAGE_SIZE);
     } else {
       LOG_INFO("Reachable: %d, getIP: %d, actual ip: ", NETSTACK_ROUTING.node_is_reachable(), NETSTACK_ROUTING.get_root_ipaddr(&dest_ipaddr));
             LOG_INFO_6ADDR(&dest_ipaddr);

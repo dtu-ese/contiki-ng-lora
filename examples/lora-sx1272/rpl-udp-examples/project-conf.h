@@ -51,7 +51,7 @@
 #define SX1272_CONF_SPI_MOSI EXT_FLASH_SPI_PIN_MOSI
 #define SX1272_CONF_SPI_CS EXT_FLASH_SPI_PIN_CS
 #define SX1272_CONF_SPI_BITRATE 1000000
-#define TSCH_CONF_WAIT_FOR_EB   RTIMER_SECOND/0.1 /*Sending an EB is 70ms*/
+#define TSCH_CONF_WAIT_FOR_EB   RTIMER_SECOND/20 /*Sending an EB is 70ms*/
 
 /*We need these macros to be imported earli in the build process*/
 #define TSCH_CONF_ASSOCIATION_POLL_FREQUENCY 32
@@ -64,7 +64,7 @@
 
 /* USB serial takes space, free more space elsewhere */
 #define SICSLOWPAN_CONF_FRAG 0
-#define UIP_CONF_BUFFER_SIZE 160
+#define UIP_CONF_BUFFER_SIZE 600
 
 
 /* Length of the various slotframes. Tune to balance network capacity,
@@ -85,7 +85,7 @@
 /******************* Configure TSCH ********************/
 /*******************************************************/
 
-#define PACKETBUF_CONF_SIZE 128
+#define PACKETBUF_CONF_SIZE 256
 
 /* IEEE802.15.4 PANID */
 #define IEEE802154_CONF_PANID 0x81a5
@@ -125,6 +125,7 @@
 #define NETSTACK_MAX_ROUTE_ENTRIES 5
 
 #define ENERGEST_CONF_ON 1
+#define TSCH_CONF_CHANNEL_SCAN_DURATION CLOCK_SECOND
 
 /********** Includes **********/
 //#define BUILD_WITH_ORCHESTRA                            1

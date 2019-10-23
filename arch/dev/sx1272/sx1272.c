@@ -31,7 +31,7 @@ radio_result_t get_value_sx1272(radio_param_t param, radio_value_t *value){
     *value = get_last_snr();
     return RADIO_RESULT_OK;
   case RADIO_CONST_MAX_PAYLOAD_LEN:
-    *value = 0xFF;/*We have harcoded max payload of 0xFF*/
+    *value = 150;/*We pick this ourselves, but max is 255. Most likely the hard limit is bound by your timeslots.*/
     return RADIO_RESULT_OK;
   default:
     return RADIO_RESULT_NOT_SUPPORTED;

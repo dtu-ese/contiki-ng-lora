@@ -15,7 +15,8 @@ static uint8_t pending_packet_length;
 static rtimer_clock_t last_packet_received;
 static rtimer_clock_t time_at_rx_done;
 static uint8_t prev_opmode;
-static uint8_t tx_power;
+static int8_t tx_power;
+static uint8_t fifoClean = 0;/*Indicates whether the fifo has been cleared after an rx. Only relevant for scanning*/
 
 void initialize_contiki_end();/*Initialize spi and gpio*/
 void initialize_radio();/*Initializes the sx1272-radio*/
@@ -47,6 +48,8 @@ void initialize_radio(){
     spi_write_sx1272(REG_LR_OPMODE, RFLR_OPMODE_LONGRANGEMODE_ON);/*Sets the device in LoRa mode, and puts it to sleep*/
     set_channel(0);
 
+    spi_write_sx1272(REG_LR_PAYLOADMAXLENGTH, 0xFF);
+
     /*Handle TX Output power*/
     if (SX1272_TX_OUTPUT_POWER >= 20){
       tx_power = 20;
@@ -59,13 +62,13 @@ void initialize_radio(){
     }
     if (tx_power >= 20){/*PA_Boost with high power*/
       spi_write_sx1272(REG_LR_PACONFIG, (tx_power - 5 ) | RFLR_PACONFIG_PASELECT_PABOOST);
-      spi_write_sx1272(REG_LR_PADAC, (spi_read_sx1272(REG_LR_PADAC) & RFLR_PADAC_20DBM_MASK) | (~RFLR_PADAC_20DBM_MASK | RFLR_PADAC_20DBM_ON));
+      spi_write_sx1272(REG_LR_PADAC, 0x87);
     } else if (tx_power >= 15){/*PA_BOOST*/
       spi_write_sx1272(REG_LR_PACONFIG, (tx_power - 2 ) | RFLR_PACONFIG_PASELECT_PABOOST);
-      spi_write_sx1272(REG_LR_PADAC, (spi_read_sx1272(REG_LR_PADAC) & RFLR_PADAC_20DBM_MASK) | (~RFLR_PADAC_20DBM_MASK | RFLR_PADAC_20DBM_OFF));
+      spi_write_sx1272(REG_LR_PADAC, 0x84);
     } else {/*RFIO Pin*/
       spi_write_sx1272(REG_LR_PACONFIG, (tx_power + 1 ) | RFLR_PACONFIG_PASELECT_RFO);
-      spi_write_sx1272(REG_LR_PADAC, (spi_read_sx1272(REG_LR_PADAC) & RFLR_PADAC_20DBM_MASK) | (~RFLR_PADAC_20DBM_MASK | RFLR_PADAC_20DBM_OFF));
+      spi_write_sx1272(REG_LR_PADAC, 0x84);
     }
 
     general_setup();
@@ -270,12 +273,9 @@ int read_packet(void *buf, unsigned short buf_len){
 void storepacket(){
   pending_packet_length = spi_read_sx1272(REG_LR_RXNBBYTES);
   spi_read_fifo_sx1272(rx_tx_buffer, pending_packet_length);
-  for (int i = 0; i < pending_packet_length; i++){
-    //printf("%x", ((uint8_t *)rx_tx_buffer)[i]);
-  }
-  //printf("\n");
 
   last_packet_received = time_at_rx_done - TSCH_PACKET_DURATION(pending_packet_length);
+  fifoClean = 0;
   pending_packet_flag = 1;
 }
 
@@ -296,9 +296,9 @@ int pending_packet(){
 int rx_mode(){
   prev_opmode = get_opmode();
 
-  if (prev_opmode == RFLR_OPMODE_RECEIVER){
+  if ((prev_opmode == RFLR_OPMODE_RECEIVER) && (fifoClean)){
     /*Clear Interrupt vector, sanity check*/
-    spi_write_sx1272(REG_LR_IRQFLAGS, 0xf);
+    /*spi_write_sx1272(REG_LR_IRQFLAGS, 0xf);*/
     return RADIO_RESULT_OK;
   }
   set_opmode(RFLR_OPMODE_STANDBY);
@@ -321,7 +321,7 @@ int rx_mode(){
   // DIO0=RxDone. The only interrupt that needs firing. We do not use gpio-pin DIO0, we only read the interrupt register IRQFlags.
   spi_write_sx1272( REG_LR_DIOMAPPING1, RFLR_DIOMAPPING1_DIO0_00);
 
-
+  fifoClean = 1;
   set_opmode(RFLR_OPMODE_RECEIVER);
   return RADIO_RESULT_OK;
 }
