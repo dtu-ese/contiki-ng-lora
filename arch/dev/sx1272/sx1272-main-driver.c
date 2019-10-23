@@ -352,7 +352,7 @@ int set_channel(uint8_t channel)
 }
 
 rtimer_clock_t time_of_last_packet_reception(){
-  return last_packet_received - US_TO_RTIMERTICKS(750);  
+  return last_packet_received - US_TO_RTIMERTICKS(SX1272_RXDONE_DELAY_USEC);  
 }
 
 

@@ -45,7 +45,6 @@ License: Revised BSD License, see LICENSE.TXT file include in the project
 #else
 /*We default to just using the pins meant for the external flash*/
 #define  SX1272_RESET_PIN           BOARD_IOID_DIO15
-//#define  SX1272_ANT_SWITCH          BOARD_IOID_DIO30
 #define  SX1272_SPI_SCK             EXT_FLASH_SPI_PIN_SCK
 #define  SX1272_SPI_MISO            EXT_FLASH_SPI_PIN_MISO
 #define  SX1272_SPI_MOSI            EXT_FLASH_SPI_PIN_MOSI
@@ -88,6 +87,11 @@ License: Revised BSD License, see LICENSE.TXT file include in the project
 //#define  SX1272_ANT_SWITCH_PIN_PORT      GPIO_HAL_NULL_PORT
 #endif
 
+#ifdef SX1272_CONF_RXDONE_DELAY_USEC
+#define SX1272_RXDONE_DELAY_USEC SX1272_CONF_RXDONE_DELAY_USEC
+#else
+#define SX1272_RXDONE_DELAY_USEC 780
+#endif
 
 
 /*Defines for LoRa*/

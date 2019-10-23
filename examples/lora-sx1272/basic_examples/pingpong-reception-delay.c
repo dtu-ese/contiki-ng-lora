@@ -29,7 +29,7 @@ Maintainer: Miguel Luis and Gregory Cristian
 #define BUFFER_SIZE                                 1 // Define the payload size here
 
 #define SANITY_VALUE 0xaf
-#define INTERVAL 2500000
+#define INTERVAL 250000
 
 static uint8_t transmit_flag = 0;
 static uint8_t prev_transmit_flag = 0;
@@ -100,7 +100,7 @@ PROCESS_THREAD(pingpong, ev, data)
             printf("Received %d bytes, expected time on air: %lu us\nInterval between transmission: %d\nactual difference: %lu\nrxdone-modemregister: %lu\n", 
             len, 
             RTIMERTICKS_TO_US_64(TSCH_CONF_PACKET_DURATION(len)), 
-            250000, 
+            INTERVAL, 
             RTIMERTICKS_TO_US_64(packet_arrival_time - packet_transmit_time),
             RTIMERTICKS_TO_US_64(modemTime - packet_arrival_time));
         }
