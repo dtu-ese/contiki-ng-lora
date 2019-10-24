@@ -43,7 +43,7 @@
 #define SYMBOL_TIME_SX1272  ((uint32_t)(((1000 /*From s to us*/)*(1 << SX1272_SPREADING_FACTOR))/((SX1272_BANDWIDTH == 0) ? (125000/1000) : (SX1272_BANDWIDTH == 1) ? (250000/1000) : (500000/1000))))
 
 /*Instead of calling ceil, a +1 and int cast is done. The potential negative part occurs twice, hence the macro*/
-#define SX1272_POTENTIAL_NEGATIVE_CONTRIBUTION_TO_TIME(len) (((int)((8 * len - 4 * SX1272_SPREADING_FACTOR +\
+#define SX1272_POTENTIAL_NEGATIVE_CONTRIBUTION_TO_TIME(len) ((int)(((8 * len - 4 * SX1272_SPREADING_FACTOR +\
                                 28 + 16 - 20)/\
                                 ( double )( 4 * (SX1272_SPREADING_FACTOR)))+1)*\
                                 ( SX1272_CODINGRATE + 4))

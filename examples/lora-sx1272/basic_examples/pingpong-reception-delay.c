@@ -29,7 +29,7 @@ Maintainer: Miguel Luis and Gregory Cristian
 #define BUFFER_SIZE                                 1 // Define the payload size here
 
 #define SANITY_VALUE 0xaf
-#define INTERVAL 250000
+#define INTERVAL 500000
 
 static uint8_t transmit_flag = 0;
 static uint8_t prev_transmit_flag = 0;

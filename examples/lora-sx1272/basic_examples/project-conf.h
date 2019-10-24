@@ -36,8 +36,8 @@
 #define PROJECT_CONF_H_
 /*Configuration of LoRa radio driver*/
 #define USE_SX1272_AS_STANDARD_RADIO    1
-#define SX1272_CONF_TX_OUTPUT_POWER     1
-#define SX1272_CONF_SPREADING_FACTOR    7
+#define SX1272_CONF_TX_OUTPUT_POWER     14
+#define SX1272_CONF_SPREADING_FACTOR    10
 #define SX1272_CONF_CODINGRATE          1
 #define SX1272_CONF_PREAMBLE_LENGTH     6
 #define SX1272_CONF_TX_SYMBOL_TIMEOUT   5
@@ -51,6 +51,7 @@
 #define SX1272_CONF_SPI_CS EXT_FLASH_SPI_PIN_CS
 #define SX1272_CONF_SPI_BITRATE 1000000
 #define TSCH_CONF_WAIT_FOR_EB   RTIMER_SECOND/20 /*Sending an EB is 70ms*/
+#define SX1272_CONF_RXDONE_DELAY_USEC 0
 
 /*We need these macros to be imported earli in the build process*/
 #include "dev/sx1272/sx1272-project-conf-macros.h"
@@ -106,10 +107,9 @@
 #define RPL_CONF_DIO_INTERVAL_MIN 15
 #define RPL_CONF_DIO_INTERVAL_DOUBLINGS 2
 #define NETSTACK_MAX_ROUTE_ENTRIES 5
-
-
+#define SX1272_CONF_RXDONE_DELAY 0
+#define CONTIKI_WATCHDOG_CONF_TIMER_TOP 0xFFFFFFF
 #define ENERGEST_CONF_ON 1
-
 /********** Includes **********/
 //#define BUILD_WITH_ORCHESTRA                            1
 // #define ORCHESTRA_CONF_EBSF_PERIOD                     23
