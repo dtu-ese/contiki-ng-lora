@@ -46,7 +46,7 @@ void initialize_contiki_end(){
 void initialize_radio(){
     reset_device();
     spi_write_sx1272(REG_LR_OPMODE, RFLR_OPMODE_LONGRANGEMODE_ON);/*Sets the device in LoRa mode, and puts it to sleep*/
-    set_channel(0);
+    set_channel(20);
 
     spi_write_sx1272(REG_LR_PAYLOADMAXLENGTH, 0xFF);
 
