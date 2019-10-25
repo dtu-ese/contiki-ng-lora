@@ -41,6 +41,8 @@
 #include <string.h>
 #include "contiki.h"
 #include "coap-engine.h"
+#include "net/netstack.h"
+
 
 #if PLATFORM_SUPPORTS_BUTTON_HAL
 #include "dev/button-hal.h"
@@ -58,6 +60,7 @@
  */
 extern coap_resource_t
   res_hello,
+  res_id,
   res_mirror,
   res_chunks,
   res_separate,
@@ -97,6 +100,7 @@ PROCESS_THREAD(er_example_server, ev, data)
    * All static variables are the same for each URI path.
    */
   coap_activate_resource(&res_hello, "test/hello");
+  coap_activate_resource(&res_id, "test/id");
   coap_activate_resource(&res_mirror, "debug/mirror");
   coap_activate_resource(&res_chunks, "test/chunks");
   coap_activate_resource(&res_separate, "test/separate");
@@ -141,6 +145,22 @@ PROCESS_THREAD(er_example_server, ev, data)
       res_separate.resume();
     }
 #endif /* PLATFORM_HAS_BUTTON */
+    if(NETSTACK_ROUTING.node_is_reachable(){ 
+          LOG_INFO("\nEnergest:\n");
+    
+    LOG_INFO(" Radio LISTEN %llu TRANSMIT %llu OFF      %llu TOTAL: %llu\n",
+           energest_type_time(ENERGEST_TYPE_SX1272_TRANSMIT),
+           energest_type_time(ENERGEST_TYPE_SX1272_RX),
+           
+           (ENERGEST_GET_TOTAL_TIME()
+                      - energest_type_time(ENERGEST_TYPE_SX1272_TRANSMIT)
+                      - energest_type_time(ENERGEST_TYPE_SX1272_RX)), ENERGEST_GET_TOTAL_TIME());
+  
+    LOG_INFO("Total time: %d minutes, %d seconds, %d ticks pr sec\n", (int)energest_time/ENERGEST_SECOND/60, (int)energest_time/ENERGEST_SECOND % 60, (int)ENERGEST_SECOND);
+
+    }
+
+
   }                             /* while (1) */
 
   PROCESS_END();

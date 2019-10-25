@@ -109,111 +109,126 @@ void set_opmode(uint8_t opmode){
   /*Will always ensure LoRa Mode*/
   prev_opmode = get_opmode();
   
-  if (prev_opmode == opmode){
-    return;
+  if (prev_opmode != opmode){
+    spi_write_sx1272( REG_LR_OPMODE, (1 << 7) | (opmode & ~RFLR_OPMODE_MASK) );
   }
-
-  spi_write_sx1272( REG_LR_OPMODE, (1 << 7) | (opmode & ~RFLR_OPMODE_MASK) );
   /*We 'wait' the time the switch takes*/
   switch(opmode){
     case RFLR_OPMODE_SLEEP:
-    {
       /*We do nothing, assumed immediate switch*/
       switch (prev_opmode){
         case RFLR_OPMODE_STANDBY:
-        {/*ENERGEST_TYPE_SX1272_TRANSMIT,ENERGEST_TYPE_SX1272_RX,ENERGEST_TYPE_SX1272_SLEEP,ENERGEST_TYPE_SX1272_STANDBY*/
-          ENERGEST_SWITCH(ENERGEST_TYPE_SX1272_STANDBY, ENERGEST_TYPE_SX1272_SLEEP);
-        }
+        /*ENERGEST_TYPE_SX1272_TRANSMIT,ENERGEST_TYPE_SX1272_RX,ENERGEST_TYPE_SX1272_SLEEP,ENERGEST_TYPE_SX1272_STANDBY*/
+          ENERGEST_OFF(ENERGEST_TYPE_SX1272_STANDBY);
+          ENERGEST_ON(ENERGEST_TYPE_SX1272_SLEEP);
+          break;
+        
         case RFLR_OPMODE_TRANSMITTER:
-        {
-          ENERGEST_SWITCH(ENERGEST_TYPE_SX1272_TRANSMIT, ENERGEST_TYPE_SX1272_SLEEP);
-        }
+        
+          ENERGEST_OFF(ENERGEST_TYPE_SX1272_TRANSMIT);
+          ENERGEST_ON(ENERGEST_TYPE_SX1272_SLEEP);
+          break;
+       
         case RFLR_OPMODE_RECEIVER:
-        {
-          ENERGEST_SWITCH(ENERGEST_TYPE_SX1272_RX, ENERGEST_TYPE_SX1272_SLEEP);
-        }
+        
+          ENERGEST_OFF(ENERGEST_TYPE_SX1272_RX);
+          ENERGEST_ON(ENERGEST_TYPE_SX1272_SLEEP);
+          break;
+        
         default:
-        {
-
-        }
+        
+          break;
+        
       }
-    }
+      break;
+    
     case RFLR_OPMODE_STANDBY:
-    {
+    
       switch (prev_opmode){
         case RFLR_OPMODE_SLEEP:
-        {
+        
           delay_usec_rtimer(USEC_SLEEP_TO_STANDBY);
-          ENERGEST_SWITCH(ENERGEST_TYPE_SX1272_SLEEP, ENERGEST_TYPE_SX1272_STANDBY);
-        }
+          ENERGEST_OFF(ENERGEST_TYPE_SX1272_SLEEP);
+          ENERGEST_ON(ENERGEST_TYPE_SX1272_STANDBY);
+        
         case RFLR_OPMODE_TRANSMITTER:
-        {
-          ENERGEST_SWITCH(ENERGEST_TYPE_SX1272_TRANSMIT, ENERGEST_TYPE_SX1272_STANDBY);
-        }
+        
+          ENERGEST_OFF(ENERGEST_TYPE_SX1272_TRANSMIT);
+          ENERGEST_ON(ENERGEST_TYPE_SX1272_STANDBY);
+        
         case RFLR_OPMODE_RECEIVER:
-        {
-          ENERGEST_SWITCH(ENERGEST_TYPE_SX1272_RX, ENERGEST_TYPE_SX1272_STANDBY);
-        }
+        
+          ENERGEST_OFF(ENERGEST_TYPE_SX1272_RX);
+          ENERGEST_ON(ENERGEST_TYPE_SX1272_STANDBY);
+        
         default:
-        {
+        
+          break;
 
-        }
+        
       }
-    }
+      break;
+    
     case RFLR_OPMODE_RECEIVER:
-    {
+    
       switch (prev_opmode){
         case RFLR_OPMODE_SLEEP:
-        {
+        
           delay_usec_rtimer(USEC_SLEEP_TO_STANDBY + USEC_STANDBY_TO_RX + USEC_FREQ_SYNTH);
-          ENERGEST_SWITCH(ENERGEST_TYPE_SX1272_SLEEP, ENERGEST_TYPE_SX1272_RX);          
-        }
+          ENERGEST_OFF(ENERGEST_TYPE_SX1272_SLEEP);
+          ENERGEST_ON(ENERGEST_TYPE_SX1272_RX);
+          break;
+        
         case RFLR_OPMODE_STANDBY:
-        {
+        
           delay_usec_rtimer(USEC_STANDBY_TO_RX + USEC_FREQ_SYNTH);
-          ENERGEST_SWITCH(ENERGEST_TYPE_SX1272_STANDBY, ENERGEST_TYPE_SX1272_RX);
-        }
+          ENERGEST_OFF(ENERGEST_TYPE_SX1272_STANDBY);
+          ENERGEST_ON(ENERGEST_TYPE_SX1272_RX);
+          break;
+        
         /*This case should never occur, as we go from tx to standby always*/
         case RFLR_OPMODE_TRANSMITTER:
-        {
-          ENERGEST_SWITCH(ENERGEST_TYPE_SX1272_TRANSMIT, ENERGEST_TYPE_SX1272_RX);
-        }
+        
+          ENERGEST_OFF(ENERGEST_TYPE_SX1272_TRANSMIT);
+          ENERGEST_ON(ENERGEST_TYPE_SX1272_RX);
+          break;
+        
         default:
-        {
+        
+          break;
 
-        }
+        
       }
-    }
+      break;
+    
     case RFLR_OPMODE_TRANSMITTER:
-    {
+    
       switch (prev_opmode){
-        case RFLR_OPMODE_SLEEP:
-        {
+        case RFLR_OPMODE_SLEEP:        
           delay_usec_rtimer(USEC_SLEEP_TO_STANDBY + USEC_STANDBY_TO_TX + USEC_FREQ_SYNTH);
-          ENERGEST_SWITCH(ENERGEST_TYPE_SX1272_SLEEP, ENERGEST_TYPE_SX1272_TRANSMIT);
-        }
-        case RFLR_OPMODE_STANDBY:
-        {
+          ENERGEST_OFF(ENERGEST_TYPE_SX1272_SLEEP);
+          ENERGEST_ON(ENERGEST_TYPE_SX1272_TRANSMIT);
+          break;        
+        case RFLR_OPMODE_STANDBY:        
           delay_usec_rtimer(USEC_STANDBY_TO_TX + USEC_FREQ_SYNTH);
-          ENERGEST_SWITCH(ENERGEST_TYPE_SX1272_STANDBY, ENERGEST_TYPE_SX1272_TRANSMIT);
-        }
-        case RFLR_OPMODE_RECEIVER:
-        {
+          ENERGEST_OFF(ENERGEST_TYPE_SX1272_STANDBY);
+          ENERGEST_ON(ENERGEST_TYPE_SX1272_TRANSMIT);
+          break;        
+        case RFLR_OPMODE_RECEIVER:        
           delay_usec_rtimer(USEC_FREQ_SYNTH + USEC_CHANNEL_HOP);
-          ENERGEST_SWITCH(ENERGEST_TYPE_SX1272_RX, ENERGEST_TYPE_SX1272_TRANSMIT);
-        }
-        default:
-        {
-
-        }
+          ENERGEST_OFF(ENERGEST_TYPE_SX1272_RX);
+          ENERGEST_ON(ENERGEST_TYPE_SX1272_TRANSMIT);
+          break;        
+        default:        
+          break;        
       }
-    }
+      break;
+    
     default:
-    {
+    
       /*We do nothing*/
-    }
+      break;    
   }
-
 }
 
 void general_setup(){
@@ -250,7 +265,9 @@ int prepare(const void *buffer, unsigned short size){
 int transmit(unsigned short size){
   set_opmode(RFLR_OPMODE_TRANSMITTER);
   delay_usec_rtimer(SX1272_PHY_OVERHEAD + SX1272_PAYLOAD_TIME(size));
-  ENERGEST_SWITCH(ENERGEST_TYPE_TRANSMIT, ENERGEST_TYPE_CPU);/*As the radio automatically stops transmitting and go into standby when it's done tx'ing*/ 
+  /*As the radio automatically stops transmitting and go into standby when it's done tx'ing*/ 
+  ENERGEST_OFF(ENERGEST_TYPE_SX1272_TRANSMIT);
+  ENERGEST_ON(ENERGEST_TYPE_SX1272_STANDBY);
   return 0;
 }
 int send(const void *buffer, unsigned short size){

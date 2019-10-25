@@ -93,7 +93,7 @@
 #define IEEE802154_CONF_PANID 0x81a5
 
 /* Do not start TSCH at init, wait for NETSTACK_MAC.on() */
-#define TSCH_CONF_AUTOSTART 0
+#define TSCH_CONF_AUTOSTART 1
 
 /* 6TiSCH minimal schedule length.
  * Larger values result in less frequent active slots: reduces capacity and saves energy. */
