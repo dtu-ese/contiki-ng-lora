@@ -1,0 +1,1294 @@
+[INFO: Main      ] Starting Contiki-NG-release/v4.3-131-geb4f2f9-dirty
+[INFO: Main      ] - Routing: RPL Lite
+[INFO: Main      ] - Net: sicslowpan
+[INFO: Main      ] - MAC: TSCH
+[INFO: Main      ] - 802.15.4 PANID: 0x81a5
+[INFO: Main      ] - 802.15.4 TSCH default hopping sequence length: 1
+[INFO: Main      ] Node ID: 63494
+[INFO: Main      ] Link-layer address: 0012.4b00.1531.f806
+[INFO: RPL       ] initializing
+[INFO: Main      ] Tentative link-local IPv6 address: fe80::212:4b00:1531:f806
+[INFO: CC26xx/CC13xx] TI CC1350 LaunchPad
+[INFO: CC26xx/CC13xx]  RF: Channel 0
+Orchestra: initializing rule 0
+[INFO: TSCH Sched] add_slotframe 0 23
+[INFO: TSCH Sched] add_link sf=0 opt=Tx type=ADV_ONLY ts=6 ch=0 addr=ffff.ffff.ffff.ffff
+Orchestra: initializing rule 1
+[INFO: TSCH Sched] add_slotframe 1 13
+[INFO: TSCH Sched] add_link sf=1 opt=Tx|Sh type=NORMAL ts=0 ch=1 addr=ffff.ffff.ffff.ffff
+[INFO: TSCH Sched] add_link sf=1 opt=Tx|Sh type=NORMAL ts=1 ch=1 addr=ffff.ffff.ffff.ffff
+[INFO: TSCH Sched] add_link sf=1 opt=Tx|Sh type=NORMAL ts=2 ch=1 addr=ffff.ffff.ffff.ffff
+[INFO: TSCH Sched] add_link sf=1 opt=Tx|Sh type=NORMAL ts=3 ch=1 addr=ffff.ffff.ffff.ffff
+[INFO: TSCH Sched] add_link sf=1 opt=Tx|Sh type=NORMAL ts=4 ch=1 addr=ffff.ffff.ffff.ffff
+[INFO: TSCH Sched] add_link sf=1 opt=Tx|Sh type=NORMAL ts=5 ch=1 addr=ffff.ffff.ffff.ffff
+[INFO: TSCH Sched] add_link sf=1 opt=Tx|Rx|Sh type=NORMAL ts=6 ch=1 addr=ffff.ffff.ffff.ffff
+[INFO: TSCH Sched] add_link sf=1 opt=Tx|Sh type=NORMAL ts=7 ch=1 addr=ffff.ffff.ffff.ffff
+[INFO: TSCH Sched] add_link sf=1 opt=Tx|Sh type=NORMAL ts=8 ch=1 addr=ffff.ffff.ffff.ffff
+[INFO: TSCH Sched] add_link sf=1 opt=Tx|Sh type=NORMAL ts=9 ch=1 addr=ffff.ffff.ffff.ffff
+[INFO: TSCH Sched] add_link sf=1 opt=Tx|Sh type=NORMAL ts=10 ch=1 addr=ffff.ffff.ffff.ffff
+[INFO: TSCH Sched] add_link sf=1 opt=Tx|Sh type=NORMAL ts=11 ch=1 addr=ffff.ffff.ffff.ffff
+[INFO: TSCH Sched] add_link sf=1 opt=Tx|Sh type=NORMAL ts=12 ch=1 addr=ffff.ffff.ffff.ffff
+Orchestra: initializing rule 2
+[INFO: TSCH Sched] add_slotframe 2 11
+[INFO: TSCH Sched] add_link sf=2 opt=Tx|Rx|Sh type=NORMAL ts=0 ch=2 addr=ffff.ffff.ffff.ffff
+Orchestra: initialization done
+[INFO: App       ] Server here
+[INFO: RPL       ] IPv6 addresses:
+[INFO: RPL       ] -- fd00::212:4b00:1531:f806
+[INFO: RPL       ] -- fe80::212:4b00:1531:f806
+[INFO: RPL       ] reset DIO timer (Init root)
+[INFO: RPL       ] created DAG with instance ID 0, DAG ID fd00::212:4b00:1531:f806, rank 128
+[INFO: RPL       ] created a new RPL DAG
+[INFO: TSCH      ] starting as coordinator, PAN ID 81a5, asn-0.0
+[INFO: TSCH      ] starting as coordinator
+[INFO: TSCH      ] TSCH: enqueue EB packet 41 22
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 176, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.00000006 link  0  23   0  6  0 ch 20} bc-0-1 tx LL-f806->LL-NULL, len  41, seq 176, st 0  1
+[INFO: RPL       ] sending a multicast-DIO with rank 128 to ff02::1a
+[INFO: TSCH      ] send packet to ffff.ffff.ffff.ffff with seqno 40, queue 1 1, len 20 100
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 177, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.00000058 link  2  11   0  0  2 ch 20} bc-1-5 tx LL-f806->LL-NULL, len 100, seq 177, st 0  1
+[INFO: TSCH      ] TSCH: enqueue EB packet 41 22
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 178, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.00000062 link  0  23   0  6  0 ch 20} bc-0-1 tx LL-f806->LL-NULL, len  41, seq 178, st 0  1
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 16, nbr count 0 (Periodic)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] No routing links
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          75348 LPM      16106 DEEP LPM 3843342
+[INFO: App       ] Total time: 1 minutes, 0 seconds, 65536 ticks pr sec
+[INFO: TSCH      ] TSCH: enqueue EB packet 41 22
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 179, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.000000be link  0  23   0  6  0 ch 20} bc-0-1 tx LL-f806->LL-NULL, len  41, seq 179, st 0  1
+[INFO: RPL       ] sending a multicast-DIO with rank 128 to ff02::1a
+[INFO: TSCH      ] send packet to ffff.ffff.ffff.ffff with seqno 40, queue 1 1, len 20 100
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 180, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.000000e7 link  2  11   0  0  2 ch 20} bc-1-5 tx LL-f806->LL-NULL, len 100, seq 180, st 0  1
+Transmitted ack, length 23
+[INFO: TSCH      ] received from 0012.4b00.1532.af06 with seqno 212
+[INFO: RPL       ] received a unicast-DIO from fe80::212:4b00:1532:af06, instance_id 0, DAG ID fd00::212:4b00:1531:f806, version 240, dtsn 240, rank 65535
+[INFO: TSCH-LOG  ] {asn 00.000000f0 link  1  13   0  6  1 ch 20} uc-1-5 rx LL-af06->LL-f806, len 106, seq 212, edr   2
+Transmitted ack, length 23
+[INFO: TSCH      ] received from 0012.4b00.1532.af06 with seqno 213
+[INFO: RPL       ] received a unicast-DIO from fe80::212:4b00:1532:af06, instance_id 0, DAG ID fd00::212:4b00:1531:f806, version 240, dtsn 240, rank 65535
+[INFO: TSCH-LOG  ] {asn 00.000000fd link  1  13   0  6  1 ch 20} uc-1-5 rx LL-af06->LL-f806, len 106, seq 213, edr   0
+Transmitted ack, length 23
+[INFO: TSCH      ] received from 0012.4b00.1532.af06 with seqno 214
+[INFO: RPL       ] received a unicast-DIO from fe80::212:4b00:1532:af06, instance_id 0, DAG ID fd00::212:4b00:1531:f806, version 240, dtsn 240, rank 65535
+[INFO: TSCH-LOG  ] {asn 00.0000010a link  1  13   0  6  1 ch 20} uc-1-5 rx LL-af06->LL-f806, len 106, seq 214, edr  -2
+Transmitted ack, length 23
+[INFO: TSCH      ] received from 0012.4b00.1532.af06 with seqno 215
+[INFO: RPL       ] received a unicast-DIO from fe80::212:4b00:1532:af06, instance_id 0, DAG ID fd00::212:4b00:1531:f806, version 240, dtsn 240, rank 65535
+[INFO: TSCH-LOG  ] {asn 00.00000117 link  1  13   0  6  1 ch 20} uc-1-5 rx LL-af06->LL-f806, len 106, seq 215, edr   0
+Transmitted ack, length 23
+[INFO: TSCH      ] received from 0012.4b00.1532.af06 with seqno 216
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:1532:af06 to fd00::212:4b00:1531:f806 going up, sender closer 0 (353 < 128), rank error 0, loop detected 0
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:1532:af06 to fd00::212:4b00:1531:f806 going up, sender closer 0 (353 < 128), rank error 0, loop detected 0
+[INFO: RPL       ] received a DAO from fd00::212:4b00:1532:af06, seqno 241, lifetime 30, prefix fd00::212:4b00:1532:af06, prefix length 128, parent fd00::212:4b00:1531:f806 
+[INFO: TSCH-LOG  ] {asn 00.0000013e link  1  13   0  6  1 ch 20} uc-1-5 rx LL-af06->LL-f806, len  89, seq 216, edr  -4
+[INFO: RPL       ] sending a DAO-ACK seqno 241 to fd00::212:4b00:1532:af06 with status 0
+[INFO: RPL       ] SRH creating source routing header with destination fd00::212:4b00:1532:af06 
+[INFO: RPL       ] SRH path len: 0, ComprI 15, ComprE 15, ext len 8 (padding 0)
+[INFO: TSCH      ] send packet to 0012.4b00.1532.af06 with seqno 41, queue 1 1, len 27 47
+[INFO: TSCH      ] packet sent to 0012.4b00.1532.af06, seqno 41, status 0, tx 1
+[INFO: RPL       ] packet sent to 0012.4b00.1532.af06, status 0, tx 1, new link metric 320
+[INFO: TSCH-LOG  ] {asn 00.0000014b link  1  13   0  6  1 ch 20} uc-1-5 tx LL-f806->LL-af06, len  47, seq  41, st 0  1
+[INFO: TSCH      ] TSCH: enqueue EB packet 41 22
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 17, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af0665535,   320 => 65535 --  1       (last tx 0 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 2 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 1740 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          246146 LPM      34470 DEEP LPM 7587472
+[INFO: App       ] Total time: 2 minutes, 0 seconds, 65536 ticks pr sec
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 181, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.0000015f link  0  23   0  6  0 ch 20} bc-0-1 tx LL-f806->LL-NULL, len  41, seq 181, st 0  1
+[INFO: TSCH-LOG  ] {asn 00.00000176 link  2  11   0  0  2 ch 20} bc-0-1 rx LL-af06->LL-NULL, len  41, seq 216, edr   0
+[INFO: TSCH      ] received from 0012.4b00.1532.af06 with seqno 65535
+[INFO: RPL       ] received a multicast-DIO from fe80::212:4b00:1532:af06, instance_id 0, DAG ID fd00::212:4b00:1531:f806, version 240, dtsn 240, rank 343
+[INFO: TSCH-LOG  ] {asn 00.00000197 link  2  11   0  0  2 ch 20} bc-1-5 rx LL-af06->LL-NULL, len 100, seq 216, edr   0
+Transmitted ack, length 23
+[INFO: TSCH      ] received from 0012.4b00.1532.af06 with seqno 217
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:f29:a804 to fd00::212:4b00:1531:f806 going up, sender closer 0 (343 < 128), rank error 0, loop detected 0
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:f29:a804 to fd00::212:4b00:1531:f806 going up, sender closer 0 (343 < 128), rank error 0, loop detected 0
+[INFO: RPL       ] received a DAO from fd00::212:4b00:f29:a804, seqno 241, lifetime 30, prefix fd00::212:4b00:f29:a804, prefix length 128, parent fd00::212:4b00:1532:af06 
+[INFO: TSCH-LOG  ] {asn 00.00000201 link  1  13   0  6  1 ch 20} uc-1-5 rx LL-af06->LL-f806, len  98, seq 217, edr   6
+[INFO: RPL       ] sending a DAO-ACK seqno 241 to fd00::212:4b00:f29:a804 with status 0
+[INFO: RPL       ] SRH creating source routing header with destination fd00::212:4b00:f29:a804 
+[INFO: RPL       ] SRH Hop fd00::212:4b00:1532:af06
+[INFO: RPL       ] SRH path len: 1, ComprI 12, ComprE 12, ext len 16 (padding 4)
+[INFO: TSCH      ] send packet to 0012.4b00.1532.af06 with seqno 42, queue 1 1, len 27 55
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 17, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af06  343,   320 =>   663 --  1  ba   (last tx 1 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 3 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 1680 seconds)
+[INFO: RPL       ] links: fd00::212:4b00:f29:a804  to fd00::212:4b00:1532:af06 (lifetime: 1740 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          344430 LPM      51362 DEEP LPM 11405288
+[INFO: App       ] Total time: 3 minutes, 0 seconds, 65536 ticks pr sec
+[INFO: TSCH-LOG  ] {asn 00.0000020e link  1  13   0  6  1 ch 20} Ack missing
+[INFO: TSCH-LOG  ] {asn 00.0000020e link  1  13   0  6  1 ch 20} uc-1-5 tx LL-f806->LL-af06, len  55, seq  42, st 2  1
+[INFO: TSCH-LOG  ] {asn 00.0000021b link  1  13   0  6  1 ch 20} Ack missing
+[INFO: TSCH-LOG  ] {asn 00.0000021b link  1  13   0  6  1 ch 20} uc-1-5 tx LL-f806->LL-af06, len  55, seq  42, st 2  2
+[INFO: TSCH      ] received from 0012.4b00.1532.af06 with seqno 65535
+[INFO: RPL       ] received a multicast-DIO from fe80::212:4b00:1532:af06, instance_id 0, DAG ID fd00::212:4b00:1531:f806, version 240, dtsn 240, rank 343
+[INFO: TSCH-LOG  ] {asn 00.00000226 link  2  11   0  0  2 ch 20} bc-1-5 rx LL-af06->LL-NULL, len 100, seq 217, edr   6
+[INFO: TSCH-LOG  ] {asn 00.00000228 link  1  13   0  6  1 ch 20} Ack missing
+[INFO: TSCH-LOG  ] {asn 00.00000228 link  1  13   0  6  1 ch 20} uc-1-5 tx LL-f806->LL-af06, len  55, seq  42, st 2  3
+[INFO: TSCH      ] packet sent to 0012.4b00.1532.af06, seqno 42, status 0, tx 4
+[INFO: RPL       ] packet sent to 0012.4b00.1532.af06, status 0, tx 4, new link metric 339
+[INFO: TSCH-LOG  ] {asn 00.00000235 link  1  13   0  6  1 ch 20} uc-1-5 tx LL-f806->LL-af06, len  55, seq  42, st 0  4
+[INFO: RPL       ] sending a multicast-DIO with rank 128 to ff02::1a
+[INFO: TSCH      ] send packet to ffff.ffff.ffff.ffff with seqno 42, queue 1 1, len 20 100
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 182, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.0000023c link  2  11   0  0  2 ch 20} bc-1-5 tx LL-f806->LL-NULL, len 100, seq 182, st 0  1
+Transmitted ack, length 23
+[INFO: TSCH      ] received from 0012.4b00.1532.af06 with seqno 217
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:f29:a804 to fd00::212:4b00:1531:f806 going up, sender closer 0 (343 < 128), rank error 0, loop detected 0
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:f29:a804 to fd00::212:4b00:1531:f806 going up, sender closer 0 (343 < 128), rank error 0, loop detected 0
+[INFO: RPL       ] received a DAO from fd00::212:4b00:f29:a804, seqno 241, lifetime 30, prefix fd00::212:4b00:f29:a804, prefix length 128, parent fd00::212:4b00:1532:af06 
+[INFO: TSCH-LOG  ] {asn 00.00000242 link  1  13   0  6  1 ch 20} uc-1-5 rx LL-af06->LL-f806, len  98, seq 217, edr   4
+[INFO: RPL       ] sending a DAO-ACK seqno 241 to fd00::212:4b00:f29:a804 with status 0
+[INFO: RPL       ] SRH creating source routing header with destination fd00::212:4b00:f29:a804 
+[INFO: RPL       ] SRH Hop fd00::212:4b00:1532:af06
+[INFO: RPL       ] SRH path len: 1, ComprI 12, ComprE 12, ext len 16 (padding 4)
+[INFO: TSCH      ] send packet to 0012.4b00.1532.af06 with seqno 43, queue 1 1, len 27 55
+[INFO: TSCH      ] packet sent to 0012.4b00.1532.af06, seqno 43, status 0, tx 1
+[INFO: RPL       ] packet sent to 0012.4b00.1532.af06, status 0, tx 1, new link metric 317
+[INFO: TSCH-LOG  ] {asn 00.0000024f link  1  13   0  6  1 ch 20} uc-1-5 tx LL-f806->LL-af06, len  55, seq  43, st 0  1
+[INFO: TSCH-LOG  ] {asn 00.00000273 link  2  11   0  0  2 ch 20} bc-0-1 rx LL-af06->LL-NULL, len  41, seq 217, edr  -2
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 18, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af06  343,   317 =>   660 --  6  baf  (last tx 0 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 3 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 1620 seconds)
+[INFO: RPL       ] links: fd00::212:4b00:f29:a804  to fd00::212:4b00:1532:af06 (lifetime: 1740 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          491756 LPM      70584 DEEP LPM 15171944
+[INFO: App       ] Total time: 4 minutes, 0 seconds, 65536 ticks pr sec
+[INFO: TSCH      ] TSCH: enqueue EB packet 41 22
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 183, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.000002b8 link  0  23   0  6  0 ch 20} bc-0-1 tx LL-f806->LL-NULL, len  41, seq 183, st 0  1
+Transmitted ack, length 23
+[INFO: TSCH      ] received from 0012.4b00.1532.af06 with seqno 221
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:1532:af06 to fd00::212:4b00:1531:f806 going up, sender closer 0 (385 < 128), rank error 0, loop detected 0
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:1532:af06 to fd00::212:4b00:1531:f806 going up, sender closer 0 (385 < 128), rank error 0, loop detected 0
+[INFO: App       ] Received packet 0, 80 bytes and 152 checksum from fd00::212:4b00:1532:af06
+[INFO: TSCH-LOG  ] {asn 00.000002d1 link  1  13   0  6  1 ch 20} uc-1-5 rx LL-af06->LL-f806, len 125, seq 221, edr  -2
+Transmitted ack, length 23
+[WARN: TSCH      ] ! drop dup ll from 0012.4b00.1532.af06 seqno 221
+[INFO: TSCH-LOG  ] {asn 00.000002de link  1  13   0  6  1 ch 20} uc-1-5 rx LL-af06->LL-f806, len 125, seq 221, edr   0
+[INFO: TSCH      ] received from 0012.4b00.1532.af06 with seqno 65535
+[INFO: RPL       ] received a multicast-DIO from fe80::212:4b00:1532:af06, instance_id 0, DAG ID fd00::212:4b00:1531:f806, version 240, dtsn 240, rank 384
+[INFO: TSCH-LOG  ] {asn 00.000002ec link  2  11   0  0  2 ch 20} bc-1-5 rx LL-af06->LL-NULL, len 100, seq 221, edr   0
+Transmitted ack, length 23
+[INFO: TSCH      ] received from 0012.4b00.1532.af06 with seqno 222
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:f29:a804 to fd00::212:4b00:1531:f806 going up, sender closer 0 (384 < 128), rank error 0, loop detected 0
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:f29:a804 to fd00::212:4b00:1531:f806 going up, sender closer 0 (384 < 128), rank error 0, loop detected 0
+[INFO: App       ] Received packet 0, 80 bytes and 148 checksum from fd00::212:4b00:f29:a804
+[INFO: TSCH-LOG  ] {asn 00.000002f8 link  1  13   0  6  1 ch 20} uc-1-5 rx LL-af06->LL-f806, len 134, seq 222, edr   0
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 18, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af06  384,   317 =>   701 --  6  baf  (last tx 1 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 3 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 1560 seconds)
+[INFO: RPL       ] links: fd00::212:4b00:f29:a804  to fd00::212:4b00:1532:af06 (lifetime: 1680 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          623920 LPM      88136 DEEP LPM 18955840
+[INFO: App       ] Total time: 5 minutes, 0 seconds, 65536 ticks pr sec
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 18, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af06  384,   317 =>   701 --  6  baf  (last tx 2 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 3 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 1500 seconds)
+[INFO: RPL       ] links: fd00::212:4b00:f29:a804  to fd00::212:4b00:1532:af06 (lifetime: 1620 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          674846 LPM      104674 DEEP LPM 22821472
+[INFO: App       ] Total time: 6 minutes, 0 seconds, 65536 ticks pr sec
+[INFO: TSCH      ] received from 0012.4b00.1532.af06 with seqno 65535
+[INFO: RPL       ] received a multicast-DIO from fe80::212:4b00:1532:af06, instance_id 0, DAG ID fd00::212:4b00:1531:f806, version 240, dtsn 240, rank 371
+[INFO: TSCH-LOG  ] {asn 00.0000044c link  2  11   0  0  2 ch 20} bc-1-5 rx LL-af06->LL-NULL, len 100, seq 222, edr  10
+[INFO: TSCH-LOG  ] {asn 00.0000046d link  2  11   0  0  2 ch 20} bc-0-1 rx LL-af06->LL-NULL, len  41, seq 222, edr   4
+[INFO: RPL       ] sending a multicast-DIO with rank 128 to ff02::1a
+[INFO: TSCH      ] send packet to ffff.ffff.ffff.ffff with seqno 43, queue 1 1, len 20 100
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 184, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.000004a4 link  2  11   0  0  2 ch 20} bc-1-5 tx LL-f806->LL-NULL, len 100, seq 184, st 0  1
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 18, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af06  371,   317 =>   688 --  6  baf  (last tx 3 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 3 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 1440 seconds)
+[INFO: RPL       ] links: fd00::212:4b00:f29:a804  to fd00::212:4b00:1532:af06 (lifetime: 1560 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          757644 LPM      121796 DEEP LPM 26654844
+[INFO: App       ] Total time: 7 minutes, 0 seconds, 65536 ticks pr sec
+[INFO: TSCH      ] TSCH: enqueue EB packet 41 22
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 185, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.00000525 link  0  23   0  6  0 ch 20} bc-0-1 tx LL-f806->LL-NULL, len  41, seq 185, st 0  1
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 18, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af06  371,   317 =>   688 --  6  baf  (last tx 4 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 3 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 1380 seconds)
+[INFO: RPL       ] links: fd00::212:4b00:f29:a804  to fd00::212:4b00:1532:af06 (lifetime: 1500 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          817408 LPM      138136 DEEP LPM 30511520
+[INFO: App       ] Total time: 8 minutes, 0 seconds, 65536 ticks pr sec
+Transmitted ack, length 23
+[INFO: TSCH      ] received from 0012.4b00.1532.af06 with seqno 223
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:1532:af06 to fd00::212:4b00:1531:f806 going up, sender closer 0 (371 < 128), rank error 0, loop detected 0
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:1532:af06 to fd00::212:4b00:1531:f806 going up, sender closer 0 (371 < 128), rank error 0, loop detected 0
+[INFO: App       ] Received packet 1, 80 bytes and 77 checksum from fd00::212:4b00:1532:af06
+[INFO: TSCH-LOG  ] {asn 00.00000582 link  1  13   0  6  1 ch 20} uc-1-5 rx LL-af06->LL-f806, len 125, seq 223, edr  -4
+Transmitted ack, length 23
+[INFO: TSCH      ] received from 0012.4b00.1532.af06 with seqno 224
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:f29:a804 to fd00::212:4b00:1531:f806 going up, sender closer 0 (359 < 128), rank error 0, loop detected 0
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:f29:a804 to fd00::212:4b00:1531:f806 going up, sender closer 0 (359 < 128), rank error 0, loop detected 0
+[INFO: App       ] Received packet 1, 80 bytes and 7 checksum from fd00::212:4b00:f29:a804
+[INFO: TSCH-LOG  ] {asn 00.0000059c link  1  13   0  6  1 ch 20} uc-1-5 rx LL-af06->LL-f806, len 134, seq 224, edr   0
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 19, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af06  371,   317 =>   688 --  6  baf  (last tx 5 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 3 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 1320 seconds)
+[INFO: RPL       ] links: fd00::212:4b00:f29:a804  to fd00::212:4b00:1532:af06 (lifetime: 1440 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          910146 LPM      154110 DEEP LPM 34336224
+[INFO: App       ] Total time: 9 minutes, 0 seconds, 65536 ticks pr sec
+[INFO: TSCH      ] received from 0012.4b00.1532.af06 with seqno 65535
+[INFO: RPL       ] received a multicast-DIO from fe80::212:4b00:1532:af06, instance_id 0, DAG ID fd00::212:4b00:1531:f806, version 240, dtsn 240, rank 348
+[INFO: TSCH-LOG  ] {asn 00.00000625 link  2  11   0  0  2 ch 20} bc-1-5 rx LL-af06->LL-NULL, len 100, seq 224, edr   4
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 19, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af06  348,   317 =>   665 --  6  baf  (last tx 6 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 3 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 1260 seconds)
+[INFO: RPL       ] links: fd00::212:4b00:f29:a804  to fd00::212:4b00:1532:af06 (lifetime: 1380 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          975166 LPM      170760 DEEP LPM 38187670
+[INFO: App       ] Total time: 10 minutes, 0 seconds, 65536 ticks pr sec
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 19, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af06  348,   317 =>   665 --  6  baf  (last tx 7 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 3 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 1200 seconds)
+[INFO: RPL       ] links: fd00::212:4b00:f29:a804  to fd00::212:4b00:1532:af06 (lifetime: 1320 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          1026086 LPM      187228 DEEP LPM 42053362
+[INFO: App       ] Total time: 11 minutes, 0 seconds, 65536 ticks pr sec
+[INFO: TSCH      ] TSCH: enqueue EB packet 41 22
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 186, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.000007ee link  0  23   0  6  0 ch 20} bc-0-1 tx LL-f806->LL-NULL, len  41, seq 186, st 0  1
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 19, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af06  348,   317 =>   665 --  6  baf  (last tx 8 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 3 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 1140 seconds)
+[INFO: RPL       ] links: fd00::212:4b00:f29:a804  to fd00::212:4b00:1532:af06 (lifetime: 1260 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          1085896 LPM      204480 DEEP LPM 45909590
+[INFO: App       ] Total time: 12 minutes, 0 seconds, 65536 ticks pr sec
+Transmitted ack, length 23
+[INFO: TSCH      ] received from 0012.4b00.1532.af06 with seqno 225
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:1532:af06 to fd00::212:4b00:1531:f806 going up, sender closer 0 (348 < 128), rank error 0, loop detected 0
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:1532:af06 to fd00::212:4b00:1531:f806 going up, sender closer 0 (348 < 128), rank error 0, loop detected 0
+[INFO: App       ] Received packet 2, 80 bytes and 224 checksum from fd00::212:4b00:1532:af06
+[INFO: TSCH-LOG  ] {asn 00.00000840 link  1  13   0  6  1 ch 20} uc-1-5 rx LL-af06->LL-f806, len 125, seq 225, edr   0
+Transmitted ack, length 23
+[INFO: TSCH      ] received from 0012.4b00.1532.af06 with seqno 226
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:f29:a804 to fd00::212:4b00:1531:f806 going up, sender closer 0 (348 < 128), rank error 0, loop detected 0
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:f29:a804 to fd00::212:4b00:1531:f806 going up, sender closer 0 (348 < 128), rank error 0, loop detected 0
+[INFO: App       ] Received packet 2, 80 bytes and 36 checksum from fd00::212:4b00:f29:a804
+[INFO: TSCH-LOG  ] {asn 00.00000841 link  1  13   1  7  1 ch 20} uc-1-5 rx LL-af06->LL-f806, len 134, seq 226, edr   4
+[INFO: TSCH-LOG  ] {asn 00.00000861 link  2  11   0  0  2 ch 20} bc-0-1 rx LL-af06->LL-NULL, len  41, seq 226, edr  -2
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 19, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af06  348,   317 =>   665 --  6  baf  (last tx 9 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 3 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 1080 seconds)
+[INFO: RPL       ] links: fd00::212:4b00:f29:a804  to fd00::212:4b00:1532:af06 (lifetime: 1200 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          1187110 LPM      221562 DEEP LPM 49724586
+[INFO: App       ] Total time: 13 minutes, 0 seconds, 65536 ticks pr sec
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 19, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af06  348,   317 =>   665 --  6  ba   (last tx 10 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 3 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 1020 seconds)
+[INFO: RPL       ] links: fd00::212:4b00:f29:a804  to fd00::212:4b00:1532:af06 (lifetime: 1140 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          1238808 LPM      237582 DEEP LPM 53589772
+[INFO: App       ] Total time: 14 minutes, 0 seconds, 65536 ticks pr sec
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 19, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af06  348,   317 =>   665 --  6  ba   (last tx 11 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 3 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 960 seconds)
+[INFO: RPL       ] links: fd00::212:4b00:f29:a804  to fd00::212:4b00:1532:af06 (lifetime: 1080 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          1291354 LPM      253956 DEEP LPM 57454480
+[INFO: App       ] Total time: 15 minutes, 0 seconds, 65536 ticks pr sec
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 19, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af06  348,   317 =>   665 --  3  ba   (last tx 12 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 3 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 900 seconds)
+[INFO: RPL       ] links: fd00::212:4b00:f29:a804  to fd00::212:4b00:1532:af06 (lifetime: 1020 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          1342334 LPM      270026 DEEP LPM 61320898
+[INFO: App       ] Total time: 16 minutes, 0 seconds, 65536 ticks pr sec
+Transmitted ack, length 23
+[INFO: TSCH      ] received from 0012.4b00.1532.af06 with seqno 229
+[INFO: TSCH-LOG  ] {asn 00.00000abd link  1  13   0  6  1 ch 20} uc-1-5 rx LL-af06->LL-f806, len  27, seq 229, edr  -2
+[INFO: RPL       ] sending a multicast-DIO with rank 128 to ff02::1a
+[INFO: TSCH      ] send packet to ffff.ffff.ffff.ffff with seqno Transmitted ack, length 23
+43, queue 1 1, len 20 100
+[INFO: TSCH      ] received from 0012.4b00.1532.af06 with seqno 230
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:1532:af06 to fd00::212:4b00:1531:f806 going up, sender closer 0 (321 < 128), rank error 0, loop detected 0
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:1532:af06 to fd00::212:4b00:1531:f806 going up, sender closer 0 (321 < 128), rank error 0, loop detected 0
+[INFO: App       ] Received packet 3, 80 bytes and 18 checksum from fd00::212:4b00:1532:af06
+[INFO: TSCH-LOG  ] {asn 00.00000ae4 link  1  13   0  6  1 ch 20} uc-1-5 rx LL-af06->LL-f806, len 125, seq 230, edr   0
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 187, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.00000aea link  2  11   0  0  2 ch 20} bc-1-5 tx LL-f806->LL-NULL, len 100, seq 187, st 0  1
+Transmitted ack, length 23
+[INFO: TSCH      ] received from 0012.4b00.1532.af06 with seqno 231
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:f29:a804 to fd00::212:4b00:1531:f806 going up, sender closer 0 (314 < 128), rank error 0, loop detected 0
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:f29:a804 to fd00::212:4b00:1531:f806 going up, sender closer 0 (314 < 128), rank error 0, loop detected 0
+[INFO: App       ] Received packet 3, 80 bytes and 111 checksum from fd00::212:4b00:f29:a804
+[INFO: TSCH-LOG  ] {asn 00.00000afe link  1  13   0  6  1 ch 20} uc-1-5 rx LL-af06->LL-f806, len 134, seq 231, edr   2
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 20, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af06  348,   317 =>   665 --  3  ba   (last tx 13 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 3 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 840 seconds)
+[INFO: RPL       ] links: fd00::212:4b00:f29:a804  to fd00::212:4b00:1532:af06 (lifetime: 960 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          1457264 LPM      287148 DEEP LPM 65121750
+[INFO: App       ] Total time: 17 minutes, 0 seconds, 65536 ticks pr sec
+[INFO: TSCH      ] TSCH: enqueue EB packet 41 22
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 188, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.00000bf9 link  0  23   0  6  0 ch 20} bc-0-1 tx LL-f806->LL-NULL, len  41, seq 188, st 0  1
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 20, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af06  348,   317 =>   665 --  3  ba   (last tx 14 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 3 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 780 seconds)
+[INFO: RPL       ] links: fd00::212:4b00:f29:a804  to fd00::212:4b00:1532:af06 (lifetime: 900 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          1528290 LPM      304034 DEEP LPM 68967130
+[INFO: App       ] Total time: 18 minutes, 0 seconds, 65536 ticks pr sec
+[INFO: TSCH      ] received from 0012.4b00.1532.af06 with seqno 65535
+[INFO: RPL       ] received a multicast-DIO from fe80::212:4b00:1532:af06, instance_id 0, DAG ID fd00::212:4b00:1531:f806, version 240, dtsn 240, rank 308
+[INFO: TSCH-LOG  ] {asn 00.00000c81 link  2  11   0  0  2 ch 20} bc-1-5 rx LL-af06->LL-NULL, len 100, seq 232, edr   0
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 20, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af06  308,   317 =>   625 --  3  ba   (last tx 15 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 3 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 720 seconds)
+[INFO: RPL       ] links: fd00::212:4b00:f29:a804  to fd00::212:4b00:1532:af06 (lifetime: 840 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          1591832 LPM      320108 DEEP LPM 72820806
+[INFO: App       ] Total time: 19 minutes, 0 seconds, 65536 ticks pr sec
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 20, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af06  308,   317 =>   625 --  3  ba   (last tx 16 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 3 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 660 seconds)
+[INFO: RPL       ] links: fd00::212:4b00:f29:a804  to fd00::212:4b00:1532:af06 (lifetime: 780 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          1644286 LPM      336430 DEEP LPM 76685270
+[INFO: App       ] Total time: 20 minutes, 0 seconds, 65536 ticks pr sec
+Transmitted ack, length 23
+[INFO: TSCH      ] received from 0012.4b00.1532.af06 with seqno 233
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:1532:af06 to fd00::212:4b00:1531:f806 going up, sender closer 0 (308 < 128), rank error 0, loop detected 0
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:1532:af06 to fd00::212:4b00:1531:f806 going up, sender closer 0 (308 < 128), rank error 0, loop detected 0
+[INFO: App       ] Received packet 4, 80 bytes and 245 checksum from fd00::212:4b00:1532:af06
+[INFO: TSCH-LOG  ] {asn 00.00000d95 link  1  13   0  6  1 ch 20} uc-1-5 rx LL-af06->LL-f806, len 125, seq 233, edr  -4
+Transmitted ack, length 23
+[INFO: TSCH      ] received from 0012.4b00.1532.af06 with seqno 234
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:f29:a804 to fd00::212:4b00:1531:f806 going up, sender closer 0 (302 < 128), rank error 0, loop detected 0
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:f29:a804 to fd00::212:4b00:1531:f806 going up, sender closer 0 (302 < 128), rank error 0, loop detected 0
+[INFO: App       ] Received packet 4, 80 bytes and 34 checksum from fd00::212:4b00:f29:a804
+[INFO: TSCH-LOG  ] {asn 00.00000daf link  1  13   0  6  1 ch 20} uc-1-5 rx LL-af06->LL-f806, len 134, seq 234, edr   0
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 20, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af06  308,   317 =>   625 --  3  ba   (last tx 17 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 3 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 600 seconds)
+[INFO: RPL       ] links: fd00::212:4b00:f29:a804  to fd00::212:4b00:1532:af06 (lifetime: 720 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          1737072 LPM      352518 DEEP LPM 80509352
+[INFO: App       ] Total time: 21 minutes, 0 seconds, 65536 ticks pr sec
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 20, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af06  308,   317 =>   625 --  3  ba   (last tx 18 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 3 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 540 seconds)
+[INFO: RPL       ] links: fd00::212:4b00:f29:a804  to fd00::212:4b00:1532:af06 (lifetime: 660 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          1791004 LPM      369188 DEEP LPM 84373294
+[INFO: App       ] Total time: 22 minutes, 0 seconds, 65536 ticks pr sec
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 20, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af06  308,   317 =>   625 --  3  ba   (last tx 19 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 3 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 480 seconds)
+[INFO: RPL       ] links: fd00::212:4b00:f29:a804  to fd00::212:4b00:1532:af06 (lifetime: 600 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          1841962 LPM      385176 DEEP LPM 88239536
+[INFO: App       ] Total time: 23 minutes, 0 seconds, 65536 ticks pr sec
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 20, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af06  308,   317 =>   625 --  3  ba   (last tx 20 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 3 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 420 seconds)
+[INFO: RPL       ] links: fd00::212:4b00:f29:a804  to fd00::212:4b00:1532:af06 (lifetime: 540 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          1892994 LPM      401248 DEEP LPM 92105722
+[INFO: App       ] Total time: 24 minutes, 0 seconds, 65536 ticks pr sec
+[INFO: TSCH      ] TSCH: enqueue EB packet 41 22
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 189, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.0000101b link  0  23   0  6  0 ch 20} bc-0-1 tx LL-f806->LL-NULL, len  41, seq 189, st 0  1
+Transmitted ack, length 23
+[INFO: TSCH      ] received from 0012.4b00.1532.af06 with seqno 235
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:1532:af06 to fd00::212:4b00:1531:f806 going up, sender closer 0 (297 < 128), rank error 0, loop detected 0
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:1532:af06 to fd00::212:4b00:1531:f806 going up, sender closer 0 (297 < 128), rank error 0, loop detected 0
+[INFO: App       ] Received packet 5, 80 bytes and 237 checksum from fd00::212:4b00:1532:af06
+[INFO: TSCH-LOG  ] {asn 00.00001039 link  1  13   0  6  1 ch 20} uc-1-5 rx LL-af06->LL-f806, len 125, seq 235, edr   0
+Transmitted ack, length 23
+[INFO: TSCH      ] received from 0012.4b00.1532.af06 with seqno 236
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:f29:a804 to fd00::212:4b00:1531:f806 going up, sender closer 0 (292 < 128), rank error 0, loop detected 0
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:f29:a804 to fd00::212:4b00:1531:f806 going up, sender closer 0 (292 < 128), rank error 0, loop detected 0
+[INFO: App       ] Received packet 5, 80 bytes and 117 checksum from fd00::212:4b00:f29:a804
+[INFO: TSCH-LOG  ] {asn 00.00001053 link  1  13   0  6  1 ch 20} uc-1-5 rx LL-af06->LL-f806, len 134, seq 236, edr   0
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 20, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af06  308,   317 =>   625 --  3  ba   (last tx 21 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 3 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 360 seconds)
+[INFO: RPL       ] links: fd00::212:4b00:f29:a804  to fd00::212:4b00:1532:af06 (lifetime: 480 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          1994470 LPM      417314 DEEP LPM 95921406
+[INFO: App       ] Total time: 25 minutes, 0 seconds, 65536 ticks pr sec
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 20, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af06  308,   317 =>   625 --  3  ba   (last tx 22 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 3 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 300 seconds)
+[INFO: RPL       ] links: fd00::212:4b00:f29:a804  to fd00::212:4b00:1532:af06 (lifetime: 420 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          2045434 LPM      433352 DEEP LPM 99787886
+[INFO: App       ] Total time: 26 minutes, 0 seconds, 65536 ticks pr sec
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 20, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af06  308,   317 =>   625 --  3  ba   (last tx 23 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 3 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 240 seconds)
+[INFO: RPL       ] links: fd00::212:4b00:f29:a804  to fd00::212:4b00:1532:af06 (lifetime: 360 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          2099366 LPM      450022 DEEP LPM 103650400
+[INFO: App       ] Total time: 27 minutes, 0 seconds, 65536 ticks pr sec
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 20, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af06  308,   317 =>   625 --  3  ba   (last tx 24 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 3 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 180 seconds)
+[INFO: RPL       ] links: fd00::212:4b00:f29:a804  to fd00::212:4b00:1532:af06 (lifetime: 300 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          2150348 LPM      466078 DEEP LPM 107516442
+[INFO: App       ] Total time: 28 minutes, 0 seconds, 65536 ticks pr sec
+Transmitted ack, length 23
+[INFO: TSCH      ] received from 0012.4b00.1532.af06 with seqno 238
+[INFO: TSCH-LOG  ] {asn 00.000012dd link  1  13   0  6  1 ch 20} uc-1-5 rx LL-af06->LL-f806, len  27, seq 238, edr -16
+Transmitted ack, length 23
+[INFO: TSCH      ] received from 0012.4b00.1532.af06 with seqno 239
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:1532:af06 to fd00::212:4b00:1531:f806 going up, sender closer 0 (284 < 128), rank error 0, loop detected 0
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:1532:af06 to fd00::212:4b00:1531:f806 going up, sender closer 0 (284 < 128), rank error 0, loop detected 0
+[INFO: App       ] Received packet 6, 80 bytes and 229 checksum from fd00::212:4b00:1532:af06
+[INFO: TSCH-LOG  ] {asn 00.000012ea link  1  13   0  6  1 ch 20} uc-1-5 rx LL-af06->LL-f806, len 125, seq 239, edr   0
+Transmitted ack, length 23
+[INFO: TSCH      ] received from 0012.4b00.1532.af06 with seqno 240
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:f29:a804 to fd00::212:4b00:1531:f806 going up, sender closer 0 (281 < 128), rank error 0, loop detected 0
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:f29:a804 to fd00::212:4b00:1531:f806 going up, sender closer 0 (281 < 128), rank error 0, loop detected 0
+[INFO: App       ] Received packet 6, 80 bytes and 4 checksum from fd00::212:4b00:f29:a804
+[INFO: TSCH-LOG  ] {asn 00.00001304 link  1  13   0  6  1 ch 20} uc-1-5 rx LL-af06->LL-f806, len 134, seq 240, edr   0
+[INFO: TSCH-LOG  ] {asn 00.00001340 link  2  11   0  0  2 ch 20} bc-0-1 rx LL-af06->LL-NULL, len  41, seq 240, edr  -2
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 20, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af06  308,   317 =>   625 --  3  ba   (last tx 25 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 3 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 120 seconds)
+[INFO: RPL       ] links: fd00::212:4b00:f29:a804  to fd00::212:4b00:1532:af06 (lifetime: 240 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          2257164 LPM      482190 DEEP LPM 111326806
+[INFO: App       ] Total time: 29 minutes, 0 seconds, 65536 ticks pr sec
+[INFO: TSCH      ] TSCH: enqueue EB packet 41 22
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 190, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.000013e1 link  0  23   0  6  0 ch 20} bc-0-1 tx LL-f806->LL-NULL, len  41, seq 190, st 0  1
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 20, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af06  308,   317 =>   625 --  3  ba   (last tx 26 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 3 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 60 seconds)
+[INFO: RPL       ] links: fd00::212:4b00:f29:a804  to fd00::212:4b00:1532:af06 (lifetime: 180 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          2315434 LPM      498354 DEEP LPM 115185664
+[INFO: App       ] Total time: 30 minutes, 0 seconds, 65536 ticks pr sec
+Transmitted ack, length 23
+[INFO: TSCH      ] received from 0012.4b00.1532.af06 with seqno 241
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:1532:af06 to fd00::212:4b00:1531:f806 going up, sender closer 0 (278 < 128), rank error 0, loop detected 0
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:1532:af06 to fd00::212:4b00:1531:f806 going up, sender closer 0 (278 < 128), rank error 0, loop detected 0
+[INFO: RPL       ] received a DAO from fd00::212:4b00:1532:af06, seqno 242, lifetime 30, prefix fd00::212:4b00:1532:af06, prefix length 128, parent fd00::212:4b00:1531:f806 
+[INFO: TSCH-LOG  ] {asn 00.0000142f link  1  13   0  6  1 ch 20} uc-1-5 rx LL-af06->LL-f806, len  89, seq 241, edr  -6
+[INFO: RPL       ] sending a DAO-ACK seqno 242 to fd00::212:4b00:1532:af06 with status 0
+[INFO: RPL       ] SRH creating source routing header with destination fd00::212:4b00:1532:af06 
+[INFO: RPL       ] SRH path len: 0, ComprI 15, ComprE 15, ext len 8 (padding 0)
+[INFO: TSCH      ] send packet to 0012.4b00.1532.af06 with seqno 44, queue 1 1, len 27 47
+[INFO: TSCH      ] packet sent to 0012.4b00.1532.af06, seqno 44, status 0, tx 1
+[INFO: RPL       ] packet sent to 0012.4b00.1532.af06, status 0, tx 1, new link metric 269
+[INFO: TSCH-LOG  ] {asn 00.0000143c link  1  13   0  6  1 ch 20} uc-1-5 tx LL-f806->LL-af06, len  47, seq  44, st 0  1
+[INFO: RPL       ] sending a multicast-DIO with rank 128 to ff02::1a
+[INFO: TSCH      ] send packet to ffff.ffff.ffff.ffff with seqno 44, queue 1 1, len 20 100
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 191, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.00001495 link  2  11   0  0  2 ch 20} bc-1-5 tx LL-f806->LL-NULL, len 100, seq 191, st 0  1
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 20, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af06  308,   269 =>   577 --  2  ba   (last tx 0 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 3 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 1740 seconds)
+[INFO: RPL       ] links: fd00::212:4b00:f29:a804  to fd00::212:4b00:1532:af06 (lifetime: 120 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          2408834 LPM      515110 DEEP LPM 119008412
+[INFO: App       ] Total time: 31 minutes, 0 seconds, 65536 ticks pr sec
+[INFO: TSCH      ] received from 0012.4b00.1532.af06 with seqno 65535
+[INFO: RPL       ] received a multicast-DIO from fe80::212:4b00:1532:af06, instance_id 0, DAG ID fd00::212:4b00:1531:f806, version 240, dtsn 240, rank 275
+[INFO: TSCH-LOG  ] {asn 00.0000155b link  2  11   0  0  2 ch 20} bc-1-5 rx LL-af06->LL-NULL, len 100, seq 241, edr   2
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 20, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af06  275,   269 =>   544 --  2  ba   (last tx 1 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 3 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 1680 seconds)
+[INFO: RPL       ] links: fd00::212:4b00:f29:a804  to fd00::212:4b00:1532:af06 (lifetime: 60 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          2475414 LPM      531802 DEEP LPM 122858256
+[INFO: App       ] Total time: 32 minutes, 0 seconds, 65536 ticks pr sec
+Transmitted ack, length 23
+[INFO: TSCH      ] received from 0012.4b00.1532.af06 with seqno 243
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:f29:a804 to fd00::212:4b00:1531:f806 going up, sender closer 0 (275 < 128), rank error 0, loop detected 0
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:f29:a804 to fd00::212:4b00:1531:f806 going up, sender closer 0 (275 < 128), rank error 0, loop detected 0
+[INFO: RPL       ] received a DAO from fd00::212:4b00:f29:a804, seqno 242, lifetime 30, prefix fd00::212:4b00:f29:a804, prefix length 128, parent fd00::212:4b00:1532:af06 
+[INFO: TSCH-LOG  ] {asn 00.0000158e link  1  13   0  6  1 ch 20} uc-1-5 rx LL-af06->LL-f806, len  98, seq 243, edr   6
+[INFO: RPL       ] sending a DAO-ACK seqno 242 to fd00::212:4b00:f29:a804 with status 0
+[INFO: RPL       ] SRH creating source routing header with destination fd00::212:4b00:f29:a804 
+[INFO: RPL       ] SRH Hop fd00::212:4b00:1532:af06
+[INFO: RPL       ] SRH path len: 1, ComprI 12, ComprE 12, ext len 16 (padding 4)
+[INFO: TSCH      ] send packet to 0012.4b00.1532.af06 with seqno 45, queue 1 1, len 27 55
+[INFO: TSCH-LOG  ] {asn 00.0000159b link  1  13   0  6  1 ch 20} Ack missing
+[INFO: TSCH-LOG  ] {asn 00.0000159b link  1  13   0  6  1 ch 20} uc-1-5 tx LL-f806->LL-af06, len  55, seq  45, st 2  1
+[INFO: TSCH-LOG  ] {asn 00.000015a8 link  1  13   0  6  1 ch 20} Ack missing
+[INFO: TSCH-LOG  ] {asn 00.000015a8 link  1  13   0  6  1 ch 20} uc-1-5 tx LL-f806->LL-af06, len  55, seq  45, st 2  2
+[INFO: TSCH-LOG  ] {asn 00.000015b5 link  1  13   0  6  1 ch 20} Ack missing
+[INFO: TSCH-LOG  ] {asn 00.000015b5 link  1  13   0  6  1 ch 20} uc-1-5 tx LL-f806->LL-af06, len  55, seq  45, st 2  3
+[INFO: TSCH      ] packet sent to 0012.4b00.1532.af06, seqno 45, status 0, tx 4
+[INFO: RPL       ] packet sent to 0012.4b00.1532.af06, status 0, tx 4, new link metric 293
+[INFO: TSCH-LOG  ] {asn 00.000015c2 link  1  13   0  6  1 ch 20} uc-1-5 tx LL-f806->LL-af06, len  55, seq  45, st 0  4
+Transmitted ack, length 23
+[INFO: TSCH      ] received from 0012.4b00.1532.af06 with seqno 244
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:1532:af06 to fd00::212:4b00:1531:f806 going up, sender closer 0 (273 < 128), rank error 0, loop detected 0
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:1532:af06 to fd00::212:4b00:1531:f806 going up, sender closer 0 (273 < 128), rank error 0, loop detected 0
+[INFO: App       ] Received packet 7, 80 bytes and 167 checksum from fd00::212:4b00:1532:af06
+[INFO: TSCH-LOG  ] {asn 00.000015cf link  1  13   0  6  1 ch 20} uc-1-5 rx LL-af06->LL-f806, len 125, seq 244, edr   0
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 20, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af06  275,   293 =>   568 --  6  baf  (last tx 0 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 3 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 1620 seconds)
+[INFO: RPL       ] links: fd00::212:4b00:f29:a804  to fd00::212:4b00:1532:af06 (lifetime: 1740 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          2601566 LPM      549936 DEEP LPM 126647438
+[INFO: App       ] Total time: 33 minutes, 0 seconds, 65536 ticks pr sec
+Transmitted ack, length 23
+[INFO: TSCH      ] received from 0012.4b00.1532.af06 with seqno 246
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:f29:a804 to fd00::212:4b00:1531:f806 going up, sender closer 0 (309 < 128), rank error 0, loop detected 0
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:f29:a804 to fd00::212:4b00:1531:f806 going up, sender closer 0 (309 < 128), rank error 0, loop detected 0
+[INFO: App       ] Received packet 7, 80 bytes and 152 checksum from fd00::212:4b00:f29:a804
+[INFO: TSCH-LOG  ] {asn 00.0000162a link  1  13   0  6  1 ch 20} uc-1-5 rx LL-af06->LL-f806, len 134, seq 246, edr   6
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 20, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af06  275,   293 =>   568 --  6  baf  (last tx 1 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 3 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 1560 seconds)
+[INFO: RPL       ] links: fd00::212:4b00:f29:a804  to fd00::212:4b00:1532:af06 (lifetime: 1680 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          2673874 LPM      566972 DEEP LPM 130490998
+[INFO: App       ] Total time: 34 minutes, 0 seconds, 65536 ticks pr sec
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 21, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af06  275,   293 =>   568 --  6  baf  (last tx 2 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 3 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 1500 seconds)
+[INFO: RPL       ] links: fd00::212:4b00:f29:a804  to fd00::212:4b00:1532:af06 (lifetime: 1620 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          2726318 LPM      583822 DEEP LPM 134354996
+[INFO: App       ] Total time: 35 minutes, 0 seconds, 65536 ticks pr sec
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 21, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af06  275,   293 =>   568 --  6  baf  (last tx 3 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 3 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 1440 seconds)
+[INFO: RPL       ] links: fd00::212:4b00:f29:a804  to fd00::212:4b00:1532:af06 (lifetime: 1560 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          2777258 LPM      600396 DEEP LPM 138220756
+[INFO: App       ] Total time: 36 minutes, 0 seconds, 65536 ticks pr sec
+[INFO: TSCH      ] TSCH: enqueue EB packet 41 22
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 192, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.00001848 link  0  23   0  6  0 ch 20} bc-0-1 tx LL-f806->LL-NULL, len  41, seq 192, st 0  1
+Transmitted ack, length 23
+[INFO: TSCH      ] received from 0012.4b00.1532.af06 with seqno 247
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:1532:af06 to fd00::212:4b00:1531:f806 going up, sender closer 0 (303 < 128), rank error 0, loop detected 0
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:1532:af06 to fd00::212:4b00:1531:f806 going up, sender closer 0 (303 < 128), rank error 0, loop detected 0
+[INFO: App       ] Received packet 8, 80 bytes and 21 checksum from fd00::212:4b00:1532:af06
+[INFO: TSCH-LOG  ] {asn 00.0000184c link  1  13   0  6  1 ch 20} uc-1-5 rx LL-af06->LL-f806, len 125, seq 247, edr   2
+Transmitted ack, length 23
+[INFO: TSCH      ] received from 0012.4b00.1532.af06 with seqno 248
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:f29:a804 to fd00::212:4b00:1531:f806 going up, sender closer 0 (298 < 128), rank error 0, loop detected 0
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:f29:a804 to fd00::212:4b00:1531:f806 going up, sender closer 0 (298 < 128), rank error 0, loop detected 0
+[INFO: App       ] Received packet 8, 80 bytes and 14 checksum from fd00::212:4b00:f29:a804
+[INFO: TSCH-LOG  ] {asn 00.00001866 link  1  13   0  6  1 ch 20} uc-1-5 rx LL-af06->LL-f806, len 134, seq 248, edr   0
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 21, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af06  275,   293 =>   568 --  6  baf  (last tx 4 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 3 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 1380 seconds)
+[INFO: RPL       ] links: fd00::212:4b00:f29:a804  to fd00::212:4b00:1532:af06 (lifetime: 1500 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          2880374 LPM      617038 DEEP LPM 142034256
+[INFO: App       ] Total time: 37 minutes, 0 seconds, 65536 ticks pr sec
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 21, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af06  275,   293 =>   568 --  6  baf  (last tx 5 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 3 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 1320 seconds)
+[INFO: RPL       ] links: fd00::212:4b00:f29:a804  to fd00::212:4b00:1532:af06 (lifetime: 1440 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          2931366 LPM      633058 DEEP LPM 145900198
+[INFO: App       ] Total time: 38 minutes, 0 seconds, 65536 ticks pr sec
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 21, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af06  275,   293 =>   568 --  6  baf  (last tx 6 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 3 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 1260 seconds)
+[INFO: RPL       ] links: fd00::212:4b00:f29:a804  to fd00::212:4b00:1532:af06 (lifetime: 1380 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          2982244 LPM      649650 DEEP LPM 149766144
+[INFO: App       ] Total time: 39 minutes, 0 seconds, 65536 ticks pr sec
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 21, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af06  275,   293 =>   568 --  6  baf  (last tx 7 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 3 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 1200 seconds)
+[INFO: RPL       ] links: fd00::212:4b00:f29:a804  to fd00::212:4b00:1532:af06 (lifetime: 1320 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          3034648 LPM      666534 DEEP LPM 153630148
+[INFO: App       ] Total time: 40 minutes, 0 seconds, 65536 ticks pr sec
+Transmitted ack, length 23
+[INFO: TSCH      ] received from 0012.4b00.1532.af06 with seqno 249
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:1532:af06 to fd00::212:4b00:1531:f806 going up, sender closer 0 (293 < 128), rank error 0, loop detected 0
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:1532:af06 to fd00::212:4b00:1531:f806 going up, sender closer 0 (293 < 128), rank error 0, loop detected 0
+[INFO: App       ] Received packet 9, 80 bytes and 87 checksum from fd00::212:4b00:1532:af06
+[INFO: TSCH-LOG  ] {asn 00.00001afd link  1  13   0  6  1 ch 20} uc-1-5 rx LL-af06->LL-f806, len 125, seq 249, edr  18
+Transmitted ack, length 23
+[INFO: TSCH      ] received from 0012.4b00.1532.af06 with seqno 250
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:f29:a804 to fd00::212:4b00:1531:f806 going up, sender closer 0 (289 < 128), rank error 0, loop detected 0
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:f29:a804 to fd00::212:4b00:1531:f806 going up, sender closer 0 (289 < 128), rank error 0, loop detected 0
+[INFO: App       ] Received packet 9, 80 bytes and 13 checksum from fd00::212:4b00:f29:a804
+[INFO: TSCH-LOG  ] {asn 00.00001b17 link  1  13   0  6  1 ch 20} uc-1-5 rx LL-af06->LL-f806, len 134, seq 250, edr   0
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 21, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af06  275,   293 =>   568 --  6  baf  (last tx 8 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 3 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 1140 seconds)
+[INFO: RPL       ] links: fd00::212:4b00:f29:a804  to fd00::212:4b00:1532:af06 (lifetime: 1260 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          3127386 LPM      682888 DEEP LPM 157454348
+[INFO: App       ] Total time: 41 minutes, 0 seconds, 65536 ticks pr sec
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 21, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af06  275,   293 =>   568 --  6  baf  (last tx 9 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 3 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 1080 seconds)
+[INFO: RPL       ] links: fd00::212:4b00:f29:a804  to fd00::212:4b00:1532:af06 (lifetime: 1200 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          3181388 LPM      699514 DEEP LPM 161316960
+[INFO: App       ] Total time: 42 minutes, 0 seconds, 65536 ticks pr sec
+[INFO: TSCH      ] TSCH: enqueue EB packet 41 22
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 193, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.00001c81 link  0  23   0  6  0 ch 20} bc-0-1 tx LL-f806->LL-NULL, len  41, seq 193, st 0  1
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 21, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af06  275,   293 =>   568 --  6  ba   (last tx 10 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 3 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 1020 seconds)
+[INFO: RPL       ] links: fd00::212:4b00:f29:a804  to fd00::212:4b00:1532:af06 (lifetime: 1140 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          3239782 LPM      715626 DEEP LPM 165175922
+[INFO: App       ] Total time: 43 minutes, 0 seconds, 65536 ticks pr sec
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 21, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af06  275,   293 =>   568 --  6  ba   (last tx 11 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 3 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 960 seconds)
+[INFO: RPL       ] links: fd00::212:4b00:f29:a804  to fd00::212:4b00:1532:af06 (lifetime: 1080 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          3290770 LPM      731692 DEEP LPM 169042160
+[INFO: App       ] Total time: 44 minutes, 0 seconds, 65536 ticks pr sec
+Transmitted ack, length 23
+[INFO: TSCH      ] received from 0012.4b00.1532.af06 with seqno 252
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:1532:af06 to fd00::212:4b00:1531:f806 going up, sender closer 0 (285 < 128), rank error 0, loop detected 0
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:1532:af06 to fd00::212:4b00:1531:f806 going up, sender closer 0 (285 < 128), rank error 0, loop detected 0
+[INFO: App       ] Received packet 10, 80 bytes and 209 checksum from fd00::212:4b00:1532:af06
+[INFO: TSCH-LOG  ] {asn 00.00001dae link  1  13   0  6  1 ch 20} uc-1-5 rx LL-af06->LL-f806, len 125, seq 252, edr   4
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 21, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af06  275,   293 =>   568 --  6  ba   (last tx 12 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 3 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 900 seconds)
+[INFO: RPL       ] links: fd00::212:4b00:f29:a804  to fd00::212:4b00:1532:af06 (lifetime: 1020 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          3363604 LPM      747992 DEEP LPM 172885930
+[INFO: App       ] Total time: 45 minutes, 0 seconds, 65536 ticks pr sec
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 21, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af06  275,   293 =>   568 --  3  ba   (last tx 13 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 3 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 840 seconds)
+[INFO: RPL       ] links: fd00::212:4b00:f29:a804  to fd00::212:4b00:1532:af06 (lifetime: 960 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          3414588 LPM      764058 DEEP LPM 176752172
+[INFO: App       ] Total time: 46 minutes, 0 seconds, 65536 ticks pr sec
+[INFO: TSCH      ] received from 0012.4b00.1532.af06 with seqno 65535
+[INFO: RPL       ] received a multicast-DIO from fe80::212:4b00:1532:af06, instance_id 0, DAG ID fd00::212:4b00:1531:f806, version 240, dtsn 240, rank 282
+[INFO: TSCH-LOG  ] {asn 00.00001f5e link  2  11   0  0  2 ch 20} bc-1-5 rx LL-af06->LL-NULL, len 100, seq 252, edr   8
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 21, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af06  282,   293 =>   575 --  3  ba   (last tx 14 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 3 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 780 seconds)
+[INFO: RPL       ] links: fd00::212:4b00:f29:a804  to fd00::212:4b00:1532:af06 (lifetime: 900 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          3481184 LPM      780738 DEEP LPM 180602188
+[INFO: App       ] Total time: 47 minutes, 0 seconds, 65536 ticks pr sec
+[INFO: TSCH      ] received from 0012.4b00.1532.af06 with seqno 65535
+[INFO: RPL       ] received a multicast-DIO from fe80::212:4b00:1532:af06, instance_id 0, DAG ID fd00::212:4b00:1531:f806, version 240, dtsn 240, rank 282
+[INFO: TSCH-LOG  ] {asn 00.00001fed link  2  11   0  0  2 ch 20} bc-1-5 rx LL-af06->LL-NULL, len 100, seq 252, edr  12
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 21, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af06  282,   293 =>   575 --  3  ba   (last tx 15 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 3 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 720 seconds)
+[INFO: RPL       ] links: fd00::212:4b00:f29:a804  to fd00::212:4b00:1532:af06 (lifetime: 840 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          3544746 LPM      796758 DEEP LPM 184455510
+[INFO: App       ] Total time: 48 minutes, 0 seconds, 65536 ticks pr sec
+Transmitted ack, length 23
+[INFO: TSCH      ] received from 0012.4b00.1532.af06 with seqno 253
+[INFO: TSCH-LOG  ] {asn 00.00002038 link  1  13   0  6  1 ch 20} uc-1-5 rx LL-af06->LL-f806, len  27, seq 253, edr  10
+Transmitted ack, length 23
+[INFO: TSCH      ] received from 0012.4b00.1532.af06 with seqno 254
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:1532:af06 to fd00::212:4b00:1531:f806 going up, sender closer 0 (279 < 128), rank error 0, loop detected 0
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:1532:af06 to fd00::212:4b00:1531:f806 going up, sender closer 0 (279 < 128), rank error 0, loop detected 0
+[INFO: App       ] Received packet 11, 80 bytes and 205 checksum from fd00::212:4b00:1532:af06
+[INFO: TSCH-LOG  ] {asn 00.00002052 link  1  13   0  6  1 ch 20} uc-1-5 rx LL-af06->LL-f806, len 125, seq 254, edr   0
+[INFO: TSCH      ] TSCH: enqueue EB packet 41 22
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 194, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.00002075 link  0  23   0  6  0 ch 20} bc-0-1 tx LL-f806->LL-NULL, len  41, seq 194, st 0  1
+[INFO: TSCH      ] received from 0012.4b00.1532.af06 with seqno 65535
+[INFO: RPL       ] received a multicast-DIO from fe80::212:4b00:1532:af06, instance_id 0, DAG ID fd00::212:4b00:1531:f806, version 240, dtsn 240, rank 276
+[INFO: TSCH-LOG  ] {asn 00.000020a8 link  2  11   0  0  2 ch 20} bc-1-5 rx LL-af06->LL-NULL, len 100, seq 254, edr   0
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 21, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af06  276,   293 =>   569 --  3  ba   (last tx 16 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 3 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 660 seconds)
+[INFO: RPL       ] links: fd00::212:4b00:f29:a804  to fd00::212:4b00:1532:af06 (lifetime: 780 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          3644578 LPM      812920 DEEP LPM 188272808
+[INFO: App       ] Total time: 49 minutes, 0 seconds, 65536 ticks pr sec
+[INFO: TSCH      ] received from 0012.4b00.1532.af06 with seqno 65535
+[INFO: RPL       ] received a multicast-DIO from fe80::212:4b00:1532:af06, instance_id 0, DAG ID fd00::212:4b00:1531:f806, version 240, dtsn 240, rank 276
+[INFO: TSCH-LOG  ] {asn 00.00002100 link  2  11   0  0  2 ch 20} bc-1-5 rx LL-af06->LL-NULL, len 100, seq 254, edr   0
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 21, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af06  276,   293 =>   569 --  3  ba   (last tx 17 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 3 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 600 seconds)
+[INFO: RPL       ] links: fd00::212:4b00:f29:a804  to fd00::212:4b00:1532:af06 (lifetime: 720 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          3709568 LPM      829196 DEEP LPM 192124958
+[INFO: App       ] Total time: 50 minutes, 0 seconds, 65536 ticks pr sec
+[INFO: TSCH      ] received from 0012.4b00.1532.af06 with seqno 65535
+[INFO: RPL       ] received a multicast-DIO from fe80::212:4b00:1532:af06, instance_id 0, DAG ID fd00::212:4b00:1531:f806, version 240, dtsn 240, rank 276
+[INFO: TSCH-LOG  ] {asn 00.0000219a link  2  11   0  0  2 ch 20} bc-1-5 rx LL-af06->LL-NULL, len 100, seq 254, edr  -2
+[INFO: TSCH      ] received from 0012.4b00.1532.af06 with seqno 65535
+[INFO: RPL       ] received a multicast-DIO from fe80::212:4b00:1532:af06, instance_id 0, DAG ID fd00::212:4b00:1531:f806, version 240, dtsn 240, rank 276
+[INFO: TSCH-LOG  ] {asn 00.00002208 link  2  11   0  0  2 ch 20} bc-1-5 rx LL-af06->LL-NULL, len 100, seq 254, edr   0
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 21, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af06  276,   293 =>   569 --  3  ba   (last tx 18 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 3 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 540 seconds)
+[INFO: RPL       ] links: fd00::212:4b00:f29:a804  to fd00::212:4b00:1532:af06 (lifetime: 660 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          3785958 LPM      845232 DEEP LPM 195965310
+[INFO: App       ] Total time: 51 minutes, 0 seconds, 65536 ticks pr sec
+[INFO: TSCH      ] received from 0012.4b00.1532.af06 with seqno 65535
+[INFO: RPL       ] received a multicast-DIO from fe80::212:4b00:1532:af06, instance_id 0, DAG ID fd00::212:4b00:1531:f806, version 240, dtsn 240, rank 276
+[INFO: TSCH-LOG  ] {asn 00.00002297 link  2  11   0  0  2 ch 20} bc-1-5 rx LL-af06->LL-NULL, len 100, seq 254, edr  -4
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 21, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af06  276,   293 =>   569 --  3  ba   (last tx 19 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 3 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 480 seconds)
+[INFO: RPL       ] links: fd00::212:4b00:f29:a804  to fd00::212:4b00:1532:af06 (lifetime: 600 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          3852520 LPM      861902 DEEP LPM 199815370
+[INFO: App       ] Total time: 52 minutes, 0 seconds, 65536 ticks pr sec
+Transmitted ack, length 23
+[INFO: TSCH      ] received from 0012.4b00.1532.af06 with seqno 255
+[INFO: TSCH-LOG  ] {asn 00.000022f6 link  1  13   0  6  1 ch 20} uc-1-5 rx LL-af06->LL-f806, len  27, seq 255, edr  -6
+Transmitted ack, length 23
+[INFO: TSCH      ] received from 0012.4b00.1532.af06 with seqno 1
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:1532:af06 to fd00::212:4b00:1531:f806 going up, sender closer 0 (274 < 128), rank error 0, loop detected 0
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:1532:af06 to fd00::212:4b00:1531:f806 going up, sender closer 0 (274 < 128), rank error 0, loop detected 0
+[INFO: App       ] Received packet 12, 80 bytes and 141 checksum from fd00::212:4b00:1532:af06
+[INFO: TSCH-LOG  ] {asn 00.00002303 link  1  13   0  6  1 ch 20} uc-1-5 rx LL-af06->LL-f806, len 125, seq   1, edr   0
+[INFO: TSCH      ] received from 0012.4b00.1532.af06 with seqno 65535
+[INFO: RPL       ] received a multicast-DIO from fe80::212:4b00:1532:af06, instance_id 0, DAG ID fd00::212:4b00:1531:f806, version 240, dtsn 240, rank 274
+[INFO: TSCH-LOG  ] {asn 00.00002305 link  2  11   0  0  2 ch 20} bc-1-5 rx LL-af06->LL-NULL, len 100, seq   1, edr   0
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 21, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af06  274,   293 =>   567 --  3  ba   (last tx 20 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 3 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 420 seconds)
+[INFO: RPL       ] links: fd00::212:4b00:f29:a804  to fd00::212:4b00:1532:af06 (lifetime: 540 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          3944938 LPM      877990 DEEP LPM 203640280
+[INFO: App       ] Total time: 53 minutes, 0 seconds, 65536 ticks pr sec
+[INFO: TSCH      ] received from 0012.4b00.1532.af06 with seqno 65535
+[INFO: RPL       ] received a multicast-DIO from fe80::212:4b00:1532:af06, instance_id 0, DAG ID fd00::212:4b00:1531:f806, version 240, dtsn 240, rank 272
+[INFO: TSCH-LOG  ] {asn 00.000023aa link  2  11   0  0  2 ch 20} bc-1-5 rx LL-af06->LL-NULL, len 100, seq   1, edr   2
+[INFO: TSCH      ] TSCH: enqueue EB packet 41 22
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 195, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.00002424 link  0  23   0  6  0 ch 20} bc-0-1 tx LL-f806->LL-NULL, len  41, seq 195, st 0  1
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 21, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af06  272,   293 =>   565 --  3  ba   (last tx 21 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 3 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 360 seconds)
+[INFO: RPL       ] links: fd00::212:4b00:f29:a804  to fd00::212:4b00:1532:af06 (lifetime: 480 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          4015882 LPM      894102 DEEP LPM 207486516
+[INFO: App       ] Total time: 54 minutes, 0 seconds, 65536 ticks pr sec
+[INFO: TSCH      ] received from 0012.4b00.1532.af06 with seqno 65535
+[INFO: RPL       ] received a multicast-DIO from fe80::212:4b00:1532:af06, instance_id 0, DAG ID fd00::212:4b00:1531:f806, version 240, dtsn 240, rank 272
+[INFO: TSCH-LOG  ] {asn 00.00002439 link  2  11   0  0  2 ch 20} bc-1-5 rx LL-af06->LL-NULL, len 100, seq   1, edr   0
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 21, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af06  272,   293 =>   565 --  3  ba   (last tx 22 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 3 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 300 seconds)
+[INFO: RPL       ] links: fd00::212:4b00:f29:a804  to fd00::212:4b00:1532:af06 (lifetime: 420 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          4080410 LPM      910448 DEEP LPM 211338934
+[INFO: App       ] Total time: 55 minutes, 0 seconds, 65536 ticks pr sec
+[INFO: TSCH      ] received from 0012.4b00.1532.af06 with seqno 65535
+[INFO: RPL       ] received a multicast-DIO from fe80::212:4b00:1532:af06, instance_id 0, DAG ID fd00::212:4b00:1531:f806, version 240, dtsn 240, rank 272
+[INFO: TSCH-LOG  ] {asn 00.00002515 link  2  11   0  0  2 ch 20} bc-1-5 rx LL-af06->LL-NULL, len 100, seq   1, edr   4
+Transmitted ack, length 23
+[INFO: TSCH      ] received from 0012.4b00.1532.af06 with seqno 3
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:f29:a804 to fd00::212:4b00:1531:f806 going up, sender closer 0 (272 < 128), rank error 0, loop detected 0
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:f29:a804 to fd00::212:4b00:1531:f806 going up, sender closer 0 (272 < 128), rank error 0, loop detected 0
+[INFO: RPL       ] received a DAO from fd00::212:4b00:f29:a804, seqno 241, lifetime 30, prefix fd00::212:4b00:f29:a804, prefix length 128, parent fd00::212:4b00:1532:af06 
+[INFO: TSCH-LOG  ] {asn 00.00002573 link  1  13   0  6  1 ch 20} uc-1-5 rx LL-af06->LL-f806, len  98, seq   3, edr  10
+[INFO: RPL       ] sending a DAO-ACK seqno 241 to fd00::212:4b00:f29:a804 with status 0
+[INFO: RPL       ] SRH creating source routing header with destination fd00::212:4b00:f29:a804 
+[INFO: RPL       ] SRH Hop fd00::212:4b00:1532:af06
+[INFO: RPL       ] SRH path len: 1, ComprI 12, ComprE 12, ext len 16 (padding 4)
+[INFO: TSCH      ] send packet to 0012.4b00.1532.af06 with seqno 46, queue 1 1, len 27 55
+[INFO: TSCH      ] packet sent to 0012.4b00.1532.af06, seqno 46, status 0, tx 1
+[INFO: RPL       ] packet sent to 0012.4b00.1532.af06, status 0, tx 1, new link metric 276
+[INFO: TSCH-LOG  ] {asn 00.00002580 link  1  13   0  6  1 ch 20} uc-1-5 tx LL-f806->LL-af06, len  55, seq  46, st 0  1
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 21, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af06  272,   276 =>   548 --  4  baf  (last tx 0 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 3 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 240 seconds)
+[INFO: RPL       ] links: fd00::212:4b00:f29:a804  to fd00::212:4b00:1532:af06 (lifetime: 1740 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          4176010 LPM      926868 DEEP LPM 215160330
+[INFO: App       ] Total time: 56 minutes, 0 seconds, 65536 ticks pr sec
+Transmitted ack, length 23
+[INFO: TSCH      ] received from 0012.4b00.1532.af06 with seqno 5
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:1532:af06 to fd00::212:4b00:1531:f806 going up, sender closer 0 (270 < 128), rank error 0, loop detected 0
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:1532:af06 to fd00::212:4b00:1531:f806 going up, sender closer 0 (270 < 128), rank error 0, loop detected 0
+[INFO: App       ] Received packet 13, 80 bytes and 59 checksum from fd00::212:4b00:1532:af06
+[INFO: TSCH-LOG  ] {asn 00.000025b4 link  1  13   0  6  1 ch 20} uc-1-5 rx LL-af06->LL-f806, len 125, seq   5, edr   0
+[INFO: TSCH      ] received from 0012.4b00.1532.af06 with seqno 65535
+[INFO: RPL       ] received a multicast-DIO from fe80::212:4b00:1532:af06, instance_id 0, DAG ID fd00::212:4b00:1531:f806, version 240, dtsn 240, rank 268
+[INFO: TSCH-LOG  ] {asn 00.000025c5 link  2  11   0  0  2 ch 20} bc-1-5 rx LL-af06->LL-NULL, len 100, seq   5, edr   6
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 21, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af06  268,   276 =>   544 --  4  baf  (last tx 1 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 3 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 180 seconds)
+[INFO: RPL       ] links: fd00::212:4b00:f29:a804  to fd00::212:4b00:1532:af06 (lifetime: 1680 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          4262990 LPM      944056 DEEP LPM 218989454
+[INFO: App       ] Total time: 57 minutes, 0 seconds, 65536 ticks pr sec
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 21, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af06  268,   276 =>   544 --  4  baf  (last tx 2 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 3 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 120 seconds)
+[INFO: RPL       ] links: fd00::212:4b00:f29:a804  to fd00::212:4b00:1532:af06 (lifetime: 1620 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          4315460 LPM      960946 DEEP LPM 222853116
+[INFO: App       ] Total time: 58 minutes, 0 seconds, 65536 ticks pr sec
+[INFO: TSCH      ] received from 0012.4b00.1532.af06 with seqno 65535
+[INFO: RPL       ] received a multicast-DIO from fe80::212:4b00:1532:af06, instance_id 0, DAG ID fd00::212:4b00:1531:f806, version 240, dtsn 240, rank 268
+[INFO: TSCH-LOG  ] {asn 00.0000271a link  2  11   0  0  2 ch 20} bc-1-5 rx LL-af06->LL-NULL, len 100, seq   5, edr  24
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 21, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af06  268,   276 =>   544 --  4  baf  (last tx 3 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 3 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 60 seconds)
+[INFO: RPL       ] links: fd00::212:4b00:f29:a804  to fd00::212:4b00:1532:af06 (lifetime: 1560 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          4377498 LPM      976664 DEEP LPM 226708534
+[INFO: App       ] Total time: 59 minutes, 0 seconds, 65536 ticks pr sec
+Transmitted ack, length 23
+[INFO: TSCH      ] received from 0012.4b00.1532.af06 with seqno 6
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:1532:af06 to fd00::212:4b00:1531:f806 going up, sender closer 0 (268 < 128), rank error 0, loop detected 0
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:1532:af06 to fd00::212:4b00:1531:f806 going up, sender closer 0 (268 < 128), rank error 0, loop detected 0
+[INFO: RPL       ] received a DAO from fd00::212:4b00:1532:af06, seqno 243, lifetime 30, prefix fd00::212:4b00:1532:af06, prefix length 128, parent fd00::212:4b00:1531:f806 
+[INFO: TSCH-LOG  ] {asn 00.000027a2 link  1  13   0  6  1 ch 20} uc-1-5 rx LL-af06->LL-f806, len  89, seq   6, edr  34
+[INFO: RPL       ] sending a DAO-ACK seqno 243 to fd00::212:4b00:1532:af06 with status 0
+[INFO: RPL       ] SRH creating source routing header with destination fd00::212:4b00:1532:af06 
+[INFO: RPL       ] SRH path len: 0, ComprI 15, ComprE 15, ext len 8 (padding 0)
+[INFO: TSCH      ] send packet to 0012.4b00.1532.af06 with seqno 47, queue 1 1, len 27 47
+[INFO: TSCH      ] packet sent to 0012.4b00.1532.af06, seqno 47, status 0, tx 1
+[INFO: RPL       ] packet sent to 0012.4b00.1532.af06, status 0, tx 1, new link metric 261
+[INFO: TSCH-LOG  ] {asn 00.000027af link  1  13   0  6  1 ch 20} uc-1-5 tx LL-f806->LL-af06, len  47, seq  47, st 0  1
+[INFO: TSCH      ] TSCH: enqueue EB packet 41 22
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 196, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.000027bc link  0  23   0  6  0 ch 20} bc-0-1 tx LL-f806->LL-NULL, len  41, seq 196, st 0  1
+[INFO: RPL       ] sending a multicast-DIO with rank 128 to ff02::1a
+[INFO: TSCH      ] send packet to ffff.ffff.ffff.ffff with seqno 47, queue 1 1, len 20 100
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 197, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.000027ca link  2  11   0  0  2 ch 20} bc-1-5 tx LL-f806->LL-NULL, len 100, seq 197, st 0  1
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 21, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af06  268,   261 =>   529 --  5  baf  (last tx 0 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 3 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 1740 seconds)
+[INFO: RPL       ] links: fd00::212:4b00:f29:a804  to fd00::212:4b00:1532:af06 (lifetime: 1500 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          4478170 LPM      993846 DEEP LPM 230523972
+[INFO: App       ] Total time: 60 minutes, 1 seconds, 65536 ticks pr sec
+Transmitted ack, length 23
+[INFO: TSCH      ] received from 0012.4b00.1532.af06 with seqno 7
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:1532:af06 to fd00::212:4b00:1531:f806 going up, sender closer 0 (266 < 128), rank error 0, loop detected 0
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:1532:af06 to fd00::212:4b00:1531:f806 going up, sender closer 0 (266 < 128), rank error 0, loop detected 0
+[INFO: App       ] Received packet 14, 80 bytes and 216 checksum from fd00::212:4b00:1532:af06
+[INFO: TSCH-LOG  ] {asn 00.00002865 link  1  13   0  6  1 ch 20} uc-1-5 rx LL-af06->LL-f806, len 125, seq   7, edr   8
+Transmitted ack, length 23
+[INFO: TSCH      ] received from 0012.4b00.1532.af06 with seqno 8
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:f29:a804 to fd00::212:4b00:1531:f806 going up, sender closer 0 (265 < 128), rank error 0, loop detected 0
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:f29:a804 to fd00::212:4b00:1531:f806 going up, sender closer 0 (265 < 128), rank error 0, loop detected 0
+[INFO: App       ] Received packet 12, 80 bytes and 25 checksum from fd00::212:4b00:f29:a804
+[INFO: TSCH-LOG  ] {asn 00.00002899 link  1  13   0  6  1 ch 20} uc-1-5 rx LL-af06->LL-f806, len 134, seq   8, edr   8
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 21, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af06  268,   261 =>   529 --  2  ba   (last tx 1 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 3 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 1680 seconds)
+[INFO: RPL       ] links: fd00::212:4b00:f29:a804  to fd00::212:4b00:1532:af06 (lifetime: 1440 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          4570920 LPM      1010426 DEEP LPM 234347918
+[INFO: App       ] Total time: 61 minutes, 1 seconds, 65536 ticks pr sec
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 21, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af06  268,   261 =>   529 --  2  ba   (last tx 2 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 3 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 1620 seconds)
+[INFO: RPL       ] links: fd00::212:4b00:f29:a804  to fd00::212:4b00:1532:af06 (lifetime: 1380 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          4624860 LPM      1028084 DEEP LPM 238209240
+[INFO: App       ] Total time: 62 minutes, 1 seconds, 65536 ticks pr sec
+[INFO: TSCH      ] received from 0012.4b00.1532.af06 with seqno 65535
+[INFO: RPL       ] received a multicast-DIO from fe80::212:4b00:1532:af06, instance_id 0, DAG ID fd00::212:4b00:1531:f806, version 240, dtsn 240, rank 264
+[INFO: TSCH-LOG  ] {asn 00.000029cf link  2  11   0  0  2 ch 20} bc-1-5 rx LL-af06->LL-NULL, len 100, seq   8, edr  14
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 21, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af06  264,   261 =>   525 --  2  ba   (last tx 3 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 3 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 1560 seconds)
+[INFO: RPL       ] links: fd00::212:4b00:f29:a804  to fd00::212:4b00:1532:af06 (lifetime: 1320 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          4689948 LPM      1044960 DEEP LPM 242060392
+[INFO: App       ] Total time: 63 minutes, 1 seconds, 65536 ticks pr sec
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 21, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af06  264,   261 =>   525 --  2  ba   (last tx 4 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 3 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 1500 seconds)
+[INFO: RPL       ] links: fd00::212:4b00:f29:a804  to fd00::212:4b00:1532:af06 (lifetime: 1260 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          4739436 LPM      1061194 DEEP LPM 245927750
+[INFO: App       ] Total time: 64 minutes, 1 seconds, 65536 ticks pr sec
+Transmitted ack, length 23
+[INFO: TSCH      ] received from 0012.4b00.1532.af06 with seqno 10
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:1532:af06 to fd00::212:4b00:1531:f806 going up, sender closer 0 (264 < 128), rank error 0, loop detected 0
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:1532:af06 to fd00::212:4b00:1531:f806 going up, sender closer 0 (264 < 128), rank error 0, loop detected 0
+[INFO: App       ] Received packet 15, 80 bytes and 225 checksum from fd00::212:4b00:1532:af06
+[INFO: TSCH-LOG  ] {asn 00.00002b16 link  1  13   0  6  1 ch 20} uc-1-5 rx LL-af06->LL-f806, len 125, seq  10, edr  26
+Transmitted ack, length 23
+[INFO: TSCH      ] received from 0012.4b00.1532.af06 with seqno 11
+[INFO: TSCH-LOG  ] {asn 00.00002b17 link  1  13   1  7  1 ch 20} uc-1-5 rx LL-af06->LL-f806, len  27, seq  11, edr   2
+Transmitted ack, length 23
+[INFO: TSCH      ] received from 0012.4b00.1532.af06 with seqno 12
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:f29:a804 to fd00::212:4b00:1531:f806 going up, sender closer 0 (262 < 128), rank error 0, loop detected 0
+[INFO: RPL       ] ext hdr: packet from fd00::212:4b00:f29:a804 to fd00::212:4b00:1531:f806 going up, sender closer 0 (262 < 128), rank error 0, loop detected 0
+[INFO: App       ] Received packet 13, 80 bytes and 217 checksum from fd00::212:4b00:f29:a804
+[INFO: TSCH-LOG  ] {asn 00.00002b30 link  1  13   0  6  1 ch 20} uc-1-5 rx LL-af06->LL-f806, len 134, seq  12, edr   4
+[INFO: TSCH      ] TSCH: enqueue EB packet 41 22
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 198, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.00002b54 link  0  23   0  6  0 ch 20} bc-0-1 tx LL-f806->LL-NULL, len  41, seq 198, st 0  1
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 21, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af06  264,   261 =>   525 --  2  ba   (last tx 5 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 3 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 1440 seconds)
+[INFO: RPL       ] links: fd00::212:4b00:f29:a804  to fd00::212:4b00:1532:af06 (lifetime: 1200 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          4850958 LPM      1078484 DEEP LPM 249732228
+[INFO: App       ] Total time: 65 minutes, 1 seconds, 65536 ticks pr sec
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 21, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af06  264,   261 =>   525 --  2  ba   (last tx 6 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 3 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 1380 seconds)
+[INFO: RPL       ] links: fd00::212:4b00:f29:a804  to fd00::212:4b00:1532:af06 (lifetime: 1140 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          4901928 LPM      1094480 DEEP LPM 253598554
+[INFO: App       ] Total time: 66 minutes, 1 seconds, 65536 ticks pr sec
+[INFO: RPL       ] nbr: own state, addr fd00::212:4b00:1531:f806, DAG state: reachable, MOP 1 OCP 1 rank 128 max-rank 65535, dioint 21, nbr count 1 (Periodic)
+[INFO: RPL       ] nbr: fe80::212:4b00:1532:af06  264,   261 =>   525 --  2  ba   (last tx 7 min ago)
+[INFO: RPL       ] nbr: end of list
+[INFO: RPL       ] links: 3 routing links in total (Periodic)
+[INFO: RPL       ] links: fd00::212:4b00:1531:f806  (DODAG root) (lifetime: infinite)
+[INFO: RPL       ] links: fd00::212:4b00:1532:af06  to fd00::212:4b00:1531:f806 (lifetime: 1320 seconds)
+[INFO: RPL       ] links: fd00::212:4b00:f29:a804  to fd00::212:4b00:1532:af06 (lifetime: 1080 seconds)
+[INFO: RPL       ] links: end of list
+[INFO: App       ] 
+Energest:
+[INFO: App       ]  CPU          4955818 LPM      1111012 DEEP LPM 257461548
+[INFO: App       ] Total time: 67 minutes, 1 seconds, 65536 ticks pr sec

@@ -1,0 +1,453 @@
+[16:26:19.602811 0.000001] Receiving
+[16:26:24.706485 5.103679] [INFO: Main      ] Starting Contiki-NG-release/v4.3-131-geb4f2f9-dirty
+[16:26:24.713562 0.007077] [INFO: Main      ] - Routing: RPL Lite
+[16:26:24.717479 0.003918] [INFO: Main      ] - Net: sicslowpan
+[16:26:24.721093 0.003612] [INFO: Main      ] - MAC: CSMA
+[16:26:24.724651 0.003558] [INFO: Main      ] - 802.15.4 PANID: 0x81a5
+[16:26:24.729003 0.004353] [INFO: Main      ] - 802.15.4 Default channel: 0
+[16:26:24.734543 0.005540] [INFO: Main      ] Node ID: 44806
+[16:26:24.738161 0.003617] [INFO: Main      ] Link-layer address: 0012.4b00.1532.af06
+[16:26:24.743740 0.005580] [INFO: RPL       ] initializing
+[16:26:24.746803 0.003064] [INFO: Main      ] Tentative link-local IPv6 address: fe80::212:4b00:1532:af06
+[16:26:24.754493 0.007690] [INFO: CC26xx/CC13xx] TI CC1350 LaunchPad
+[16:26:24.758868 0.004374] [INFO: CC26xx/CC13xx]  RF: Channel 0
+[16:26:26.540241 1.781373] Receiving
+[16:26:26.659282 0.119042] buf: af
+[16:26:28.055761 1.396474] Receiving
+[16:26:28.172095 0.116339] buf: b0
+[16:26:28.173396 0.001300] Received 1 bytes, expected time on air: 149506 us
+[16:26:28.181065 0.007665] Interval between transmission: 750000
+[16:26:28.188529 0.007468] actual difference: 762543
+[16:26:28.191006 0.002476] rxdone-modemregister: 33997
+[16:26:29.568269 1.377264] Receiving
+[16:26:29.684686 0.116416] buf: b0
+[16:26:29.685692 0.001010] Received 1 bytes, expected time on air: 149506 us
+[16:26:29.690339 0.004642] Interval between transmission: 750000
+[16:26:29.694123 0.003787] actual difference: 762543
+[16:26:29.696684 0.002561] rxdone-modemregister: 34027
+[16:26:31.079740 1.383051] Receiving
+[16:26:31.196289 0.116547] buf: b0
+[16:26:31.198664 0.002379] Received 1 bytes, expected time on air: 149506 us
+[16:26:31.209788 0.011124] Interval between transmission: 750000
+[16:26:31.214269 0.004482] actual difference: 762543
+[16:26:31.217023 0.002755] rxdone-modemregister: 34027
+[16:26:32.592166 1.375143] Receiving
+[16:26:32.708739 0.116573] buf: b0
+[16:26:32.709956 0.001216] Received 1 bytes, expected time on air: 149506 us
+[16:26:32.714917 0.004962] Interval between transmission: 750000
+[16:26:32.719013 0.004095] actual difference: 762543
+[16:26:32.721558 0.002548] rxdone-modemregister: 34027
+[16:26:34.104784 1.383224] Receiving
+[16:26:34.221425 0.116629] buf: b0
+[16:26:34.223300 0.001887] Received 1 bytes, expected time on air: 149506 us
+[16:26:34.231542 0.008237] Interval between transmission: 750000
+[16:26:34.235165 0.003628] actual difference: 762482
+[16:26:34.238060 0.002893] rxdone-modemregister: 34088
+[16:26:35.608680 1.370622] Receiving
+[16:26:35.734134 0.125451] buf: b0
+[16:26:35.736072 0.001941] Received 1 bytes, expected time on air: 149506 us
+[16:26:35.745515 0.009443] Interval between transmission: 750000
+[16:26:35.749174 0.003660] actual difference: 762482
+[16:26:35.751533 0.002360] rxdone-modemregister: 25909
+[16:26:37.121301 1.369765] Receiving
+[16:26:37.245388 0.124076] buf: b0
+[16:26:37.247391 0.002014] Received 1 bytes, expected time on air: 149506 us
+[16:26:37.256984 0.009592] Interval between transmission: 750000
+[16:26:37.260697 0.003716] actual difference: 762512
+[16:26:37.263152 0.002454] rxdone-modemregister: 25909
+[16:26:38.641581 1.378425] Receiving
+[16:26:38.757877 0.116300] buf: b0
+[16:26:38.759270 0.001394] Received 1 bytes, expected time on air: 149506 us
+[16:26:38.764085 0.004815] Interval between transmission: 750000
+[16:26:38.767675 0.003589] actual difference: 762543
+[16:26:38.770254 0.002581] rxdone-modemregister: 34027
+[16:26:40.154103 1.383843] Receiving
+[16:26:40.270730 0.116625] buf: b0
+[16:26:40.272832 0.002106] Received 1 bytes, expected time on air: 149506 us
+[16:26:40.282246 0.009395] Interval between transmission: 750000
+[16:26:40.286325 0.004100] actual difference: 762543
+[16:26:40.289004 0.002680] rxdone-modemregister: 34027
+[16:26:41.666581 1.377576] Receiving
+[16:26:41.783221 0.116636] buf: b0
+[16:26:41.785204 0.001987] Received 1 bytes, expected time on air: 149506 us
+[16:26:41.794643 0.009440] Interval between transmission: 750000
+[16:26:41.798306 0.003662] actual difference: 762512
+[16:26:41.800755 0.002450] rxdone-modemregister: 34058
+[16:26:43.178083 1.377318] Receiving
+[16:26:43.294451 0.116377] buf: b0
+[16:26:43.295727 0.001277] Received 1 bytes, expected time on air: 149506 us
+[16:26:43.300820 0.005092] Interval between transmission: 750000
+[16:26:43.304464 0.003641] actual difference: 762543
+[16:26:43.307050 0.002590] rxdone-modemregister: 34027
+[16:26:44.690681 1.383627] Receiving
+[16:26:44.807089 0.116411] buf: b0
+[16:26:44.808360 0.001269] Received 1 bytes, expected time on air: 149506 us
+[16:26:44.813444 0.005087] Interval between transmission: 750000
+[16:26:44.817380 0.003933] actual difference: 762512
+[16:26:44.820270 0.002892] rxdone-modemregister: 34058
+[16:26:46.194546 1.374264] Receiving
+[16:26:46.319732 0.125197] buf: b0
+[16:26:46.320925 0.001194] Received 1 bytes, expected time on air: 149506 us
+[16:26:46.326084 0.005160] Interval between transmission: 750000
+[16:26:46.329809 0.003723] actual difference: 762512
+[16:26:46.332376 0.002569] rxdone-modemregister: 25848
+[16:26:47.715798 1.383402] Receiving
+[16:26:47.832290 0.116495] buf: b0
+[16:26:47.833298 0.001027] Received 1 bytes, expected time on air: 149506 us
+[16:26:47.837923 0.004621] Interval between transmission: 750000
+[16:26:47.841541 0.003620] actual difference: 762482
+[16:26:47.844000 0.002459] rxdone-modemregister: 34088
+[16:26:49.227148 1.383147] Receiving
+[16:26:49.343812 0.116661] buf: b0
+[16:26:49.345870 0.002060] Received 1 bytes, expected time on air: 149506 us
+[16:26:49.355141 0.009271] Interval between transmission: 750000
+[16:26:49.358767 0.003628] actual difference: 762482
+[16:26:49.361218 0.002452] rxdone-modemregister: 34058
+[16:26:50.739943 1.378718] Receiving
+[16:26:50.856288 0.116350] buf: b0
+[16:26:50.867372 0.011084] Received 1 bytes, expected time on air: 149506 us
+[16:26:50.872342 0.004970] Interval between transmission: 750000
+[16:26:50.876180 0.003838] actual difference: 762543
+[16:26:50.878702 0.002523] rxdone-modemregister: 33997
+[16:26:52.252549 1.373842] Receiving
+[16:26:52.368906 0.116361] buf: b0
+[16:26:52.370246 0.001338] Received 1 bytes, expected time on air: 149506 us
+[16:26:52.375129 0.004885] Interval between transmission: 750000
+[16:26:52.378819 0.003690] actual difference: 762482
+[16:26:52.381553 0.002734] rxdone-modemregister: 34088
+[16:26:53.765220 1.383662] Receiving
+[16:26:53.881580 0.116365] buf: b0
+[16:26:53.883058 0.001478] Received 1 bytes, expected time on air: 149506 us
+[16:26:53.888340 0.005282] Interval between transmission: 750000
+[16:26:53.892049 0.003710] actual difference: 762543
+[16:26:53.894624 0.002574] rxdone-modemregister: 33997
+[16:26:55.276516 1.381889] Receiving
+[16:26:55.392922 0.116409] buf: b0
+[16:26:55.394279 0.001356] Received 1 bytes, expected time on air: 149506 us
+[16:26:55.399162 0.004885] Interval between transmission: 750000
+[16:26:55.402865 0.003703] actual difference: 762482
+[16:26:55.405493 0.002629] rxdone-modemregister: 34088
+[16:26:56.789197 1.383698] Receiving
+[16:26:56.905671 0.116475] buf: b0
+[16:26:56.908105 0.002435] Received 1 bytes, expected time on air: 149506 us
+[16:26:56.915476 0.007374] Interval between transmission: 750000
+[16:26:56.919256 0.003781] actual difference: 762512
+[16:26:56.921811 0.002554] rxdone-modemregister: 34088
+[16:26:58.301771 1.379959] Receiving
+[16:26:58.418487 0.116712] buf: b0
+[16:26:58.420628 0.002144] Received 1 bytes, expected time on air: 149506 us
+[16:26:58.430256 0.009610] Interval between transmission: 750000
+[16:26:58.433921 0.003676] actual difference: 762512
+[16:26:58.436530 0.002619] rxdone-modemregister: 34088
+[16:26:59.813262 1.376730] Receiving
+[16:26:59.929942 0.116676] buf: b0
+[16:26:59.932014 0.002073] Received 1 bytes, expected time on air: 149506 us
+[16:26:59.942216 0.010204] Interval between transmission: 750000
+[16:26:59.947488 0.005274] actual difference: 762512
+[16:26:59.950141 0.002654] rxdone-modemregister: 34058
+[16:27:01.325873 1.375730] Receiving
+[16:27:01.442388 0.116515] buf: b0
+[16:27:01.443682 0.001294] Received 1 bytes, expected time on air: 149506 us
+[16:27:01.448368 0.004688] Interval between transmission: 750000
+[16:27:01.451800 0.003431] actual difference: 762482
+[16:27:01.454183 0.002381] rxdone-modemregister: 34088
+[16:27:02.829896 1.375710] Receiving
+[16:27:02.955325 0.125428] buf: b0
+[16:27:02.957850 0.002526] Received 1 bytes, expected time on air: 149506 us
+[16:27:02.964796 0.006950] Interval between transmission: 750000
+[16:27:02.968662 0.003866] actual difference: 762573
+[16:27:02.971333 0.002671] rxdone-modemregister: 25848
+[16:27:04.351443 1.380107] Receiving
+[16:27:04.467840 0.116401] buf: b0
+[16:27:04.468848 0.001010] Received 1 bytes, expected time on air: 149506 us
+[16:27:04.473559 0.004709] Interval between transmission: 750000
+[16:27:04.477147 0.003589] actual difference: 762543
+[16:27:04.479685 0.002535] rxdone-modemregister: 34027
+[16:27:05.855331 1.375643] Receiving
+[16:27:05.979071 0.123744] buf: b0
+[16:27:05.980432 0.001361] Received 1 bytes, expected time on air: 149506 us
+[16:27:05.985223 0.004792] Interval between transmission: 750000
+[16:27:05.988936 0.003713] actual difference: 762512
+[16:27:05.991529 0.002591] rxdone-modemregister: 25909
+[16:27:07.375216 1.383672] Receiving
+[16:27:07.491827 0.116623] buf: b0
+[16:27:07.493790 0.001967] Received 1 bytes, expected time on air: 149506 us
+[16:27:07.499255 0.005465] Interval between transmission: 750000
+[16:27:07.502690 0.003436] actual difference: 762482
+[16:27:07.505125 0.002435] rxdone-modemregister: 34058
+[16:27:08.888042 1.382912] Receiving
+[16:27:09.004339 0.116301] buf: b0
+[16:27:09.005476 0.001137] Received 1 bytes, expected time on air: 149506 us
+[16:27:09.010485 0.005010] Interval between transmission: 750000
+[16:27:09.014483 0.003998] actual difference: 762543
+[16:27:09.017452 0.002969] rxdone-modemregister: 33997
+[16:27:10.399283 1.381830] Receiving
+[16:27:10.515839 0.116557] buf: b0
+[16:27:10.517555 0.001714] Received 1 bytes, expected time on air: 149506 us
+[16:27:10.527287 0.009733] Interval between transmission: 750000
+[16:27:10.531021 0.003736] actual difference: 762482
+[16:27:10.533526 0.002504] rxdone-modemregister: 34088
+[16:27:11.904542 1.371011] Receiving
+[16:27:12.028522 0.123981] buf: b0
+[16:27:12.030421 0.001903] Received 1 bytes, expected time on air: 149506 us
+[16:27:12.040237 0.009812] Interval between transmission: 750000
+[16:27:12.044964 0.004731] actual difference: 762573
+[16:27:12.047430 0.002467] rxdone-modemregister: 25848
+[16:27:13.415903 1.368467] Receiving
+[16:27:13.541042 0.125143] buf: b0
+[16:27:13.542923 0.001880] Received 1 bytes, expected time on air: 149506 us
+[16:27:13.552793 0.009871] Interval between transmission: 750000
+[16:27:13.556528 0.003736] actual difference: 762512
+[16:27:13.558995 0.002468] rxdone-modemregister: 25909
+[16:27:14.937283 1.378286] Receiving
+[16:27:15.053935 0.116649] buf: b0
+[16:27:15.055921 0.001988] Received 1 bytes, expected time on air: 149506 us
+[16:27:15.064616 0.008697] Interval between transmission: 750000
+[16:27:15.068485 0.003870] actual difference: 762482
+[16:27:15.071011 0.002526] rxdone-modemregister: 34088
+[16:27:16.448603 1.377590] Receiving
+[16:27:16.565102 0.116499] buf: b0
+[16:27:16.566550 0.001448] Received 1 bytes, expected time on air: 149506 us
+[16:27:16.571567 0.005018] Interval between transmission: 750000
+[16:27:16.575413 0.003846] actual difference: 762543
+[16:27:16.578206 0.002793] rxdone-modemregister: 34027
+[16:27:17.961427 1.383219] Receiving
+[16:27:18.077989 0.116560] buf: b0
+[16:27:18.080024 0.002038] Received 1 bytes, expected time on air: 149506 us
+[16:27:18.087260 0.007237] Interval between transmission: 750000
+[16:27:18.091052 0.003792] actual difference: 762482
+[16:27:18.093613 0.002560] rxdone-modemregister: 34088
+[16:27:19.474221 1.380604] Receiving
+[16:27:19.590572 0.116355] buf: b0
+[16:27:19.591700 0.001129] Received 1 bytes, expected time on air: 149506 us
+[16:27:19.596739 0.005039] Interval between transmission: 750000
+[16:27:19.600574 0.003834] actual difference: 762482
+[16:27:19.603462 0.002888] rxdone-modemregister: 34088
+[16:27:20.985446 1.381983] Receiving
+[16:27:21.102049 0.116601] buf: b0
+[16:27:21.104024 0.001978] Received 1 bytes, expected time on air: 149506 us
+[16:27:21.111959 0.007936] Interval between transmission: 750000
+[16:27:21.115489 0.003531] actual difference: 762543
+[16:27:21.117997 0.002506] rxdone-modemregister: 34027
+[16:27:22.498198 1.380200] Receiving
+[16:27:22.614649 0.116453] buf: b0
+[16:27:22.616241 0.001591] Received 1 bytes, expected time on air: 149506 us
+[16:27:22.621216 0.004975] Interval between transmission: 750000
+[16:27:22.624982 0.003765] actual difference: 762482
+[16:27:22.627572 0.002592] rxdone-modemregister: 34088
+[16:27:24.010797 1.383206] Receiving
+[16:27:24.127316 0.116537] buf: b0
+[16:27:24.129144 0.001827] Received 1 bytes, expected time on air: 149506 us
+[16:27:24.138626 0.009480] Interval between transmission: 750000
+[16:27:24.142410 0.003783] actual difference: 762543
+[16:27:24.144878 0.002472] rxdone-modemregister: 34027
+[16:27:25.522443 1.377562] Receiving
+[16:27:25.638812 0.116372] buf: b0
+[16:27:25.640183 0.001371] Received 1 bytes, expected time on air: 149506 us
+[16:27:25.645530 0.005343] Interval between transmission: 750000
+[16:27:25.649538 0.004012] actual difference: 762543
+[16:27:25.652398 0.002860] rxdone-modemregister: 34027
+[16:27:27.034915 1.382517] Receiving
+[16:27:27.151373 0.116458] buf: b0
+[16:27:27.152630 0.001254] Received 1 bytes, expected time on air: 149506 us
+[16:27:27.157431 0.004805] Interval between transmission: 750000
+[16:27:27.161036 0.003605] actual difference: 762543
+[16:27:27.163748 0.002710] rxdone-modemregister: 34027
+[16:27:28.547696 1.383945] Receiving
+[16:27:28.664119 0.116422] buf: b0
+[16:27:28.666100 0.001984] Received 1 bytes, expected time on air: 149506 us
+[16:27:28.674024 0.007927] Interval between transmission: 750000
+[16:27:28.678267 0.004242] actual difference: 762543
+[16:27:28.680840 0.002573] rxdone-modemregister: 33997
+[16:27:30.060236 1.379385] Receiving
+[16:27:30.176658 0.116432] buf: b0
+[16:27:30.177844 0.001188] Received 1 bytes, expected time on air: 149506 us
+[16:27:30.183554 0.005710] Interval between transmission: 750000
+[16:27:30.187568 0.004013] actual difference: 762543
+[16:27:30.190298 0.002731] rxdone-modemregister: 34027
+[16:27:31.572836 1.382533] Receiving
+[16:27:31.689303 0.116472] buf: b0
+[16:27:31.690793 0.001489] Received 1 bytes, expected time on air: 149506 us
+[16:27:31.695880 0.005087] Interval between transmission: 750000
+[16:27:31.700294 0.004414] actual difference: 762512
+[16:27:31.703137 0.002842] rxdone-modemregister: 34088
+[16:27:33.084235 1.381099] Receiving
+[16:27:33.200832 0.116593] buf: b0
+[16:27:33.202742 0.001914] Received 1 bytes, expected time on air: 149506 us
+[16:27:33.209819 0.007077] Interval between transmission: 750000
+[16:27:33.213396 0.003578] actual difference: 762543
+[16:27:33.215889 0.002493] rxdone-modemregister: 33997
+[16:27:34.597003 1.381110] Receiving
+[16:27:34.713410 0.116406] buf: b0
+[16:27:34.715664 0.002178] Received 1 bytes, expected time on air: 149506 us
+[16:27:34.725137 0.009551] Interval between transmission: 750000
+[16:27:34.729155 0.004020] actual difference: 762543
+[16:27:34.731980 0.002823] rxdone-modemregister: 34058
+[16:27:36.109661 1.377678] Receiving
+[16:27:36.226155 0.116496] buf: b0
+[16:27:36.228129 0.001977] Received 1 bytes, expected time on air: 149506 us
+[16:27:36.236395 0.008267] Interval between transmission: 750000
+[16:27:36.240043 0.003648] actual difference: 762543
+[16:27:36.242441 0.002398] rxdone-modemregister: 33997
+[16:27:37.621010 1.378564] Receiving
+[16:27:37.737584 0.116575] buf: b0
+[16:27:37.739575 0.001992] Received 1 bytes, expected time on air: 149506 us
+[16:27:37.751568 0.011994] Interval between transmission: 750000
+[16:27:37.756227 0.004659] actual difference: 762482
+[16:27:37.759431 0.003203] rxdone-modemregister: 34088
+[16:27:39.133632 1.374203] Receiving
+[16:27:39.250166 0.116534] buf: b0
+[16:27:39.251532 0.001364] Received 1 bytes, expected time on air: 149506 us
+[16:27:39.256590 0.005060] Interval between transmission: 750000
+[16:27:39.260293 0.003703] actual difference: 762573
+[16:27:39.262923 0.002631] rxdone-modemregister: 33997
+[16:27:40.646291 1.383367] Receiving
+[16:27:40.762730 0.116440] buf: b0
+[16:27:40.763811 0.001083] Received 1 bytes, expected time on air: 149506 us
+[16:27:40.768808 0.004995] Interval between transmission: 750000
+[16:27:40.772715 0.003907] actual difference: 762482
+[16:27:40.775078 0.002364] rxdone-modemregister: 34088
+[16:27:42.158844 1.383764] Receiving
+[16:27:42.275347 0.116503] buf: b0
+[16:27:42.276683 0.001336] Received 1 bytes, expected time on air: 149506 us
+[16:27:42.281768 0.005086] Interval between transmission: 750000
+[16:27:42.285655 0.003887] actual difference: 762482
+[16:27:42.288384 0.002699] rxdone-modemregister: 34088
+[16:27:43.662842 1.374483] Receiving
+[16:27:43.786820 0.123978] buf: b0
+[16:27:43.788823 0.002006] Received 1 bytes, expected time on air: 149506 us
+[16:27:43.798768 0.009935] Interval between transmission: 750000
+[16:27:43.804703 0.005947] actual difference: 762512
+[16:27:43.807180 0.002477] rxdone-modemregister: 25879
+[16:27:45.182946 1.375765] Receiving
+[16:27:45.299428 0.116482] buf: b0
+[16:27:45.300775 0.001348] Received 1 bytes, expected time on air: 149506 us
+[16:27:45.305633 0.004859] Interval between transmission: 750000
+[16:27:45.309171 0.003538] actual difference: 762543
+[16:27:45.311839 0.002667] rxdone-modemregister: 34058
+[16:27:46.695551 1.383711] Receiving
+[16:27:46.812040 0.116488] buf: b0
+[16:27:46.813282 0.001244] Received 1 bytes, expected time on air: 149506 us
+[16:27:46.818367 0.005085] Interval between transmission: 750000
+[16:27:46.822384 0.004017] actual difference: 762482
+[16:27:46.824979 0.002594] rxdone-modemregister: 34058
+[16:27:48.199583 1.374604] Receiving
+[16:27:48.323570 0.123987] buf: b0
+[16:27:48.325072 0.001502] Received 1 bytes, expected time on air: 149506 us
+[16:27:48.329823 0.004752] Interval between transmission: 750000
+[16:27:48.333832 0.004008] actual difference: 762512
+[16:27:48.336516 0.002685] rxdone-modemregister: 25909
+[16:27:49.719724 1.383207] Receiving
+[16:27:49.836260 0.116533] buf: b0
+[16:27:49.838521 0.002262] Received 1 bytes, expected time on air: 149506 us
+[16:27:49.849269 0.010747] Interval between transmission: 750000
+[16:27:49.853975 0.004709] actual difference: 762512
+[16:27:49.858215 0.004241] rxdone-modemregister: 34058
+[16:27:51.232412 1.374176] Receiving
+[16:27:51.348875 0.116483] buf: b0
+[16:27:51.349877 0.001006] Received 1 bytes, expected time on air: 149506 us
+[16:27:51.354641 0.004760] Interval between transmission: 750000
+[16:27:51.358411 0.003772] actual difference: 762512
+[16:27:51.360980 0.002569] rxdone-modemregister: 34058
+[16:27:52.743796 1.382814] Receiving
+[16:27:52.860220 0.116424] buf: b0
+[16:27:52.861698 0.001478] Received 1 bytes, expected time on air: 149506 us
+[16:27:52.866669 0.004972] Interval between transmission: 750000
+[16:27:52.870256 0.003584] actual difference: 762512
+[16:27:52.872865 0.002612] rxdone-modemregister: 34058
+[16:27:54.256464 1.383596] Receiving
+[16:27:54.372862 0.116400] buf: b0
+[16:27:54.374202 0.001340] Received 1 bytes, expected time on air: 149506 us
+[16:27:54.379015 0.004814] Interval between transmission: 750000
+[16:27:54.382618 0.003603] actual difference: 762482
+[16:27:54.385174 0.002557] rxdone-modemregister: 34088
+[16:27:55.769120 1.383941] Receiving
+[16:27:55.885840 0.116719] buf: b0
+[16:27:55.888065 0.002227] Received 1 bytes, expected time on air: 149506 us
+[16:27:55.897267 0.009203] Interval between transmission: 750000
+[16:27:55.901905 0.004640] actual difference: 762543
+[16:27:55.904740 0.002833] rxdone-modemregister: 33997
+[16:27:57.273295 1.368550] Receiving
+[16:27:57.398241 0.124952] buf: b0
+[16:27:57.399266 0.001028] Received 1 bytes, expected time on air: 149506 us
+[16:27:57.403973 0.004704] Interval between transmission: 750000
+[16:27:57.407719 0.003748] actual difference: 762573
+[16:27:57.410321 0.002601] rxdone-modemregister: 25787
+[16:27:58.785777 1.375451] Receiving
+[16:27:58.909615 0.123842] buf: b0
+[16:27:58.911453 0.001836] Received 1 bytes, expected time on air: 149506 us
+[16:27:58.921283 0.009833] Interval between transmission: 750000
+[16:27:58.925002 0.003719] actual difference: 762482
+[16:27:58.927506 0.002503] rxdone-modemregister: 25909
+[16:28:00.306109 1.378597] Receiving
+[16:28:00.422325 0.116220] buf: b0
+[16:28:00.423664 0.001337] Received 1 bytes, expected time on air: 149506 us
+[16:28:00.428797 0.005135] Interval between transmission: 750000
+[16:28:00.432995 0.004199] actual difference: 762543
+[16:28:00.435837 0.002844] rxdone-modemregister: 34027
+[16:28:01.818459 1.382621] Receiving
+[16:28:01.934956 0.116497] buf: b0
+[16:28:01.936303 0.001339] Received 1 bytes, expected time on air: 149506 us
+[16:28:01.941963 0.005668] Interval between transmission: 750000
+[16:28:01.945894 0.003932] actual difference: 762512
+[16:28:01.948546 0.002651] rxdone-modemregister: 34058
+[16:28:03.331031 1.382484] Receiving
+[16:28:03.447519 0.116487] buf: b0
+[16:28:03.448632 0.001118] Received 1 bytes, expected time on air: 149506 us
+[16:28:03.453501 0.004867] Interval between transmission: 750000
+[16:28:03.457229 0.003728] actual difference: 762543
+[16:28:03.459802 0.002574] rxdone-modemregister: 34027
+[16:28:04.842467 1.382662] Receiving
+[16:28:04.958895 0.116430] buf: b0
+[16:28:04.961193 0.002295] Received 1 bytes, expected time on air: 149506 us
+[16:28:04.966626 0.005435] Interval between transmission: 750000
+[16:28:04.970809 0.004132] actual difference: 762512
+[16:28:04.973455 0.002697] rxdone-modemregister: 34058
+[16:28:06.355231 1.381772] Receiving
+[16:28:06.471707 0.116476] buf: b0
+[16:28:06.473889 0.002183] Received 1 bytes, expected time on air: 149506 us
+[16:28:06.483657 0.009768] Interval between transmission: 750000
+[16:28:06.487347 0.003694] actual difference: 762482
+[16:28:06.489894 0.002547] rxdone-modemregister: 34088
+[16:28:07.867726 1.377830] Receiving
+[16:28:07.984380 0.116652] buf: b0
+[16:28:07.986320 0.001943] Received 1 bytes, expected time on air: 149506 us
+[16:28:07.996002 0.009682] Interval between transmission: 750000
+[16:28:07.999688 0.003688] actual difference: 762482
+[16:28:08.002208 0.002519] rxdone-modemregister: 34088
+[16:28:09.379092 1.376882] Receiving
+[16:28:09.495729 0.116634] buf: b0
+[16:28:09.498454 0.002727] Received 1 bytes, expected time on air: 149506 us
+[16:28:09.506720 0.008269] Interval between transmission: 750000
+[16:28:09.510627 0.003907] actual difference: 762543
+[16:28:09.513205 0.002578] rxdone-modemregister: 34027
+[16:28:10.891738 1.378532] Receiving
+[16:28:11.008189 0.116451] buf: b0
+[16:28:11.009485 0.001294] Received 1 bytes, expected time on air: 149506 us
+[16:28:11.015856 0.006371] Interval between transmission: 750000
+[16:28:11.023480 0.007622] actual difference: 762512
+[16:28:11.026507 0.003033] rxdone-modemregister: 34088
+[16:28:12.404517 1.378004] Receiving
+[16:28:12.520830 0.116317] buf: b0
+[16:28:12.522102 0.001271] Received 1 bytes, expected time on air: 149506 us
+[16:28:12.527872 0.005771] Interval between transmission: 750000
+[16:28:12.532271 0.004399] actual difference: 762512
+[16:28:12.535390 0.003119] rxdone-modemregister: 34058
+[16:28:13.908188 1.372798] Receiving
+[16:28:14.033628 0.125436] buf: b0
+[16:28:14.035706 0.002082] Received 1 bytes, expected time on air: 149506 us
+[16:28:14.045254 0.009525] Interval between transmission: 750000
+[16:28:14.048903 0.003673] actual difference: 762482
+[16:28:14.051439 0.002537] rxdone-modemregister: 25940
+[16:28:15.428288 1.376847] Receiving
+[16:28:15.544893 0.116602] buf: b0
+[16:28:15.546939 0.002049] Received 1 bytes, expected time on air: 149506 us
+[16:28:15.556206 0.009268] Interval between transmission: 750000
+[16:28:15.559916 0.003710] actual difference: 762482
+[16:28:15.562519 0.002603] rxdone-modemregister: 34088
+[16:28:16.933379 1.370859] Receiving
+[16:28:17.057502 0.124120] buf: b0
+[16:28:17.059420 0.001921] Received 1 bytes, expected time on air: 149506 us
+[16:28:17.069367 0.009944] Interval between transmission: 750000
+[16:28:17.075275 0.005912] actual difference: 762543
+[16:28:17.077845 0.002571] rxdone-modemregister: 25848

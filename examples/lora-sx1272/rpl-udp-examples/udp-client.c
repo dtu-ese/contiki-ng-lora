@@ -14,8 +14,8 @@
 #define UDP_CLIENT_PORT	8765
 #define UDP_SERVER_PORT	5678
 
-#define BYTES_PER_MINUTE  50
-#define PACKAGE_SIZE      110
+#define BYTES_PER_MINUTE  20
+#define PACKAGE_SIZE      80
 //#define SEND_INTERVAL		  (60 * CLOCK_SECOND)
 #define PRINT_INTERVAL		  (60 * CLOCK_SECOND)
 
@@ -62,6 +62,7 @@ PROCESS_THREAD(udp_client_process, ev, data)
   etimer_set(&periodic_timer, (CLOCK_SECOND*60*PACKAGE_SIZE/BYTES_PER_MINUTE) + CLOCK_SECOND/20*(1-(random_rand() % 3)));
   etimer_set(&print_timer, PRINT_INTERVAL);
   static uint64_t energest_startt = 0;
+  static uint8_t packet_number = 0;
   while(1) {
     PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&periodic_timer));
     //printf("RSSIREG: %d\n", SX1272Read(REG_LR_RSSIVALUE));
@@ -74,12 +75,19 @@ PROCESS_THREAD(udp_client_process, ev, data)
       LOG_INFO_6ADDR(&dest_ipaddr);
       LOG_INFO_("\n");
       uint8_t checksum = 0;
-      for (int i = 0; i < PACKAGE_SIZE; i++){
+      buffer[0] = packet_number;
+      for (int i = 1; i < PACKAGE_SIZE; i++){
         buffer[i] = random_rand() % 256;
+      }
+      for (int i = 0; i < PACKAGE_SIZE; i++){
         checksum += buffer[i];
       }
+      
       simple_udp_sendto(&udp_conn, buffer, PACKAGE_SIZE, &dest_ipaddr);
-      LOG_INFO("Sent checksum %d and length%d\n", checksum, PACKAGE_SIZE);
+      packet_number++;
+      LOG_INFO("Sent checksum %d and length%d to ip", checksum, PACKAGE_SIZE);
+            LOG_INFO_6ADDR(&dest_ipaddr);
+      LOG_INFO("\n");
     } else {
       LOG_INFO("Reachable: %d, getIP: %d, actual ip: ", NETSTACK_ROUTING.node_is_reachable(), NETSTACK_ROUTING.get_root_ipaddr(&dest_ipaddr));
             LOG_INFO_6ADDR(&dest_ipaddr);

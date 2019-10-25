@@ -60,8 +60,9 @@ udp_rx_callback(struct simple_udp_connection *c,
       for (int i = 0; i < datalen; i++){
         checksum += data[i];
       }
+      uint8_t packet_number = data[0];
 
-  LOG_INFO("Received %d bytes and %d checksum from ", datalen, checksum);
+  LOG_INFO("Received packet %d, %d bytes and %d checksum from ", packet_number, datalen, checksum);
   LOG_INFO_6ADDR(sender_addr);
   LOG_INFO_("\n");
 

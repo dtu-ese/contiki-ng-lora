@@ -8,6 +8,9 @@
 
 License: Revised BSD License, see LICENSE.TXT file include in the project
 */
+#include "contiki.h"
+#include "net/mac/tsch/tsch.h"
+#include "dev/radio.h"
 
 #ifndef SX1272_H_
 #define SX1272_H_
@@ -107,9 +110,7 @@ License: Revised BSD License, see LICENSE.TXT file include in the project
     }
 
 /*We load contiki.h now to ensure that the type radio_driver is known...*/
-#include "contiki.h"
-#include "net/mac/tsch/tsch.h"
-#include "dev/radio.h"
+
 /*Should everything below this line be defined somewhere else?*/
 uint32_t Lora_Channels[8];
 uint8_t current_channel;

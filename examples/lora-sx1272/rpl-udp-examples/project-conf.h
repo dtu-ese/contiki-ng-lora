@@ -37,7 +37,7 @@
 /*Configuration of LoRa radio driver*/
 
 #define USE_SX1272_AS_STANDARD_RADIO    1
-#define SX1272_CONF_TX_OUTPUT_POWER     14
+#define SX1272_CONF_TX_OUTPUT_POWER     2
 #define SX1272_CONF_SPREADING_FACTOR    7
 #define SX1272_CONF_CODINGRATE          1
 #define SX1272_CONF_PREAMBLE_LENGTH     6
@@ -51,7 +51,9 @@
 #define SX1272_CONF_SPI_MOSI EXT_FLASH_SPI_PIN_MOSI
 #define SX1272_CONF_SPI_CS EXT_FLASH_SPI_PIN_CS
 #define SX1272_CONF_SPI_BITRATE 1000000
-#define TSCH_CONF_WAIT_FOR_EB   RTIMER_SECOND/20 /*Sending an EB is 70ms*/
+#define TSCH_CONF_WAIT_FOR_EB   RTIMER_SECOND/10 /*Sending an EB is 70ms*/
+#define SX1272_CONF_RXDONE_DELAY_USEC 780
+#define RPL_CONF_DIS_INTERVAL           90*CLOCK_SECOND
 
 /*We need these macros to be imported earli in the build process*/
 #define TSCH_CONF_ASSOCIATION_POLL_FREQUENCY 32
@@ -59,19 +61,18 @@
 
 /* Set to enable TSCH security */
 #ifndef WITH_SECURITY
-#define WITH_SECURITY 0
+#define WITH_SECURITY 1
 #endif /* WITH_SECURITY */
 
-/* USB serial takes space, free more space elsewhere */
 #define SICSLOWPAN_CONF_FRAG 0
 #define UIP_CONF_BUFFER_SIZE 600
 
 
 /* Length of the various slotframes. Tune to balance network capacity,
  * contention, energy, latency. */
-#define ORCHESTRA_CONF_EBSF_PERIOD 11
+#define ORCHESTRA_CONF_EBSF_PERIOD 23
 
-#define ORCHESTRA_CONF_COMMON_SHARED_PERIOD 7
+#define ORCHESTRA_CONF_COMMON_SHARED_PERIOD 11
 
 #define ORCHESTRA_CONF_UNICAST_PERIOD 13
 
@@ -85,7 +86,7 @@
 /******************* Configure TSCH ********************/
 /*******************************************************/
 
-#define PACKETBUF_CONF_SIZE 256
+#define PACKETBUF_CONF_SIZE 392
 
 /* IEEE802.15.4 PANID */
 #define IEEE802154_CONF_PANID 0x81a5
@@ -114,14 +115,15 @@
 #define LOG_CONF_LEVEL_TCPIP                       LOG_LEVEL_NONE
 #define LOG_CONF_LEVEL_IPV6                        LOG_LEVEL_NONE
 #define LOG_CONF_LEVEL_6LOWPAN                     LOG_LEVEL_NONE
-#define LOG_CONF_LEVEL_MAC                         LOG_LEVEL_DBG
+#define LOG_CONF_LEVEL_MAC                         LOG_LEVEL_INFO
 #define LOG_CONF_LEVEL_FRAMER                      LOG_LEVEL_NONE
 #define TSCH_LOG_CONF_PER_SLOT                     1
 
-#define RPL_CONF_DAO_RETRANSMISSION_TIMEOUT 10*CLOCK_SECOND
+#define RPL_CONF_DAO_RETRANSMISSION_TIMEOUT 90*CLOCK_SECOND
+#define RPL_CONF_DELAY_BEFORE_LEAVING       600*CLOCK_SECOND
 #define RPL_CONF_DAO_MAX_RETRANSMISSIONS 15
 #define RPL_CONF_DIO_INTERVAL_MIN 15
-#define RPL_CONF_DIO_INTERVAL_DOUBLINGS 2
+#define RPL_CONF_DIO_INTERVAL_DOUBLINGS 6
 #define NETSTACK_MAX_ROUTE_ENTRIES 5
 
 #define ENERGEST_CONF_ON 1
@@ -150,10 +152,10 @@
 #define TSCH_CONF_DESYNC_THRESHOLD (CLOCK_SECOND*360)
 
 /* Period between two consecutive EBs */
-#define TSCH_CONF_EB_PERIOD (CLOCK_SECOND*30)
+#define TSCH_CONF_EB_PERIOD (CLOCK_SECOND*200)
 
 /* Max Period between two consecutive EBs */
-#define TSCH_CONF_MAX_EB_PERIOD (40*CLOCK_SECOND)
+#define TSCH_CONF_MAX_EB_PERIOD (400*CLOCK_SECOND)
 #define TSCH_CONF_MIN_EB_PERIOD (20*CLOCK_SECOND)
 #define TSCH_CONF_RESYNC_WITH_SFD_TIMESTAMPS 1
 
@@ -212,7 +214,7 @@ define TSCH_RESYNC_WITH_SFD_TIMESTAMPS 0
 /******** Configuration: channel hopping *******/
 
 /* Default hopping sequence, used in case hopping sequence ID == 0 */
-#define TSCH_CONF_DEFAULT_HOPPING_SEQUENCE TSCH_HOPPING_SEQUENCE_4_4
+#define TSCH_CONF_DEFAULT_HOPPING_SEQUENCE TSCH_HOPPING_SEQUENCE_1_1
 
 /* Hopping sequence used for joining (scan channels) */
 /*

@@ -41,7 +41,6 @@
 #include <string.h>
 #include "contiki.h"
 #include "coap-engine.h"
-#include "net/netstack.h"
 
 #if PLATFORM_SUPPORTS_BUTTON_HAL
 #include "dev/button-hal.h"
@@ -90,9 +89,6 @@ PROCESS_THREAD(er_example_server, ev, data)
   PROCESS_BEGIN();
 
   PROCESS_PAUSE();
-  NETSTACK_RADIO.init();
-  NETSTACK_MAC.on();
-
   LOG_INFO("Starting Erbium Example Server\n");
 
   /*
