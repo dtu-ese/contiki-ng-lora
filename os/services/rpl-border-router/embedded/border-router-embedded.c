@@ -83,7 +83,7 @@ PROCESS_THREAD(border_router_process, ev, data)
     etimer_set(&et, CLOCK_SECOND);
     request_prefix();
     PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&et));
-    LOG_INFO("Waiting for prefix\n");
+    //LOG_INFO("Waiting for prefix\n");
   }
 
   NETSTACK_MAC.on();
