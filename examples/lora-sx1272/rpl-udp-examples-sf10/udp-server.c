@@ -32,8 +32,6 @@
 #include "net/netstack.h"
 #include "net/ipv6/simple-udp.h"
 
-#include "httpd-simple.h"
-
 #include "sys/log.h"
 #include "energest.h"
 #define LOG_MODULE "App"
@@ -62,8 +60,9 @@ udp_rx_callback(struct simple_udp_connection *c,
       for (int i = 0; i < datalen; i++){
         checksum += data[i];
       }
+      uint8_t packet_number = data[0];
 
-  LOG_INFO("Received %d bytes and %d checksum from ", datalen, checksum);
+  LOG_INFO("Received packet %d, %d bytes and %d checksum from ", packet_number, datalen, checksum);
   LOG_INFO_6ADDR(sender_addr);
   LOG_INFO_("\n");
 
@@ -78,10 +77,7 @@ PROCESS_THREAD(udp_server_process, ev, data)
 {
   PROCESS_BEGIN();
   energest_init();
-  PROCESS_NAME(webserver_nogui_process);
-  process_start(&webserver_nogui_process, NULL);
-
-  LOG_INFO("Contiki-NG Border Router started\n");
+  LOG_INFO("Server here\n");
   /* Initialize DAG root */
   NETSTACK_ROUTING.root_start();
   NETSTACK_MAC.on();

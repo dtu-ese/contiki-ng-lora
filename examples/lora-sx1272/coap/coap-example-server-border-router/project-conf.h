@@ -56,9 +56,12 @@
 #define SX1272_CONF_RXDONE_DELAY_USEC 780
 #define RPL_CONF_DIS_INTERVAL           90*CLOCK_SECOND
 
-/*We need these macros to be imported earli in the build process*/
-#define TSCH_CONF_ASSOCIATION_POLL_FREQUENCY 32
+/*We need these macros to be imported early in the build process*/
+#define TSCH_CONF_ASSOCIATION_POLL_FREQUENCY 32/*This is measured in clock ticks and needs to be LESS than the time on air for an EB. If it is higher, synchronization issues will happen.*/
 #include "dev/sx1272/sx1272-project-conf-macros.h"
+
+#define UIP_CONF_UDP 1
+#define UIP_CONF_TCP 0
 
 /* Set to enable TSCH security */
 #ifndef WITH_SECURITY
@@ -66,7 +69,7 @@
 #endif /* WITH_SECURITY */
 
 #define SICSLOWPAN_CONF_FRAG 0
-#define UIP_CONF_BUFFER_SIZE 600
+#define UIP_CONF_BUFFER_SIZE 240
 
 
 /* Length of the various slotframes. Tune to balance network capacity,
@@ -87,7 +90,7 @@
 /******************* Configure TSCH ********************/
 /*******************************************************/
 
-#define PACKETBUF_CONF_SIZE 340
+#define PACKETBUF_CONF_SIZE 240
 
 /* IEEE802.15.4 PANID */
 #define IEEE802154_CONF_PANID 0x81a5
@@ -118,27 +121,19 @@
 #define LOG_CONF_LEVEL_6LOWPAN                     LOG_LEVEL_NONE
 #define LOG_CONF_LEVEL_MAC                         LOG_LEVEL_INFO
 #define LOG_CONF_LEVEL_FRAMER                      LOG_LEVEL_NONE
+#define LOG_CONF_LEVEL_COAP                        LOG_LEVEL_NONE
 #define TSCH_LOG_CONF_PER_SLOT                     1
+
 
 #define RPL_CONF_DAO_RETRANSMISSION_TIMEOUT 90*CLOCK_SECOND
 #define RPL_CONF_DELAY_BEFORE_LEAVING       600*CLOCK_SECOND
 #define RPL_CONF_DAO_MAX_RETRANSMISSIONS 15
 #define RPL_CONF_DIO_INTERVAL_MIN 15
 #define RPL_CONF_DIO_INTERVAL_DOUBLINGS 6
-#define NETSTACK_MAX_ROUTE_ENTRIES 5
+#define NETSTACK_MAX_ROUTE_ENTRIES 6
 
 #define ENERGEST_CONF_ON 1
 #define TSCH_CONF_CHANNEL_SCAN_DURATION CLOCK_SECOND
-
-/********** Includes **********/
-//#define BUILD_WITH_ORCHESTRA                            1
-// #define ORCHESTRA_CONF_EBSF_PERIOD                     23
-
-// #define ORCHESTRA_CONF_COMMON_SHARED_PERIOD            13
-
-// #define ORCHESTRA_CONF_UNICAST_PERIOD                  17
-
-//#include "contiki.h"
 
 /******** Configuration: synchronization *******/
 
@@ -147,10 +142,10 @@
 
 /* With TSCH_ADAPTIVE_TIMESYNC enabled: keep-alive timeout used after reaching
  * accurate drift compensation. */
-#define TSCH_CONF_MAX_KEEPALIVE_TIMEOUT (CLOCK_SECOND*240)
+#define TSCH_CONF_MAX_KEEPALIVE_TIMEOUT (CLOCK_SECOND*450)
 
 /* Max time without synchronization before leaving the PAN */
-#define TSCH_CONF_DESYNC_THRESHOLD (CLOCK_SECOND*360)
+#define TSCH_CONF_DESYNC_THRESHOLD (CLOCK_SECOND*480)
 
 /* Period between two consecutive EBs */
 #define TSCH_CONF_EB_PERIOD (CLOCK_SECOND*200)

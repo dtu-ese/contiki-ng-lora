@@ -37,8 +37,8 @@
 /*Configuration of LoRa radio driver*/
 
 #define USE_SX1272_AS_STANDARD_RADIO    1
-#define SX1272_CONF_TX_OUTPUT_POWER     14
-#define SX1272_CONF_SPREADING_FACTOR    7
+#define SX1272_CONF_TX_OUTPUT_POWER     2
+#define SX1272_CONF_SPREADING_FACTOR    10
 #define SX1272_CONF_CODINGRATE          1
 #define SX1272_CONF_PREAMBLE_LENGTH     6
 #define SX1272_CONF_TX_SYMBOL_TIMEOUT   5
@@ -51,20 +51,8 @@
 #define SX1272_CONF_SPI_MOSI EXT_FLASH_SPI_PIN_MOSI
 #define SX1272_CONF_SPI_CS EXT_FLASH_SPI_PIN_CS
 #define SX1272_CONF_SPI_BITRATE 1000000
-#define TSCH_CONF_WAIT_FOR_EB   RTIMER_SECOND/20 /*Sending an EB is 70ms*/
-
-
-#ifndef WEBSERVER_CONF_CFS_CONNS
-#define WEBSERVER_CONF_CFS_CONNS 2
-#endif
-
-#ifndef BORDER_ROUTER_CONF_WEBSERVER
-#define BORDER_ROUTER_CONF_WEBSERVER 1
-#endif
-
-#if BORDER_ROUTER_CONF_WEBSERVER
-#define UIP_CONF_TCP 1
-#endif
+#define TSCH_CONF_WAIT_FOR_EB   RTIMER_SECOND/10 /*Sending an EB is 70ms*/
+#define SX1272_CONF_RXDONE_DELAY_USEC 25000
 
 /*We need these macros to be imported earli in the build process*/
 #define TSCH_CONF_ASSOCIATION_POLL_FREQUENCY 32
@@ -72,19 +60,18 @@
 
 /* Set to enable TSCH security */
 #ifndef WITH_SECURITY
-#define WITH_SECURITY 0
+#define WITH_SECURITY 1
 #endif /* WITH_SECURITY */
 
-/* USB serial takes space, free more space elsewhere */
 #define SICSLOWPAN_CONF_FRAG 0
-#define UIP_CONF_BUFFER_SIZE 256
+#define UIP_CONF_BUFFER_SIZE 600
 
 
 /* Length of the various slotframes. Tune to balance network capacity,
  * contention, energy, latency. */
-#define ORCHESTRA_CONF_EBSF_PERIOD 11
+#define ORCHESTRA_CONF_EBSF_PERIOD 23
 
-#define ORCHESTRA_CONF_COMMON_SHARED_PERIOD 7
+#define ORCHESTRA_CONF_COMMON_SHARED_PERIOD 11
 
 #define ORCHESTRA_CONF_UNICAST_PERIOD 13
 
@@ -98,7 +85,7 @@
 /******************* Configure TSCH ********************/
 /*******************************************************/
 
-#define PACKETBUF_CONF_SIZE 256
+#define PACKETBUF_CONF_SIZE 392
 
 /* IEEE802.15.4 PANID */
 #define IEEE802154_CONF_PANID 0x81a5
@@ -127,17 +114,34 @@
 #define LOG_CONF_LEVEL_TCPIP                       LOG_LEVEL_NONE
 #define LOG_CONF_LEVEL_IPV6                        LOG_LEVEL_NONE
 #define LOG_CONF_LEVEL_6LOWPAN                     LOG_LEVEL_NONE
-#define LOG_CONF_LEVEL_MAC                         LOG_LEVEL_DBG
+#define LOG_CONF_LEVEL_MAC                         LOG_LEVEL_INFO
 #define LOG_CONF_LEVEL_FRAMER                      LOG_LEVEL_NONE
 #define TSCH_LOG_CONF_PER_SLOT                     1
 
-#define RPL_CONF_DAO_RETRANSMISSION_TIMEOUT 10*CLOCK_SECOND
+#define RPL_CONF_DAO_RETRANSMISSION_TIMEOUT 240*CLOCK_SECOND
+#define RPL_CONF_DELAY_BEFORE_LEAVING       2400*CLOCK_SECOND
 #define RPL_CONF_DAO_MAX_RETRANSMISSIONS 15
-#define RPL_CONF_DIO_INTERVAL_MIN 15
-#define RPL_CONF_DIO_INTERVAL_DOUBLINGS 2
-#define NETSTACK_MAX_ROUTE_ENTRIES 5
+#define RPL_CONF_DIO_INTERVAL_MIN 18
+#define RPL_CONF_DIS_INTERVAL 800
+#define RPL_CONF_DIO_INTERVAL_DOUBLINGS 4
+#define RPL_CONF_SIGNIFICANT_CHANGE_THRESHOLD 8*128
+#define RPL_CONF_MAX_RANKINC   12*128
 
+#define NETSTACK_MAX_ROUTE_ENTRIES 5
+#define RPL_CONF_DEFAULT_LIFETIME 255
 #define ENERGEST_CONF_ON 1
+#define TSCH_CONF_CHANNEL_SCAN_DURATION CLOCK_SECOND
+
+/*SF10. This is extremely slow.*/
+#define TSCH_SX1272_TIMESLOT_CONF_TX_OFFSET      37000
+#define TSCH_SX1272_TIMESLOT_CONF_RX_OFFSET      5000
+#define TSCH_SX1272_TIMESLOT_CONF_RX_ACK_DELAY   15000
+#define TSCH_SX1272_TIMESLOT_CONF_TX_ACK_DELAY   20000
+#define TSCH_SX1272_TIMESLOT_CONF_RXWAIT         64000
+#define TSCH_SX1272_TIMESLOT_CONF_ACKWAIT        10000
+#define TSCH_SX1272_TIMESLOT_CONF_MAXACK         365000
+#define TSCH_SX1272_TIMESLOT_CONF_MAXTX          1438000
+#define TSCH_SX1272_TIMESLOT_CONF_TIMESLOTLENGTH 4500000
 
 /********** Includes **********/
 //#define BUILD_WITH_ORCHESTRA                            1
@@ -152,21 +156,21 @@
 /******** Configuration: synchronization *******/
 
 /* Max time before sending a unicast keep-alive message to the time source */
-#define TSCH_CONF_KEEPALIVE_TIMEOUT (CLOCK_SECOND*240)
+#define TSCH_CONF_KEEPALIVE_TIMEOUT (CLOCK_SECOND*2400)
 
 /* With TSCH_ADAPTIVE_TIMESYNC enabled: keep-alive timeout used after reaching
  * accurate drift compensation. */
-#define TSCH_CONF_MAX_KEEPALIVE_TIMEOUT (CLOCK_SECOND*240)
+#define TSCH_CONF_MAX_KEEPALIVE_TIMEOUT (CLOCK_SECOND*2400)
 
 /* Max time without synchronization before leaving the PAN */
-#define TSCH_CONF_DESYNC_THRESHOLD (CLOCK_SECOND*360)
+#define TSCH_CONF_DESYNC_THRESHOLD (CLOCK_SECOND*2400)
 
 /* Period between two consecutive EBs */
-#define TSCH_CONF_EB_PERIOD (CLOCK_SECOND*30)
+#define TSCH_CONF_EB_PERIOD (CLOCK_SECOND*700)
 
 /* Max Period between two consecutive EBs */
-#define TSCH_CONF_MAX_EB_PERIOD (40*CLOCK_SECOND)
-#define TSCH_CONF_MIN_EB_PERIOD (20*CLOCK_SECOND)
+#define TSCH_CONF_MAX_EB_PERIOD (800*CLOCK_SECOND)
+#define TSCH_CONF_MIN_EB_PERIOD (600*CLOCK_SECOND)
 #define TSCH_CONF_RESYNC_WITH_SFD_TIMESTAMPS 1
 
 /* Use SFD timestamp for synchronization? By default we merely rely on rtimer and busy wait
@@ -224,7 +228,7 @@ define TSCH_RESYNC_WITH_SFD_TIMESTAMPS 0
 /******** Configuration: channel hopping *******/
 
 /* Default hopping sequence, used in case hopping sequence ID == 0 */
-#define TSCH_CONF_DEFAULT_HOPPING_SEQUENCE TSCH_HOPPING_SEQUENCE_4_4
+#define TSCH_CONF_DEFAULT_HOPPING_SEQUENCE TSCH_HOPPING_SEQUENCE_1_1
 
 /* Hopping sequence used for joining (scan channels) */
 /*

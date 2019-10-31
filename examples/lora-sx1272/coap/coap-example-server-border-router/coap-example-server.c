@@ -42,7 +42,9 @@
 #include "contiki.h"
 #include "coap-engine.h"
 #include "net/netstack.h"
-
+#include "net/routing/routing.h"
+#include "sys/log.h"
+#include "sys/energest.h"
 
 #if PLATFORM_SUPPORTS_BUTTON_HAL
 #include "dev/button-hal.h"
@@ -127,6 +129,8 @@ PROCESS_THREAD(er_example_server, ev, data)
   SENSORS_ACTIVATE(temperature_sensor);
 #endif
 
+static struct etimer printtimer;
+etimer_set(&printtimer, CLOCK_SECOND*60);
   /* Define application-specific events here. */
   while(1) {
     PROCESS_WAIT_EVENT();
@@ -145,20 +149,22 @@ PROCESS_THREAD(er_example_server, ev, data)
       res_separate.resume();
     }
 #endif /* PLATFORM_HAS_BUTTON */
-    if(NETSTACK_ROUTING.node_is_reachable(){ 
+  if (etimer_expired(&printtimer)){
+
           LOG_INFO("\nEnergest:\n");
     
     LOG_INFO(" Radio LISTEN %llu TRANSMIT %llu OFF      %llu TOTAL: %llu\n",
-           energest_type_time(ENERGEST_TYPE_SX1272_TRANSMIT),
            energest_type_time(ENERGEST_TYPE_SX1272_RX),
+           energest_type_time(ENERGEST_TYPE_SX1272_TRANSMIT),
            
            (ENERGEST_GET_TOTAL_TIME()
                       - energest_type_time(ENERGEST_TYPE_SX1272_TRANSMIT)
                       - energest_type_time(ENERGEST_TYPE_SX1272_RX)), ENERGEST_GET_TOTAL_TIME());
   
-    LOG_INFO("Total time: %d minutes, %d seconds, %d ticks pr sec\n", (int)energest_time/ENERGEST_SECOND/60, (int)energest_time/ENERGEST_SECOND % 60, (int)ENERGEST_SECOND);
-
-    }
+    LOG_INFO("Total time: %d minutes, %d seconds, %d ticks pr sec\n", (int)ENERGEST_GET_TOTAL_TIME()/ENERGEST_SECOND/60, (int)ENERGEST_GET_TOTAL_TIME()/ENERGEST_SECOND % 60, (int)ENERGEST_SECOND);
+    LOG_INFO("Reachable: %d\n", NETSTACK_ROUTING.node_is_reachable());
+    etimer_reset(&printtimer);    
+  }
 
 
   }                             /* while (1) */

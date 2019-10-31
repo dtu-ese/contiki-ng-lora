@@ -1,0 +1,787 @@
+
+This is output from the CoAP and Ping test done
+
+[martin@XPSManjaro testbed_software]$ ./bin/coap-ping-test 
+Wed Oct 30 18:48:09 2019
+ my id: 44806 starting coap test
+Wed Oct 30 18:48:09 2019
+ my id: 43012 starting coap test
+v:1 t:NON c:GET i:4c5b {} [ ]
+v:1 t:NON c:GET i:f043 {} [ ]
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -N -B 300 >> output44806.log
+Node ID: 44806 �) 
+                   ` R7
+
+
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -N -B 300 >> output43012.log
+Node ID: 43012 @
+                 ` R7
+
+
+v:1 t:NON c:GET i:85b6 {} [ ]
+v:1 t:NON c:GET i:9425 {} [ ]
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -N -B 300 >> output44806.log
+Node ID: 44806 �U
+                  ` R7
+
+
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -N -B 300 >> output43012.log
+Node ID: 43012 @
+                 ` R7
+
+
+v:1 t:NON c:GET i:ac04 {} [ ]
+v:1 t:NON c:GET i:e984 {} [ ]
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -N -B 300 >> output44806.log
+Node ID: 44806 �U
+                  ` R7
+
+
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -N -B 300 >> output43012.log
+Node ID: 43012 �U
+                  ` R7
+
+
+v:1 t:NON c:GET i:2e78 {} [ ]
+v:1 t:NON c:GET i:395c {} [ ]
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -N -B 300 >> output44806.log
+Node ID: 44806 �U
+                  ` R7
+
+
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -N -B 300 >> output43012.log
+Node ID: 43012 @
+                 ` R7
+
+
+v:1 t:NON c:GET i:e984 {} [ ]
+v:1 t:NON c:GET i:e9fa {} [ ]
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -N -B 300 >> output44806.log
+Node ID: 44806 
+                ` R7
+
+
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -N -B 300 >> output43012.log
+Node ID: 43012 
+                ` R7
+
+
+v:1 t:NON c:GET i:89f8 {} [ ]
+v:1 t:NON c:GET i:e7f7 {} [ ]
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -N -B 300 >> output44806.log
+Node ID: 44806 �U
+                  ` R7
+
+
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -N -B 300 >> output43012.log
+Node ID: 43012 �U
+                  ` R7
+
+
+v:1 t:NON c:GET i:9e97 {} [ ]
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -N -B 300 >> output44806.log
+Node ID: 44806 �U
+                  ` R7
+
+
+v:1 t:NON c:GET i:dfb1 {} [ ]
+v:1 t:NON c:GET i:8039 {} [ ]
+Failure
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -N -B 300 >> output43012.log
+
+
+v:1 t:NON c:GET i:fe22 {} [ ]
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -N -B 300 >> output43012.log
+Node ID: 43012 �U
+                  ` R7
+
+
+Failure
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -N -B 300 >> output44806.log
+
+
+v:1 t:NON c:GET i:2b39 {} [ ]
+v:1 t:NON c:GET i:33a1 {} [ ]
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -N -B 300 >> output44806.log
+Node ID: 44806 @
+                 ` R7
+
+
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -N -B 300 >> output43012.log
+Node ID: 43012 �) 
+                   ` R7
+
+
+v:1 t:NON c:GET i:4826 {} [ ]
+v:1 t:NON c:GET i:d7b4 {} [ ]
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -N -B 300 >> output44806.log
+Node ID: 44806 �U
+                  ` R7
+
+
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -N -B 300 >> output43012.log
+Node ID: 43012 �U
+                  ` R7
+
+
+v:1 t:NON c:GET i:a73f {} [ ]
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -N -B 300 >> output44806.log
+Node ID: 44806 
+                ` R7
+
+
+v:1 t:NON c:GET i:c5fb {} [ ]
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -N -B 300 >> output43012.log
+Node ID: 43012 ��
+                  ` R7
+
+
+v:1 t:NON c:GET i:0765 {} [ ]
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -N -B 300 >> output44806.log
+Node ID: 44806 
+                ` R7
+
+
+v:1 t:NON c:GET i:797a {} [ ]
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -N -B 300 >> output43012.log
+Node ID: 43012 �U
+                  ` R7
+
+
+v:1 t:NON c:GET i:0cbb {} [ ]
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -N -B 300 >> output44806.log
+Node ID: 44806 @
+                 ` R7
+
+
+v:1 t:NON c:GET i:a15e {} [ ]
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -N -B 300 >> output43012.log
+Node ID: 43012 �U
+                  ` R7
+
+
+v:1 t:NON c:GET i:e984 {} [ ]
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -N -B 300 >> output44806.log
+Node ID: 44806 �U
+                  ` R7
+
+
+v:1 t:NON c:GET i:4650 {} [ ]
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -N -B 300 >> output43012.log
+Node ID: 43012 �U
+                  ` R7
+
+
+v:1 t:NON c:GET i:3515 {} [ ]
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -N -B 300 >> output44806.log
+Node ID: 44806 
+                ` R7
+
+
+v:1 t:NON c:GET i:c728 {} [ ]
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -N -B 300 >> output43012.log
+Node ID: 43012 ��
+                  ` R7
+
+
+v:1 t:NON c:GET i:2d74 {} [ ]
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -N -B 300 >> output44806.log
+Node ID: 44806 �U
+                  ` R7
+
+
+v:1 t:NON c:GET i:061a {} [ ]
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -N -B 300 >> output43012.log
+Node ID: 43012 @
+                 ` R7
+
+
+v:1 t:NON c:GET i:fdbf {} [ ]
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -N -B 300 >> output44806.log
+Node ID: 44806 �U
+                  ` R7
+
+
+v:1 t:NON c:GET i:f4f1 {} [ ]
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -N -B 300 >> output43012.log
+Node ID: 43012 P8 
+                   ` R7
+
+
+v:1 t:NON c:GET i:ac04 {} [ ]
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -N -B 300 >> output44806.log
+Node ID: 44806 �U
+                  ` R7
+
+
+v:1 t:NON c:GET i:d2d3 {} [ ]
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -N -B 300 >> output43012.log
+Node ID: 43012 
+                ` R7
+
+
+v:1 t:NON c:GET i:c33c {} [ ]
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -N -B 300 >> output44806.log
+Node ID: 44806 �U
+                  ` R7
+
+
+v:1 t:NON c:GET i:24f3 {} [ ]
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -N -B 300 >> output43012.log
+Node ID: 43012 �U
+                  ` R7
+
+
+v:1 t:NON c:GET i:00ff {} [ ]
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -N -B 300 >> output44806.log
+Node ID: 44806 �U
+                  ` R7
+
+
+v:1 t:NON c:GET i:cf08 {} [ ]
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -N -B 300 >> output43012.log
+Node ID: 43012 �U
+                  ` R7
+
+
+v:1 t:NON c:GET i:7154 {} [ ]
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -N -B 300 >> output44806.log
+Node ID: 44806 �U
+                  ` R7
+
+
+v:1 t:NON c:GET i:7666 {} [ ]
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -N -B 300 >> output43012.log
+Node ID: 43012 �U
+                  ` R7
+
+
+v:1 t:NON c:GET i:85b6 {} [ ]
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -N -B 300 >> output44806.log
+Node ID: 44806 �U
+                  ` R7
+
+
+v:1 t:NON c:GET i:5752 {} [ ]
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -N -B 300 >> output43012.log
+Node ID: 43012 �) 
+                   ` R7
+
+
+v:1 t:NON c:GET i:ae99 {} [ ]
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -N -B 300 >> output44806.log
+Node ID: 44806 �U
+                  ` R7
+
+
+v:1 t:NON c:GET i:442d {} [ ]
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -N -B 300 >> output43012.log
+Node ID: 43012 �U
+                  ` R7
+
+
+CoAP: Succeses: 22 , Failures: 1, avg time for succes: 311.597, ip: fd00::212:4b00:1532:af06, id: 44806
+Wed Oct 30 21:53:08 2019
+ my id: 44806 starting ping test
+CoAP: Succeses: 22 , Failures: 1, avg time for succes: 523.248, ip: fd00::212:4b00:f29:a804, id: 43012
+Wed Oct 30 21:54:12 2019
+ my id: 43012 starting ping test
+Succes
+ping -6 fd00::212:4b00:f29:a804 -W 180 -c 1 >> output43012.log
+PING fd00::212:4b00:f29:a804(fd00::212:4b00:f29:a804) 56 data bytes
+64 bytes from fd00::212:4b00:f29:a804: icmp_seq=1 ttl=62 time=12246 ms
+
+--- fd00::212:4b00:f29:a804 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 12246.023/12246.023/12246.023/0.000 ms
+
+
+Failure
+ping -6 fd00::212:4b00:1532:af06 -W 180 -c 1 >> output44806.log
+PING fd00::212:4b00:1532:af06(fd00::212:4b00:1532:af06) 56 data bytes
+
+--- fd00::212:4b00:1532:af06 ping statistics ---
+1 packets transmitted, 0 received, 100% packet loss, time 0ms
+
+
+
+Succes
+ping -6 fd00::212:4b00:1532:af06 -W 180 -c 1 >> output44806.log
+PING fd00::212:4b00:1532:af06(fd00::212:4b00:1532:af06) 56 data bytes
+64 bytes from fd00::212:4b00:1532:af06: icmp_seq=1 ttl=63 time=6346 ms
+
+--- fd00::212:4b00:1532:af06 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 6345.611/6345.611/6345.611/0.000 ms
+
+
+Succes
+ping -6 fd00::212:4b00:f29:a804 -W 180 -c 1 >> output43012.log
+PING fd00::212:4b00:f29:a804(fd00::212:4b00:f29:a804) 56 data bytes
+64 bytes from fd00::212:4b00:f29:a804: icmp_seq=1 ttl=62 time=15521 ms
+
+--- fd00::212:4b00:f29:a804 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 15520.571/15520.571/15520.571/0.000 ms
+
+
+Succes
+ping -6 fd00::212:4b00:1532:af06 -W 180 -c 1 >> output44806.log
+PING fd00::212:4b00:1532:af06(fd00::212:4b00:1532:af06) 56 data bytes
+64 bytes from fd00::212:4b00:1532:af06: icmp_seq=1 ttl=63 time=7728 ms
+
+--- fd00::212:4b00:1532:af06 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 7728.086/7728.086/7728.086/0.000 ms
+
+
+Succes
+ping -6 fd00::212:4b00:f29:a804 -W 180 -c 1 >> output43012.log
+PING fd00::212:4b00:f29:a804(fd00::212:4b00:f29:a804) 56 data bytes
+64 bytes from fd00::212:4b00:f29:a804: icmp_seq=1 ttl=62 time=12794 ms
+
+--- fd00::212:4b00:f29:a804 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 12793.993/12793.993/12793.993/0.000 ms
+
+
+Succes
+ping -6 fd00::212:4b00:1532:af06 -W 180 -c 1 >> output44806.log
+PING fd00::212:4b00:1532:af06(fd00::212:4b00:1532:af06) 56 data bytes
+64 bytes from fd00::212:4b00:1532:af06: icmp_seq=1 ttl=63 time=6554 ms
+
+--- fd00::212:4b00:1532:af06 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 6553.931/6553.931/6553.931/0.000 ms
+
+
+Succes
+ping -6 fd00::212:4b00:f29:a804 -W 180 -c 1 >> output43012.log
+PING fd00::212:4b00:f29:a804(fd00::212:4b00:f29:a804) 56 data bytes
+64 bytes from fd00::212:4b00:f29:a804: icmp_seq=1 ttl=62 time=9535 ms
+
+--- fd00::212:4b00:f29:a804 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 9535.120/9535.120/9535.120/0.000 ms
+
+
+Succes
+ping -6 fd00::212:4b00:1532:af06 -W 180 -c 1 >> output44806.log
+PING fd00::212:4b00:1532:af06(fd00::212:4b00:1532:af06) 56 data bytes
+64 bytes from fd00::212:4b00:1532:af06: icmp_seq=1 ttl=63 time=7367 ms
+
+--- fd00::212:4b00:1532:af06 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 7367.405/7367.405/7367.405/0.000 ms
+
+
+Succes
+ping -6 fd00::212:4b00:f29:a804 -W 180 -c 1 >> output43012.log
+PING fd00::212:4b00:f29:a804(fd00::212:4b00:f29:a804) 56 data bytes
+64 bytes from fd00::212:4b00:f29:a804: icmp_seq=1 ttl=62 time=12269 ms
+
+--- fd00::212:4b00:f29:a804 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 12268.817/12268.817/12268.817/0.000 ms
+
+
+Succes
+ping -6 fd00::212:4b00:1532:af06 -W 180 -c 1 >> output44806.log
+PING fd00::212:4b00:1532:af06(fd00::212:4b00:1532:af06) 56 data bytes
+64 bytes from fd00::212:4b00:1532:af06: icmp_seq=1 ttl=63 time=71386 ms
+
+--- fd00::212:4b00:1532:af06 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 71386.012/71386.012/71386.012/0.000 ms
+
+
+Succes
+ping -6 fd00::212:4b00:f29:a804 -W 180 -c 1 >> output43012.log
+PING fd00::212:4b00:f29:a804(fd00::212:4b00:f29:a804) 56 data bytes
+64 bytes from fd00::212:4b00:f29:a804: icmp_seq=1 ttl=62 time=47808 ms
+
+--- fd00::212:4b00:f29:a804 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 47808.467/47808.467/47808.467/0.000 ms
+
+
+Succes
+ping -6 fd00::212:4b00:1532:af06 -W 180 -c 1 >> output44806.log
+PING fd00::212:4b00:1532:af06(fd00::212:4b00:1532:af06) 56 data bytes
+64 bytes from fd00::212:4b00:1532:af06: icmp_seq=1 ttl=63 time=8484 ms
+
+--- fd00::212:4b00:1532:af06 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 8483.747/8483.747/8483.747/0.000 ms
+
+
+Failure
+ping -6 fd00::212:4b00:f29:a804 -W 180 -c 1 >> output43012.log
+PING fd00::212:4b00:f29:a804(fd00::212:4b00:f29:a804) 56 data bytes
+
+--- fd00::212:4b00:f29:a804 ping statistics ---
+1 packets transmitted, 0 received, 100% packet loss, time 0ms
+
+
+
+Succes
+ping -6 fd00::212:4b00:f29:a804 -W 180 -c 1 >> output43012.log
+PING fd00::212:4b00:f29:a804(fd00::212:4b00:f29:a804) 56 data bytes
+64 bytes from fd00::212:4b00:f29:a804: icmp_seq=1 ttl=62 time=10102 ms
+
+--- fd00::212:4b00:f29:a804 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 10101.638/10101.638/10101.638/0.000 ms
+
+
+Failure
+ping -6 fd00::212:4b00:1532:af06 -W 180 -c 1 >> output44806.log
+PING fd00::212:4b00:1532:af06(fd00::212:4b00:1532:af06) 56 data bytes
+
+--- fd00::212:4b00:1532:af06 ping statistics ---
+1 packets transmitted, 0 received, 100% packet loss, time 0ms
+
+
+
+Succes
+ping -6 fd00::212:4b00:1532:af06 -W 180 -c 1 >> output44806.log
+PING fd00::212:4b00:1532:af06(fd00::212:4b00:1532:af06) 56 data bytes
+64 bytes from fd00::212:4b00:1532:af06: icmp_seq=1 ttl=63 time=6580 ms
+
+--- fd00::212:4b00:1532:af06 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 6580.494/6580.494/6580.494/0.000 ms
+
+
+Succes
+ping -6 fd00::212:4b00:f29:a804 -W 180 -c 1 >> output43012.log
+PING fd00::212:4b00:f29:a804(fd00::212:4b00:f29:a804) 56 data bytes
+64 bytes from fd00::212:4b00:f29:a804: icmp_seq=1 ttl=62 time=12377 ms
+
+--- fd00::212:4b00:f29:a804 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 12376.795/12376.795/12376.795/0.000 ms
+
+
+Succes
+ping -6 fd00::212:4b00:1532:af06 -W 180 -c 1 >> output44806.log
+PING fd00::212:4b00:1532:af06(fd00::212:4b00:1532:af06) 56 data bytes
+64 bytes from fd00::212:4b00:1532:af06: icmp_seq=1 ttl=63 time=9872 ms
+
+--- fd00::212:4b00:1532:af06 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 9871.514/9871.514/9871.514/0.000 ms
+
+
+Succes
+ping -6 fd00::212:4b00:f29:a804 -W 180 -c 1 >> output43012.log
+PING fd00::212:4b00:f29:a804(fd00::212:4b00:f29:a804) 56 data bytes
+64 bytes from fd00::212:4b00:f29:a804: icmp_seq=1 ttl=62 time=12657 ms
+
+--- fd00::212:4b00:f29:a804 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 12657.219/12657.219/12657.219/0.000 ms
+
+
+Succes
+ping -6 fd00::212:4b00:1532:af06 -W 180 -c 1 >> output44806.log
+PING fd00::212:4b00:1532:af06(fd00::212:4b00:1532:af06) 56 data bytes
+64 bytes from fd00::212:4b00:1532:af06: icmp_seq=1 ttl=63 time=5694 ms
+
+--- fd00::212:4b00:1532:af06 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 5693.958/5693.958/5693.958/0.000 ms
+
+
+Succes
+ping -6 fd00::212:4b00:f29:a804 -W 180 -c 1 >> output43012.log
+PING fd00::212:4b00:f29:a804(fd00::212:4b00:f29:a804) 56 data bytes
+64 bytes from fd00::212:4b00:f29:a804: icmp_seq=1 ttl=62 time=14940 ms
+
+--- fd00::212:4b00:f29:a804 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 14940.480/14940.480/14940.480/0.000 ms
+
+
+Succes
+ping -6 fd00::212:4b00:1532:af06 -W 180 -c 1 >> output44806.log
+PING fd00::212:4b00:1532:af06(fd00::212:4b00:1532:af06) 56 data bytes
+64 bytes from fd00::212:4b00:1532:af06: icmp_seq=1 ttl=63 time=6974 ms
+
+--- fd00::212:4b00:1532:af06 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 6974.307/6974.307/6974.307/0.000 ms
+
+
+Succes
+ping -6 fd00::212:4b00:f29:a804 -W 180 -c 1 >> output43012.log
+PING fd00::212:4b00:f29:a804(fd00::212:4b00:f29:a804) 56 data bytes
+64 bytes from fd00::212:4b00:f29:a804: icmp_seq=1 ttl=62 time=13220 ms
+
+--- fd00::212:4b00:f29:a804 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 13219.712/13219.712/13219.712/0.000 ms
+
+
+Succes
+ping -6 fd00::212:4b00:1532:af06 -W 180 -c 1 >> output44806.log
+PING fd00::212:4b00:1532:af06(fd00::212:4b00:1532:af06) 56 data bytes
+64 bytes from fd00::212:4b00:1532:af06: icmp_seq=1 ttl=63 time=5799 ms
+
+--- fd00::212:4b00:1532:af06 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 5799.407/5799.407/5799.407/0.000 ms
+
+
+Succes
+ping -6 fd00::212:4b00:f29:a804 -W 180 -c 1 >> output43012.log
+PING fd00::212:4b00:f29:a804(fd00::212:4b00:f29:a804) 56 data bytes
+64 bytes from fd00::212:4b00:f29:a804: icmp_seq=1 ttl=62 time=12598 ms
+
+--- fd00::212:4b00:f29:a804 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 12598.328/12598.328/12598.328/0.000 ms
+
+
+Succes
+ping -6 fd00::212:4b00:1532:af06 -W 180 -c 1 >> output44806.log
+PING fd00::212:4b00:1532:af06(fd00::212:4b00:1532:af06) 56 data bytes
+64 bytes from fd00::212:4b00:1532:af06: icmp_seq=1 ttl=63 time=9065 ms
+
+--- fd00::212:4b00:1532:af06 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 9064.969/9064.969/9064.969/0.000 ms
+
+
+Failure
+ping -6 fd00::212:4b00:f29:a804 -W 180 -c 1 >> output43012.log
+PING fd00::212:4b00:f29:a804(fd00::212:4b00:f29:a804) 56 data bytes
+
+--- fd00::212:4b00:f29:a804 ping statistics ---
+1 packets transmitted, 0 received, 100% packet loss, time 0ms
+
+
+
+Succes
+ping -6 fd00::212:4b00:f29:a804 -W 180 -c 1 >> output43012.log
+PING fd00::212:4b00:f29:a804(fd00::212:4b00:f29:a804) 56 data bytes
+64 bytes from fd00::212:4b00:f29:a804: icmp_seq=1 ttl=62 time=11703 ms
+
+--- fd00::212:4b00:f29:a804 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 11703.303/11703.303/11703.303/0.000 ms
+
+
+Failure
+ping -6 fd00::212:4b00:1532:af06 -W 180 -c 1 >> output44806.log
+PING fd00::212:4b00:1532:af06(fd00::212:4b00:1532:af06) 56 data bytes
+
+--- fd00::212:4b00:1532:af06 ping statistics ---
+1 packets transmitted, 0 received, 100% packet loss, time 0ms
+
+
+
+Succes
+ping -6 fd00::212:4b00:1532:af06 -W 180 -c 1 >> output44806.log
+PING fd00::212:4b00:1532:af06(fd00::212:4b00:1532:af06) 56 data bytes
+64 bytes from fd00::212:4b00:1532:af06: icmp_seq=1 ttl=63 time=43992 ms
+
+--- fd00::212:4b00:1532:af06 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 43991.735/43991.735/43991.735/0.000 ms
+
+
+Succes
+ping -6 fd00::212:4b00:f29:a804 -W 180 -c 1 >> output43012.log
+PING fd00::212:4b00:f29:a804(fd00::212:4b00:f29:a804) 56 data bytes
+64 bytes from fd00::212:4b00:f29:a804: icmp_seq=1 ttl=62 time=39245 ms
+
+--- fd00::212:4b00:f29:a804 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 39245.494/39245.494/39245.494/0.000 ms
+
+
+Succes
+ping -6 fd00::212:4b00:1532:af06 -W 180 -c 1 >> output44806.log
+PING fd00::212:4b00:1532:af06(fd00::212:4b00:1532:af06) 56 data bytes
+64 bytes from fd00::212:4b00:1532:af06: icmp_seq=1 ttl=63 time=5453 ms
+
+--- fd00::212:4b00:1532:af06 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 5452.665/5452.665/5452.665/0.000 ms
+
+
+Succes
+ping -6 fd00::212:4b00:f29:a804 -W 180 -c 1 >> output43012.log
+PING fd00::212:4b00:f29:a804(fd00::212:4b00:f29:a804) 56 data bytes
+64 bytes from fd00::212:4b00:f29:a804: icmp_seq=1 ttl=62 time=10708 ms
+
+--- fd00::212:4b00:f29:a804 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 10707.547/10707.547/10707.547/0.000 ms
+
+
+Succes
+ping -6 fd00::212:4b00:1532:af06 -W 180 -c 1 >> output44806.log
+PING fd00::212:4b00:1532:af06(fd00::212:4b00:1532:af06) 56 data bytes
+64 bytes from fd00::212:4b00:1532:af06: icmp_seq=1 ttl=63 time=5198 ms
+
+--- fd00::212:4b00:1532:af06 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 5197.933/5197.933/5197.933/0.000 ms
+
+
+Succes
+ping -6 fd00::212:4b00:f29:a804 -W 180 -c 1 >> output43012.log
+PING fd00::212:4b00:f29:a804(fd00::212:4b00:f29:a804) 56 data bytes
+64 bytes from fd00::212:4b00:f29:a804: icmp_seq=1 ttl=62 time=12535 ms
+
+--- fd00::212:4b00:f29:a804 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 12535.365/12535.365/12535.365/0.000 ms
+
+
+Succes
+ping -6 fd00::212:4b00:1532:af06 -W 180 -c 1 >> output44806.log
+PING fd00::212:4b00:1532:af06(fd00::212:4b00:1532:af06) 56 data bytes
+64 bytes from fd00::212:4b00:1532:af06: icmp_seq=1 ttl=63 time=5469 ms
+
+--- fd00::212:4b00:1532:af06 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 5468.573/5468.573/5468.573/0.000 ms
+
+
+Succes
+ping -6 fd00::212:4b00:f29:a804 -W 180 -c 1 >> output43012.log
+PING fd00::212:4b00:f29:a804(fd00::212:4b00:f29:a804) 56 data bytes
+64 bytes from fd00::212:4b00:f29:a804: icmp_seq=1 ttl=62 time=11822 ms
+
+--- fd00::212:4b00:f29:a804 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 11822.257/11822.257/11822.257/0.000 ms
+
+
+Succes
+ping -6 fd00::212:4b00:1532:af06 -W 180 -c 1 >> output44806.log
+PING fd00::212:4b00:1532:af06(fd00::212:4b00:1532:af06) 56 data bytes
+64 bytes from fd00::212:4b00:1532:af06: icmp_seq=1 ttl=63 time=5841 ms
+
+--- fd00::212:4b00:1532:af06 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 5840.698/5840.698/5840.698/0.000 ms
+
+
+Succes
+ping -6 fd00::212:4b00:f29:a804 -W 180 -c 1 >> output43012.log
+PING fd00::212:4b00:f29:a804(fd00::212:4b00:f29:a804) 56 data bytes
+64 bytes from fd00::212:4b00:f29:a804: icmp_seq=1 ttl=62 time=10194 ms
+
+--- fd00::212:4b00:f29:a804 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 10193.541/10193.541/10193.541/0.000 ms
+
+
+Succes
+ping -6 fd00::212:4b00:1532:af06 -W 180 -c 1 >> output44806.log
+PING fd00::212:4b00:1532:af06(fd00::212:4b00:1532:af06) 56 data bytes
+64 bytes from fd00::212:4b00:1532:af06: icmp_seq=1 ttl=63 time=5129 ms
+
+--- fd00::212:4b00:1532:af06 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 5129.098/5129.098/5129.098/0.000 ms
+
+
+Succes
+ping -6 fd00::212:4b00:f29:a804 -W 180 -c 1 >> output43012.log
+PING fd00::212:4b00:f29:a804(fd00::212:4b00:f29:a804) 56 data bytes
+64 bytes from fd00::212:4b00:f29:a804: icmp_seq=1 ttl=62 time=13462 ms
+
+--- fd00::212:4b00:f29:a804 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 13461.753/13461.753/13461.753/0.000 ms
+
+
+Failure
+ping -6 fd00::212:4b00:1532:af06 -W 180 -c 1 >> output44806.log
+PING fd00::212:4b00:1532:af06(fd00::212:4b00:1532:af06) 56 data bytes
+
+--- fd00::212:4b00:1532:af06 ping statistics ---
+1 packets transmitted, 0 received, 100% packet loss, time 0ms
+
+
+
+Failure
+ping -6 fd00::212:4b00:f29:a804 -W 180 -c 1 >> output43012.log
+PING fd00::212:4b00:f29:a804(fd00::212:4b00:f29:a804) 56 data bytes
+
+--- fd00::212:4b00:f29:a804 ping statistics ---
+1 packets transmitted, 0 received, 100% packet loss, time 0ms
+
+
+
+Succes
+ping -6 fd00::212:4b00:1532:af06 -W 180 -c 1 >> output44806.log
+PING fd00::212:4b00:1532:af06(fd00::212:4b00:1532:af06) 56 data bytes
+64 bytes from fd00::212:4b00:1532:af06: icmp_seq=1 ttl=63 time=7236 ms
+
+--- fd00::212:4b00:1532:af06 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 7236.189/7236.189/7236.189/0.000 ms
+
+
+Succes
+ping -6 fd00::212:4b00:f29:a804 -W 180 -c 1 >> output43012.log
+PING fd00::212:4b00:f29:a804(fd00::212:4b00:f29:a804) 56 data bytes
+64 bytes from fd00::212:4b00:f29:a804: icmp_seq=1 ttl=62 time=11671 ms
+
+--- fd00::212:4b00:f29:a804 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 11670.649/11670.649/11670.649/0.000 ms
+
+
+Ping: Succeses: 19 , Failures: 4, avg time for succes: 230.45, ip: fd00::212:4b00:1532:af06, id: 44806
+Ping: Succeses: 20 , Failures: 3, avg time for succes: 307.714, ip: fd00::212:4b00:f29:a804, id: 43012
