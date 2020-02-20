@@ -38,7 +38,7 @@
 #define LOG_LEVEL_APP LOG_LEVEL_DBG
 
 #define USE_SX1272_AS_STANDARD_RADIO    1
-#define SX1272_CONF_TX_OUTPUT_POWER     2
+#define SX1272_CONF_TX_OUTPUT_POWER     5
 #define SX1272_CONF_SPREADING_FACTOR    7
 #define SX1272_CONF_CODINGRATE          1
 #define SX1272_CONF_PREAMBLE_LENGTH     6
@@ -55,6 +55,11 @@
 #define TSCH_CONF_WAIT_FOR_EB   RTIMER_SECOND/10 /*Sending an EB is 70ms*/
 #define SX1272_CONF_RXDONE_DELAY_USEC 780
 #define RPL_CONF_DIS_INTERVAL           90*CLOCK_SECOND
+
+#define RPL_CONF_SIGNIFICANT_CHANGE_THRESHOLD 32*128
+#define RPL_CONF_MAX_RANKINC   32*128
+#define RPL_MRHOF_CONF_MAX_PATH_COST 0xFFFF
+#define RPL_MRHOF_CONF_MAX_LINK_METRIC 16*128
 
 /*We need these macros to be imported early in the build process*/
 #define TSCH_CONF_ASSOCIATION_POLL_FREQUENCY 32/*This is measured in clock ticks and needs to be LESS than the time on air for an EB. If it is higher, synchronization issues will happen.*/

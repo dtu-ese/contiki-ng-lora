@@ -51,8 +51,10 @@
 #define SX1272_CONF_SPI_MOSI EXT_FLASH_SPI_PIN_MOSI
 #define SX1272_CONF_SPI_CS EXT_FLASH_SPI_PIN_CS
 #define SX1272_CONF_SPI_BITRATE 1000000
-#define TSCH_CONF_WAIT_FOR_EB   RTIMER_SECOND/10 /*Sending an EB is 70ms*/
-#define SX1272_CONF_RXDONE_DELAY_USEC 25000
+#define SX1272_CONF_RXDONE_DELAY_USEC 6256
+#define SX1272_CONF_RADIO_DELAY_BEFORE_DETECT US_TO_RTIMERTICKS(28000)
+
+
 
 /*We need these macros to be imported earli in the build process*/
 #define TSCH_CONF_ASSOCIATION_POLL_FREQUENCY 32
@@ -69,11 +71,11 @@
 
 /* Length of the various slotframes. Tune to balance network capacity,
  * contention, energy, latency. */
-#define ORCHESTRA_CONF_EBSF_PERIOD 23
+#define ORCHESTRA_CONF_EBSF_PERIOD 11
 
-#define ORCHESTRA_CONF_COMMON_SHARED_PERIOD 11
+#define ORCHESTRA_CONF_COMMON_SHARED_PERIOD 5
 
-#define ORCHESTRA_CONF_UNICAST_PERIOD 13
+#define ORCHESTRA_CONF_UNICAST_PERIOD 3
 
 /* Is the per-neighbor unicast slotframe sender-based (if not, it is receiver-based).
  * Note: sender-based works only with RPL storing mode as it relies on DAO and
@@ -85,7 +87,10 @@
 /******************* Configure TSCH ********************/
 /*******************************************************/
 
-#define PACKETBUF_CONF_SIZE 392
+#define PACKETBUF_CONF_SIZE 150/*Max packet size in TSCH*/
+#define TSCH_CONF_DEQUEUED_ARRAY_SIZE   16   /*Number of packets in queuebuf*/
+#define TSCH_CONF_MAX_INCOMING_PACKETS   16   /*Number of packets in queuebuf*/
+#define TSCH_CONF_QUEUE_NUM_PER_NEIGHBOR   16   /*Number of packets in queuebuf*/
 
 /* IEEE802.15.4 PANID */
 #define IEEE802154_CONF_PANID 0x81a5
@@ -96,7 +101,7 @@
 /* 6TiSCH minimal schedule length.
  * Larger values result in less frequent active slots: reduces capacity and saves energy. */
 #define TSCH_SCHEDULE_CONF_DEFAULT_LENGTH 6
-#define CONTIKI_WATCHDOG_CONF_TIMER_TOP 0xFFFFFF
+#define CONTIKI_WATCHDOG_CONF_TIMER_TOP 0xFFFFFFF
 
 #if WITH_SECURITY
 
@@ -111,34 +116,44 @@
 
 /* Logging */
 #define LOG_CONF_LEVEL_RPL                         LOG_LEVEL_INFO
-#define LOG_CONF_LEVEL_TCPIP                       LOG_LEVEL_NONE
-#define LOG_CONF_LEVEL_IPV6                        LOG_LEVEL_NONE
-#define LOG_CONF_LEVEL_6LOWPAN                     LOG_LEVEL_NONE
+#define LOG_CONF_LEVEL_TCPIP                       LOG_LEVEL_INFO
+#define LOG_CONF_LEVEL_IPV6                        LOG_LEVEL_INFO
+#define LOG_CONF_LEVEL_6LOWPAN                     LOG_LEVEL_INFO
 #define LOG_CONF_LEVEL_MAC                         LOG_LEVEL_INFO
 #define LOG_CONF_LEVEL_FRAMER                      LOG_LEVEL_NONE
 #define TSCH_LOG_CONF_PER_SLOT                     1
 
+#define RPL_CONF_DAO_DELAY 360*CLOCK_SECOND
 #define RPL_CONF_DAO_RETRANSMISSION_TIMEOUT 240*CLOCK_SECOND
 #define RPL_CONF_DELAY_BEFORE_LEAVING       2400*CLOCK_SECOND
 #define RPL_CONF_DAO_MAX_RETRANSMISSIONS 15
 #define RPL_CONF_DIO_INTERVAL_MIN 18
-#define RPL_CONF_DIS_INTERVAL 800
+#define RPL_CONF_DIS_INTERVAL 400*CLOCK_SECOND
 #define RPL_CONF_DIO_INTERVAL_DOUBLINGS 4
-#define RPL_CONF_SIGNIFICANT_CHANGE_THRESHOLD 8*128
-#define RPL_CONF_MAX_RANKINC   12*128
+
+#define RPL_CONF_PROBING_INTERVAL CLOCK_SECOND*360/*We don't want to probe often*/
+#define RPL_CONF_WITH_PROBING   1/*Probing might be breaking us*/
+
+#define RPL_CONF_SIGNIFICANT_CHANGE_THRESHOLD 32*128
+#define RPL_CONF_MAX_RANKINC   32*128
+#define RPL_MRHOF_CONF_MAX_PATH_COST 0xFFFF
+#define RPL_MRHOF_CONF_MAX_LINK_METRIC 32*128
+
 
 #define NETSTACK_MAX_ROUTE_ENTRIES 5
 #define RPL_CONF_DEFAULT_LIFETIME 255
 #define ENERGEST_CONF_ON 1
 #define TSCH_CONF_CHANNEL_SCAN_DURATION CLOCK_SECOND
 
+#define TSCH_CONF_WAIT_FOR_EB RTIMER_SECOND/10*56/10/*An 45 LL082154SEC EB is 510 us. Done like this to avoid overflows (Should be checked!)*/
+
 /*SF10. This is extremely slow.*/
 #define TSCH_SX1272_TIMESLOT_CONF_TX_OFFSET      37000
 #define TSCH_SX1272_TIMESLOT_CONF_RX_OFFSET      5000
 #define TSCH_SX1272_TIMESLOT_CONF_RX_ACK_DELAY   15000
-#define TSCH_SX1272_TIMESLOT_CONF_TX_ACK_DELAY   20000
+#define TSCH_SX1272_TIMESLOT_CONF_TX_ACK_DELAY   25000
 #define TSCH_SX1272_TIMESLOT_CONF_RXWAIT         64000
-#define TSCH_SX1272_TIMESLOT_CONF_ACKWAIT        10000
+#define TSCH_SX1272_TIMESLOT_CONF_ACKWAIT        20000
 #define TSCH_SX1272_TIMESLOT_CONF_MAXACK         365000
 #define TSCH_SX1272_TIMESLOT_CONF_MAXTX          1438000
 #define TSCH_SX1272_TIMESLOT_CONF_TIMESLOTLENGTH 4500000
@@ -170,7 +185,7 @@
 
 /* Max Period between two consecutive EBs */
 #define TSCH_CONF_MAX_EB_PERIOD (800*CLOCK_SECOND)
-#define TSCH_CONF_MIN_EB_PERIOD (600*CLOCK_SECOND)
+#define TSCH_CONF_MIN_EB_PERIOD (1*CLOCK_SECOND)
 #define TSCH_CONF_RESYNC_WITH_SFD_TIMESTAMPS 1
 
 /* Use SFD timestamp for synchronization? By default we merely rely on rtimer and busy wait

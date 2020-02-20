@@ -20,7 +20,7 @@ Maintainer: Miguel Luis and Gregory Cristian
 #include "timer.h"
 #include "dev/radio.h"
 
-#define BUFFER_SIZE                                 4
+#define BUFFER_SIZE                                 32
 static uint8_t Buffer[BUFFER_SIZE];
 static struct timer t;
 
@@ -33,7 +33,8 @@ AUTOSTART_PROCESSES(&jammer);
 PROCESS_THREAD(jammer, ev, data)
 {
     PROCESS_BEGIN();
-    timer_set(&t, CLOCK_SECOND*5);
+    NETSTACK_RADIO.set_value(RADIO_PARAM_CHANNEL, 20);
+    timer_set(&t, 10);
     while (!timer_expired(&t));
 
     NETSTACK_RADIO.init();
@@ -44,17 +45,17 @@ PROCESS_THREAD(jammer, ev, data)
     Buffer[3] = 'D';
     // We fill the buffer with numbers for the payload 
 
-    NETSTACK_RADIO.prepare(Buffer, 4);
-    NETSTACK_RADIO.transmit(4);
+    NETSTACK_RADIO.prepare(Buffer, 32);
+    NETSTACK_RADIO.transmit(32);
 
-    timer_set(&t, 2);
+    timer_set(&t, 5);
     while(!timer_expired(&t));
 
     while(1)
     {
-        NETSTACK_RADIO.prepare(Buffer, 4);
+        NETSTACK_RADIO.prepare(Buffer, 32);
         printf("Transmitting\n");
-        NETSTACK_RADIO.transmit(4);
+        NETSTACK_RADIO.transmit(32);
         timer_reset(&t);
         while(!timer_expired(&t));
     }

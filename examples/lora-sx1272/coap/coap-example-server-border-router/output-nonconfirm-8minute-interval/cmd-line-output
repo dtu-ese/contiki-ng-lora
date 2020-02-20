@@ -1,0 +1,994 @@
+ 
+Tue Nov  5 09:17:27 2019
+ my id: 44806 starting coap test
+Tue Nov  5 09:17:27 2019
+ my id: 43012 starting coap test
+Tue Nov  5 09:17:27 2019
+ my id: 43012 starting coap call
+Tue Nov  5 09:17:27 2019
+ my id: 44806 starting coap call
+v:1 t:NON c:GET i:6697 {v:1 t:NON c:GET i:906b {}} [ [ ] ]
+
+Tue Nov  5 09:17:56 2019
+ my id: 44806 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -B 300 -N >> output44806.log
+Node ID: 44806 �U
+                  ` R7
+
+
+Tue Nov  5 09:18:05 2019
+ my id: 43012 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -B 300 -N >> output43012.log
+Node ID: 43012 @
+                 ` R7
+
+
+Tue Nov  5 09:25:20 2019
+ my id: 43012 starting coap call
+v:1 t:NON c:GET i:b721 {} [ ]
+Tue Nov  5 09:25:23 2019
+ my id: 44806 starting coap call
+v:1 t:NON c:GET i:0e87 {} [ ]
+Tue Nov  5 09:25:30 2019
+ my id: 44806 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -B 300 -N >> output44806.log
+Node ID: 44806 
+                ` R7
+
+
+Tue Nov  5 09:25:40 2019
+ my id: 43012 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -B 300 -N >> output43012.log
+Node ID: 43012 �U
+                  ` R7
+
+
+Tue Nov  5 09:33:27 2019
+ my id: 43012 starting coap call
+v:1 t:NON c:GET i:16fa {} [ ]
+Tue Nov  5 09:33:28 2019
+ my id: 44806 starting coap call
+v:1 t:NON c:GET i:a56a {} [ ]
+Tue Nov  5 09:33:37 2019
+ my id: 43012 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -B 300 -N >> output43012.log
+Node ID: 43012 �U
+                  ` R7
+
+
+Tue Nov  5 09:41:30 2019
+ my id: 43012 starting coap call
+v:1 t:NON c:GET i:ea41 {} [ ]
+Tue Nov  5 09:43:28 2019
+ my id: 44806 ended coap call
+Failure
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -B 300 -N >> output44806.log
+
+
+Tue Nov  5 09:43:28 2019
+ my id: 44806 starting coap call
+v:1 t:NON c:GET i:29e9 {} [ ]
+Tue Nov  5 09:43:37 2019
+ my id: 44806 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -B 300 -N >> output44806.log
+Node ID: 44806 @
+                 ` R7
+
+
+Tue Nov  5 09:51:30 2019
+ my id: 43012 ended coap call
+Failure
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -B 300 -N >> output43012.log
+
+
+Tue Nov  5 09:51:30 2019
+ my id: 43012 starting coap call
+Tue Nov  5 09:51:30 2019
+ my id: 44806 starting coap call
+v:1 t:NON c:GET i:d62f {} [ ]
+v:1 t:NON c:GET i:fbf3 {} [ ]
+Tue Nov  5 09:51:39 2019
+ my id: 44806 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -B 300 -N >> output44806.log
+Node ID: 44806 �82
+                   ` R7
+
+
+Tue Nov  5 09:51:48 2019
+ my id: 43012 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -B 300 -N >> output43012.log
+Node ID: 43012 �U
+                  ` R7
+
+
+Tue Nov  5 09:59:21 2019
+ my id: 44806 starting coap call
+v:1 t:NON c:GET i:9d64 {} [ ]
+Tue Nov  5 09:59:27 2019
+ my id: 44806 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -B 300 -N >> output44806.log
+Node ID: 44806 
+                ` R7
+
+
+Tue Nov  5 09:59:29 2019
+ my id: 43012 starting coap call
+v:1 t:NON c:GET i:d8e4 {} [ ]
+Tue Nov  5 09:59:40 2019
+ my id: 43012 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -B 300 -N >> output43012.log
+Node ID: 43012 @
+                 ` R7
+
+
+Tue Nov  5 10:07:13 2019
+ my id: 44806 starting coap call
+v:1 t:NON c:GET i:9d64 {} [ ]
+Tue Nov  5 10:07:20 2019
+ my id: 44806 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -B 300 -N >> output44806.log
+Node ID: 44806 �0 
+                   ` R7
+
+
+Tue Nov  5 10:07:26 2019
+ my id: 43012 starting coap call
+v:1 t:NON c:GET i:7d38 {} [ ]
+Tue Nov  5 10:07:38 2019
+ my id: 43012 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -B 300 -N >> output43012.log
+Node ID: 43012 �U
+                  ` R7
+
+
+Tue Nov  5 10:15:13 2019
+ my id: 44806 starting coap call
+v:1 t:NON c:GET i:24f3 {} [ ]
+Tue Nov  5 10:15:21 2019
+ my id: 44806 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -B 300 -N >> output44806.log
+Node ID: 44806 �U
+                  ` R7
+
+
+Tue Nov  5 10:15:35 2019
+ my id: 43012 starting coap call
+v:1 t:NON c:GET i:f447 {} [ ]
+Tue Nov  5 10:15:49 2019
+ my id: 43012 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -B 300 -N >> output43012.log
+Node ID: 43012 �8�
+                   ` R7
+
+
+Tue Nov  5 10:23:06 2019
+ my id: 44806 starting coap call
+v:1 t:NON c:GET i:d8e4 {} [ ]
+Tue Nov  5 10:23:14 2019
+ my id: 44806 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -B 300 -N >> output44806.log
+Node ID: 44806 
+                ` R7
+
+
+Tue Nov  5 10:23:31 2019
+ my id: 43012 starting coap call
+v:1 t:NON c:GET i:0991 {} [ ]
+Tue Nov  5 10:23:41 2019
+ my id: 43012 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -B 300 -N >> output43012.log
+Node ID: 43012 �U
+                  ` R7
+
+
+Tue Nov  5 10:30:56 2019
+ my id: 44806 starting coap call
+v:1 t:NON c:GET i:5c50 {} [ ]
+Tue Nov  5 10:31:02 2019
+ my id: 44806 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -B 300 -N >> output44806.log
+Node ID: 44806 �) 
+                   ` R7
+
+
+Tue Nov  5 10:31:27 2019
+ my id: 43012 starting coap call
+v:1 t:NON c:GET i:c060 {} [ ]
+Tue Nov  5 10:31:39 2019
+ my id: 43012 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -B 300 -N >> output43012.log
+Node ID: 43012 @
+                 ` R7
+
+
+Tue Nov  5 10:38:58 2019
+ my id: 44806 starting coap call
+v:1 t:NON c:GET i:4124 {} [ ]
+Tue Nov  5 10:39:04 2019
+ my id: 44806 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -B 300 -N >> output44806.log
+Node ID: 44806 ��
+                  ` R7
+
+
+Tue Nov  5 10:39:33 2019
+ my id: 43012 starting coap call
+v:1 t:NON c:GET i:1a3c {} [ ]
+Tue Nov  5 10:39:45 2019
+ my id: 43012 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -B 300 -N >> output43012.log
+Node ID: 43012 �U
+                  ` R7
+
+
+Tue Nov  5 10:46:59 2019
+ my id: 44806 starting coap call
+v:1 t:NON c:GET i:a56a {} [ ]
+Tue Nov  5 10:47:06 2019
+ my id: 44806 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -B 300 -N >> output44806.log
+Node ID: 44806 �U
+                  ` R7
+
+
+Tue Nov  5 10:47:31 2019
+ my id: 43012 starting coap call
+v:1 t:NON c:GET i:aa28 {} [ ]
+Tue Nov  5 10:47:42 2019
+ my id: 43012 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -B 300 -N >> output43012.log
+Node ID: 43012 �U
+                  ` R7
+
+
+Tue Nov  5 10:54:56 2019
+ my id: 44806 starting coap call
+v:1 t:NON c:GET i:8df8 {} [ ]
+Tue Nov  5 10:55:03 2019
+ my id: 44806 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -B 300 -N >> output44806.log
+Node ID: 44806 �U
+                  ` R7
+
+
+Tue Nov  5 10:55:30 2019
+ my id: 43012 starting coap call
+v:1 t:NON c:GET i:032c {} [ ]
+Tue Nov  5 10:55:40 2019
+ my id: 43012 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -B 300 -N >> output43012.log
+Node ID: 43012 ��4
+                   ` R7
+
+
+Tue Nov  5 11:02:48 2019
+ my id: 44806 starting coap call
+v:1 t:NON c:GET i:fd15 {} [ ]
+Tue Nov  5 11:02:56 2019
+ my id: 44806 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -B 300 -N >> output44806.log
+Node ID: 44806 �U
+                  ` R7
+
+
+Tue Nov  5 11:03:30 2019
+ my id: 43012 starting coap call
+v:1 t:NON c:GET i:053d {} [ ]
+Tue Nov  5 11:03:41 2019
+ my id: 43012 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -B 300 -N >> output43012.log
+Node ID: 43012 �U
+                  ` R7
+
+
+Tue Nov  5 11:10:40 2019
+ my id: 44806 starting coap call
+v:1 t:NON c:GET i:03cd {} [ ]
+Tue Nov  5 11:10:49 2019
+ my id: 44806 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -B 300 -N >> output44806.log
+Node ID: 44806 �8 
+                   ` R7
+
+
+Tue Nov  5 11:11:23 2019
+ my id: 43012 starting coap call
+v:1 t:NON c:GET i:8df8 {} [ ]
+Tue Nov  5 11:11:34 2019
+ my id: 43012 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -B 300 -N >> output43012.log
+Node ID: 43012 ��
+                  ` R7
+
+
+Tue Nov  5 11:18:37 2019
+ my id: 44806 starting coap call
+v:1 t:NON c:GET i:cf29 {} [ ]
+Tue Nov  5 11:18:46 2019
+ my id: 44806 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -B 300 -N >> output44806.log
+Node ID: 44806 ��
+                  ` R7
+
+
+Tue Nov  5 11:19:28 2019
+ my id: 43012 starting coap call
+v:1 t:NON c:GET i:9d6a {} [ ]
+Tue Nov  5 11:19:41 2019
+ my id: 43012 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -B 300 -N >> output43012.log
+Node ID: 43012 �U
+                  ` R7
+
+
+Tue Nov  5 11:26:36 2019
+ my id: 44806 starting coap call
+v:1 t:NON c:GET i:0b02 {} [ ]
+Tue Nov  5 11:26:43 2019
+ my id: 44806 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -B 300 -N >> output44806.log
+Node ID: 44806 �U
+                  ` R7
+
+
+Tue Nov  5 11:27:20 2019
+ my id: 43012 starting coap call
+v:1 t:NON c:GET i:053d {} [ ]
+Tue Nov  5 11:27:38 2019
+ my id: 43012 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -B 300 -N >> output43012.log
+Node ID: 43012 �U
+                  ` R7
+
+
+Tue Nov  5 11:34:28 2019
+ my id: 44806 starting coap call
+v:1 t:NON c:GET i:c5fb {} [ ]
+Tue Nov  5 11:34:36 2019
+ my id: 44806 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -B 300 -N >> output44806.log
+Node ID: 44806 �U
+                  ` R7
+
+
+Tue Nov  5 11:35:28 2019
+ my id: 43012 starting coap call
+v:1 t:NON c:GET i:e984 {} [ ]
+Tue Nov  5 11:35:44 2019
+ my id: 43012 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -B 300 -N >> output43012.log
+Node ID: 43012 �U
+                  ` R7
+
+
+Tue Nov  5 11:42:27 2019
+ my id: 44806 starting coap call
+v:1 t:NON c:GET i:9e17 {} [ ]
+Tue Nov  5 11:42:33 2019
+ my id: 44806 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -B 300 -N >> output44806.log
+Node ID: 44806 
+                ` R7
+
+
+Tue Nov  5 11:43:25 2019
+ my id: 43012 starting coap call
+v:1 t:NON c:GET i:9e17 {} [ ]
+Tue Nov  5 11:43:37 2019
+ my id: 43012 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -B 300 -N >> output43012.log
+Node ID: 43012 �U
+                  ` R7
+
+
+Tue Nov  5 11:50:30 2019
+ my id: 44806 starting coap call
+v:1 t:NON c:GET i:89f8 {} [ ]
+Tue Nov  5 11:50:35 2019
+ my id: 44806 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -B 300 -N >> output44806.log
+Node ID: 44806 �U
+                  ` R7
+
+
+Tue Nov  5 11:51:31 2019
+ my id: 43012 starting coap call
+v:1 t:NON c:GET i:b7f7 {} [ ]
+Tue Nov  5 11:51:43 2019
+ my id: 43012 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -B 300 -N >> output43012.log
+Node ID: 43012 6W
+                  ` R7
+
+
+Tue Nov  5 11:58:31 2019
+ my id: 44806 starting coap call
+v:1 t:NON c:GET i:fdbf {} [ ]
+Tue Nov  5 11:58:37 2019
+ my id: 44806 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -B 300 -N >> output44806.log
+Node ID: 44806 @
+                 ` R7
+
+
+Tue Nov  5 11:59:23 2019
+ my id: 43012 starting coap call
+v:1 t:NON c:GET i:e962 {} [ ]
+Tue Nov  5 11:59:36 2019
+ my id: 43012 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -B 300 -N >> output43012.log
+Node ID: 43012 �) 
+                   ` R7
+
+
+Tue Nov  5 12:06:30 2019
+ my id: 44806 starting coap call
+v:1 t:NON c:GET i:c54e {} [ ]
+Tue Nov  5 12:06:39 2019
+ my id: 44806 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -B 300 -N >> output44806.log
+Node ID: 44806 ��
+                  ` R7
+
+
+Tue Nov  5 12:07:26 2019
+ my id: 43012 starting coap call
+v:1 t:NON c:GET i:fbcf {} [ ]
+Tue Nov  5 12:07:42 2019
+ my id: 43012 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -B 300 -N >> output43012.log
+Node ID: 43012 �U
+                  ` R7
+
+
+Tue Nov  5 12:14:21 2019
+ my id: 44806 starting coap call
+v:1 t:NON c:GET i:206a {} [ ]
+Tue Nov  5 12:14:27 2019
+ my id: 44806 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -B 300 -N >> output44806.log
+Node ID: 44806 
+                ` R7
+
+
+Tue Nov  5 12:15:35 2019
+ my id: 43012 starting coap call
+v:1 t:NON c:GET i:59bf {} [ ]
+Tue Nov  5 12:15:53 2019
+ my id: 43012 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -B 300 -N >> output43012.log
+Node ID: 43012 @
+                 ` R7
+
+
+Tue Nov  5 12:22:15 2019
+ my id: 44806 starting coap call
+v:1 t:NON c:GET i:b8d0 {} [ ]
+Tue Nov  5 12:22:20 2019
+ my id: 44806 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -B 300 -N >> output44806.log
+Node ID: 44806 �U
+                  ` R7
+
+
+Tue Nov  5 12:23:42 2019
+ my id: 43012 starting coap call
+v:1 t:NON c:GET i:e9fa {} [ ]
+Tue Nov  5 12:23:55 2019
+ my id: 43012 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -B 300 -N >> output43012.log
+Node ID: 43012 �7�,
+                    ` R7
+
+
+Tue Nov  5 12:30:23 2019
+ my id: 44806 starting coap call
+v:1 t:NON c:GET i:9664 {} [ ]
+Tue Nov  5 12:30:31 2019
+ my id: 44806 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -B 300 -N >> output44806.log
+Node ID: 44806 @
+                 ` R7
+
+
+Tue Nov  5 12:31:36 2019
+ my id: 43012 starting coap call
+v:1 t:NON c:GET i:c0fd {} [ ]
+Tue Nov  5 12:31:48 2019
+ my id: 43012 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -B 300 -N >> output43012.log
+Node ID: 43012 �U
+                  ` R7
+
+
+Tue Nov  5 12:38:28 2019
+ my id: 44806 starting coap call
+v:1 t:NON c:GET i:fa32 {} [ ]
+Tue Nov  5 12:38:37 2019
+ my id: 44806 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -B 300 -N >> output44806.log
+Node ID: 44806 
+                ` R7
+
+
+Tue Nov  5 12:39:36 2019
+ my id: 43012 starting coap call
+v:1 t:NON c:GET i:24b0 {} [ ]
+Tue Nov  5 12:39:50 2019
+ my id: 43012 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -B 300 -N >> output43012.log
+Node ID: 43012 ��
+                  ` R7
+
+
+Tue Nov  5 12:46:31 2019
+ my id: 44806 starting coap call
+v:1 t:NON c:GET i:13fe {} [ ]
+Tue Nov  5 12:46:39 2019
+ my id: 44806 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -B 300 -N >> output44806.log
+Node ID: 44806 
+                ` R7
+
+
+Tue Nov  5 12:47:32 2019
+ my id: 43012 starting coap call
+v:1 t:NON c:GET i:3bb9 {} [ ]
+Tue Nov  5 12:47:47 2019
+ my id: 43012 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -B 300 -N >> output43012.log
+Node ID: 43012 �U
+                  ` R7
+
+
+Tue Nov  5 12:54:32 2019
+ my id: 44806 starting coap call
+v:1 t:NON c:GET i:c07f {} [ ]
+Tue Nov  5 12:54:45 2019
+ my id: 44806 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -B 300 -N >> output44806.log
+Node ID: 44806 
+                ` R7
+
+
+Tue Nov  5 12:55:22 2019
+ my id: 43012 starting coap call
+v:1 t:NON c:GET i:9d64 {} [ ]
+Tue Nov  5 12:55:35 2019
+ my id: 43012 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -B 300 -N >> output43012.log
+Node ID: 43012 �0 
+                   ` R7
+
+
+Tue Nov  5 13:02:38 2019
+ my id: 44806 starting coap call
+v:1 t:NON c:GET i:f4f1 {} [ ]
+Tue Nov  5 13:02:47 2019
+ my id: 44806 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -B 300 -N >> output44806.log
+Node ID: 44806 ��
+                  ` R7
+
+
+Tue Nov  5 13:03:25 2019
+ my id: 43012 starting coap call
+v:1 t:NON c:GET i:206a {} [ ]
+Tue Nov  5 13:03:37 2019
+ my id: 43012 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -B 300 -N >> output43012.log
+Node ID: 43012 �U
+                  ` R7
+
+
+Tue Nov  5 13:10:30 2019
+ my id: 44806 starting coap call
+v:1 t:NON c:GET i:2ea5 {} [ ]
+Tue Nov  5 13:10:35 2019
+ my id: 44806 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -B 300 -N >> output44806.log
+Node ID: 44806 �U
+                  ` R7
+
+
+Tue Nov  5 13:11:25 2019
+ my id: 43012 starting coap call
+v:1 t:NON c:GET i:006b {} [ ]
+Tue Nov  5 13:11:34 2019
+ my id: 43012 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -B 300 -N >> output43012.log
+Node ID: 43012 �U
+                  ` R7
+
+
+Tue Nov  5 13:18:36 2019
+ my id: 44806 starting coap call
+v:1 t:NON c:GET i:9809 {} [ ]
+Tue Nov  5 13:18:42 2019
+ my id: 44806 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -B 300 -N >> output44806.log
+Node ID: 44806 �U
+                  ` R7
+
+
+Tue Nov  5 13:19:16 2019
+ my id: 43012 starting coap call
+v:1 t:NON c:GET i:7d38 {} [ ]
+Tue Nov  5 13:19:27 2019
+ my id: 43012 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -B 300 -N >> output43012.log
+Node ID: 43012 �U
+                  ` R7
+
+
+Tue Nov  5 13:26:31 2019
+ my id: 44806 starting coap call
+v:1 t:NON c:GET i:0e61 {} [ ]
+Tue Nov  5 13:26:39 2019
+ my id: 44806 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -B 300 -N >> output44806.log
+Node ID: 44806 
+                ` R7
+
+
+Tue Nov  5 13:27:11 2019
+ my id: 43012 starting coap call
+v:1 t:NON c:GET i:ea32 {} [ ]
+Tue Nov  5 13:27:24 2019
+ my id: 43012 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -B 300 -N >> output43012.log
+Node ID: 43012 P8 
+                   ` R7
+
+
+Tue Nov  5 13:34:25 2019
+ my id: 44806 starting coap call
+v:1 t:NON c:GET i:8a2c {} [ ]
+Tue Nov  5 13:34:32 2019
+ my id: 44806 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -B 300 -N >> output44806.log
+Node ID: 44806 �U
+                  ` R7
+
+
+Tue Nov  5 13:35:08 2019
+ my id: 43012 starting coap call
+v:1 t:NON c:GET i:1d76 {} [ ]
+Tue Nov  5 13:35:35 2019
+ my id: 43012 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -B 300 -N >> output43012.log
+Node ID: 43012 �U
+                  ` R7
+
+
+Tue Nov  5 13:42:31 2019
+ my id: 44806 starting coap call
+v:1 t:NON c:GET i:e6e4 {} [ ]
+Tue Nov  5 13:42:52 2019
+ my id: 44806 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -B 300 -N >> output44806.log
+Node ID: 44806 
+                ` R7
+
+
+Tue Nov  5 13:43:03 2019
+ my id: 43012 starting coap call
+v:1 t:NON c:GET i:831e {} [ ]
+Tue Nov  5 13:43:14 2019
+ my id: 43012 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -B 300 -N >> output43012.log
+Node ID: 43012 @
+                 ` R7
+
+
+Tue Nov  5 13:50:27 2019
+ my id: 44806 starting coap call
+v:1 t:NON c:GET i:ecf2 {} [ ]
+Tue Nov  5 13:50:35 2019
+ my id: 44806 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -B 300 -N >> output44806.log
+Node ID: 44806 �U
+                  ` R7
+
+
+Tue Nov  5 13:51:02 2019
+ my id: 43012 starting coap call
+v:1 t:NON c:GET i:6604 {} [ ]
+Tue Nov  5 13:51:16 2019
+ my id: 43012 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -B 300 -N >> output43012.log
+Node ID: 43012 �U
+                  ` R7
+
+
+Tue Nov  5 13:58:30 2019
+ my id: 44806 starting coap call
+v:1 t:NON c:GET i:ea32 {} [ ]
+Tue Nov  5 13:58:37 2019
+ my id: 44806 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -B 300 -N >> output44806.log
+Node ID: 44806 ��
+                  ` R7
+
+
+Tue Nov  5 13:59:09 2019
+ my id: 43012 starting coap call
+v:1 t:NON c:GET i:a1cb {} [ ]
+Tue Nov  5 13:59:23 2019
+ my id: 43012 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -B 300 -N >> output43012.log
+Node ID: 43012 @
+                 ` R7
+
+
+Tue Nov  5 14:06:24 2019
+ my id: 44806 starting coap call
+v:1 t:NON c:GET i:fbf3 {} [ ]
+Tue Nov  5 14:06:30 2019
+ my id: 44806 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -B 300 -N >> output44806.log
+Node ID: 44806 
+                ` R7
+
+
+Tue Nov  5 14:07:14 2019
+ my id: 43012 starting coap call
+v:1 t:NON c:GET i:e5b1 {} [ ]
+Tue Nov  5 14:07:24 2019
+ my id: 43012 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -B 300 -N >> output43012.log
+Node ID: 43012 �) 
+                   ` R7
+
+
+Tue Nov  5 14:14:16 2019
+ my id: 44806 starting coap call
+v:1 t:NON c:GET i:99c2 {} [ ]
+Tue Nov  5 14:14:23 2019
+ my id: 44806 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -B 300 -N >> output44806.log
+Node ID: 44806 �U
+                  ` R7
+
+
+Tue Nov  5 14:15:09 2019
+ my id: 43012 starting coap call
+v:1 t:NON c:GET i:aa8a {} [ ]
+Tue Nov  5 14:15:22 2019
+ my id: 43012 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -B 300 -N >> output43012.log
+Node ID: 43012 �U
+                  ` R7
+
+
+Tue Nov  5 14:22:20 2019
+ my id: 44806 starting coap call
+v:1 t:NON c:GET i:16be {} [ ]
+Tue Nov  5 14:22:29 2019
+ my id: 44806 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -B 300 -N >> output44806.log
+Node ID: 44806 �U
+                  ` R7
+
+
+Tue Nov  5 14:23:06 2019
+ my id: 43012 starting coap call
+v:1 t:NON c:GET i:cf08 {} [ ]
+Tue Nov  5 14:23:19 2019
+ my id: 43012 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -B 300 -N >> output43012.log
+Node ID: 43012 �U
+                  ` R7
+
+
+Tue Nov  5 14:30:24 2019
+ my id: 44806 starting coap call
+v:1 t:NON c:GET i:cb0e {} [ ]
+Tue Nov  5 14:30:35 2019
+ my id: 44806 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -B 300 -N >> output44806.log
+Node ID: 44806 �U
+                  ` R7
+
+
+Tue Nov  5 14:31:00 2019
+ my id: 43012 starting coap call
+v:1 t:NON c:GET i:e5b1 {} [ ]
+Tue Nov  5 14:31:12 2019
+ my id: 43012 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -B 300 -N >> output43012.log
+Node ID: 43012 �6�J
+                    ` R7
+
+
+Tue Nov  5 14:38:17 2019
+ my id: 44806 starting coap call
+v:1 t:NON c:GET i:0c21 {} [ ]
+Tue Nov  5 14:38:23 2019
+ my id: 44806 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -B 300 -N >> output44806.log
+Node ID: 44806 �U
+                  ` R7
+
+
+Tue Nov  5 14:39:00 2019
+ my id: 43012 starting coap call
+v:1 t:NON c:GET i:b96e {} [ ]
+Tue Nov  5 14:39:18 2019
+ my id: 43012 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -B 300 -N >> output43012.log
+Node ID: 43012 �U
+                  ` R7
+
+
+Tue Nov  5 14:46:14 2019
+ my id: 44806 starting coap call
+v:1 t:NON c:GET i:fdbf {} [ ]
+Tue Nov  5 14:46:34 2019
+ my id: 44806 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -B 300 -N >> output44806.log
+Node ID: 44806 �0 
+                   ` R7
+
+
+Tue Nov  5 14:46:58 2019
+ my id: 43012 starting coap call
+v:1 t:NON c:GET i:831e {} [ ]
+Tue Nov  5 14:47:11 2019
+ my id: 43012 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -B 300 -N >> output43012.log
+Node ID: 43012 �U
+                  ` R7
+
+
+Tue Nov  5 14:54:20 2019
+ my id: 44806 starting coap call
+v:1 t:NON c:GET i:4b5d {} [ ]
+Tue Nov  5 14:54:27 2019
+ my id: 44806 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -B 300 -N >> output44806.log
+Node ID: 44806 �U
+                  ` R7
+
+
+Tue Nov  5 14:55:06 2019
+ my id: 43012 starting coap call
+v:1 t:NON c:GET i:e5b1 {} [ ]
+Tue Nov  5 14:55:17 2019
+ my id: 43012 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -B 300 -N >> output43012.log
+Node ID: 43012 �U
+                  ` R7
+
+
+Tue Nov  5 15:02:18 2019
+ my id: 44806 starting coap call
+v:1 t:NON c:GET i:5876 {} [ ]
+Tue Nov  5 15:02:47 2019
+ my id: 44806 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -B 300 -N >> output44806.log
+Node ID: 44806 �81
+                   ` R7
+
+
+Tue Nov  5 15:03:00 2019
+ my id: 43012 starting coap call
+v:1 t:NON c:GET i:e7f7 {} [ ]
+Tue Nov  5 15:03:10 2019
+ my id: 43012 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -B 300 -N >> output43012.log
+Node ID: 43012 ��
+                  ` R7
+
+
+Tue Nov  5 15:10:11 2019
+ my id: 44806 starting coap call
+v:1 t:NON c:GET i:cb0e {} [ ]
+Tue Nov  5 15:10:17 2019
+ my id: 44806 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:1532:af06]/test/id -B 300 -N >> output44806.log
+Node ID: 44806 �U
+                  ` R7
+
+
+Tue Nov  5 15:11:01 2019
+ my id: 43012 starting coap call
+v:1 t:NON c:GET i:da32 {} [ ]
+Tue Nov  5 15:11:12 2019
+ my id: 43012 ended coap call
+Succes
+coap-client -m get coap://[fd00::212:4b00:f29:a804]/test/id -B 300 -N >> output43012.log
+Node ID: 43012 �U
+                  ` R7
+
+
+CoAP: Succeses: 44 , Failures: 1, avg time for succes: 404.47, ip: fd00::212:4b00:1532:af06, id: 44806
+CoAP: Succeses: 44 , Failures: 1, avg time for succes: 615.462, ip: fd00::212:4b00:f29:a804, id: 43012
+[
